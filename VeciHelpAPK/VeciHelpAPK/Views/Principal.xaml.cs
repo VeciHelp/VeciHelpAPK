@@ -36,6 +36,11 @@ namespace VeciHelpAPK.Views
                 ButtonAdministrador.IsEnabled = true;
                 ButtonAdministrador.IsVisible = true;
             }
+
+            ToolbarItem item = new ToolbarItem();
+            item.Text = "Mis Datos";
+            item.Order = ToolbarItemOrder.Secondary;
+            item.Clicked += ButtonActualizarDatos_Clicked;
         }
 
 
@@ -68,5 +73,16 @@ namespace VeciHelpAPK.Views
         {
             await Navigation.PushAsync(new Crear_Usuario(user));
         }
+
+        private async void ButtonActualizarDatos_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Crear_Usuario(user));
+        }
+
+
+            private async void ButtonCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+        }
     }
+
 }

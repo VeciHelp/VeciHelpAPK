@@ -8,12 +8,18 @@
              xmlns:local="clr-namespace:VeciHelpAPK.Models"
              Title="VeciHelp"
              BackgroundColor="#242525">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Actualizar Mis Datos" Priority="0" Order="Secondary" Clicked="ButtonActualizarDatos_Clicked" />
+        <ToolbarItem Text="Cerrar Sesion" Priority="1" Order="Secondary" Clicked="ButtonCerrarSesion_Clicked"/>
+        <ToolbarItem IconImageSource="Escudo.png" Priority="2" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+    
+    
     <ContentPage.Content>
         <StackLayout>
 
-
-
-            <StackLayout Padding="20" 
+           <StackLayout Padding="20" 
                             >
                 <StackLayout Orientation="Horizontal">
                     <Button x:Name="ButtonAdministrador" HorizontalOptions="StartAndExpand"
@@ -84,16 +90,7 @@
                             Clicked="ButtonSospecha_Clicked"
                             />
 
-                        <Button x:Name="ButtonmisDatos"
-                        HeightRequest = "80"
-                        Text="Mis Datos"
-                        BackgroundColor="#2FBB62"
-                        CornerRadius="20"
-                        TextColor="White"
-                        FontSize="20"
-                        FontAttributes="Bold"
-                            Clicked="ButtonmisDatos_Clicked"
-                            />
+                        
 
                     </StackLayout>
                 </StackLayout>
