@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:VeciHelpAPK.Models"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.LoginView"
+             BackgroundColor="#242525">
+    <ContentPage.Content>
+        <StackLayout Padding="40,30,40,100">
+
+            <StackLayout>
+                <Label Text="Bienvenido a VeciHelp"
+                   HorizontalOptions="CenterAndExpand"
+                   FontSize="Title"
+                   TextColor="Azure"/>
+            </StackLayout>
+
+            <StackLayout>
+                <Image Source="Logo2.png"
+                        WidthRequest="150"/>
+            </StackLayout>
+
+            <StackLayout WidthRequest="300" Padding="20,40,20,20">
+                <Entry  x:Name="correo" Keyboard="Email" Placeholder="Correo" BackgroundColor="Azure" HorizontalTextAlignment="Center"/>
+                <Entry  x:Name="clave" Placeholder="Ingrese su Contraseña" BackgroundColor="Azure" HorizontalTextAlignment="Center" IsPassword="True"/>
+            </StackLayout>
+
+            <StackLayout WidthRequest="300" Padding="20,40,20,20">
+                
+            <Button x:Name="ButtonLogin"
+                        Text="Iniciar Sesión" 
+                        TextColor="#2FBB62"
+                        FontSize="Medium"
+                    FontAttributes="Bold"
+                    BackgroundColor="#00000"
+                    Clicked="ButtonLogin_Clicked"/>
+
+
+            <Button x:Name="ButtonRegistrarse"
+                    Text="Registrarse"
+                        TextColor="#ffcd3c"
+                        FontSize="Medium"
+                        BackgroundColor="#00000"
+                        Clicked="ButtonRegistrate_Clicked"
+                        FontAttributes="Bold"
+                        />
+
+
+
+                <Button  
+                    Text="Olvidó su contraseña?"
+                        TextColor="#d92027"
+                        BackgroundColor="#00000"
+                        FontSize="Small"/>
+
+
+            </StackLayout>
+
+
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>

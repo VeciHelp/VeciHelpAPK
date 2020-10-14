@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "166496855727",
+    "firebase_url": "https://vecihelpapk.firebaseio.com",
+    "project_id": "vecihelpapk",
+    "storage_bucket": "vecihelpapk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166496855727:android:76bd652142e211ada2565a",
+        "android_client_info": {
+          "package_name": "com.notificaciones.vecihelpapk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166496855727-l45s95amnt5gu74a97gro8ni09cknle5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1A5JUm9b_SWmV9CMVjQcvCsqnpbyY8vg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166496855727-l45s95amnt5gu74a97gro8ni09cknle5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

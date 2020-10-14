@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.AyudaVecino"
+             Title="AYUDA VECINO"
+             BackgroundColor="#ffcd3c">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="30">
+                    <StackLayout Padding="10,50">
+                        <Image x:Name="ladronImage" Opacity="100" Source="alerta.png"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"
+                       WidthRequest="180"
+                       HeightRequest="160"
+                       />
+                    </StackLayout>
+
+                    <StackLayout x:Name="sl" Padding="10,20,10,10" VerticalOptions="CenterAndExpand">
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

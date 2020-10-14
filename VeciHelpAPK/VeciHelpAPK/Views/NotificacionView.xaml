@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="VeciHelpAPK.Views.NotificacionView" Title="ALERTA"
+             BackgroundColor="#242525">
+    
+    <ContentPage.ToolbarItems>
+
+
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Label x:Name="LblTipoAlerta" Text="TIPO ALERTA"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   TextColor="Azure"/>
+            <StackLayout Orientation="Horizontal" Padding="30">
+                <StackLayout>
+                    <Label x:Name="LblNombre" Text="Nombre" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Azure" FontAttributes="Bold"/>
+                    <Label x:Name="LblDireccion" Text="Dirección" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Azure" FontAttributes="Bold"/>
+                    <Label x:Name="LblHoraAlerta" Text="Hora" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Azure" FontAttributes="Bold"/>
+                </StackLayout>
+                <Image x:Name="FotoPerfil" Source="profile.png"
+                       WidthRequest="120"
+                       HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <Label Text="Esperando Ayuda" HorizontalOptions="Center" TextColor="Azure"/>
+                
+                <Label x:Name="LblContadorPersonas" Text="X Personas en Camino" HorizontalOptions="Center" TextColor="Azure"/>
+            </StackLayout> 
+            <StackLayout Padding="20,40, 20, 20" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="/Users/enzorojasjarpa/Projects/VH/VH.iOS/Resources/mapa.png"
+                       WidthRequest="300"
+                       HorizontalOptions="EndAndExpand"/>
+            </StackLayout>
+            <StackLayout>
+                <Button x:Name="ButtonAcudir" Text="ACUDIR A LLAMADO" FontSize="Subtitle" TextColor="Azure" BackgroundColor="#2FBB62"
+                        Clicked="ButtonAcudir_Clicked"
+                        CornerRadius="25" Padding="10,20" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="20">
+                <Button Text="BOMBEROS" HorizontalOptions="StartAndExpand" FontSize="Medium"/>
+                <Button Text="CARABIERNOS" HorizontalOptions="EndAndExpand" FontSize="Medium"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

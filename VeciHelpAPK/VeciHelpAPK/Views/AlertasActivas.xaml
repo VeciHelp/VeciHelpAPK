@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.AlertasActivas"
+             Title="ALERTAS"
+             BackgroundColor="#242525">
+
+    <ContentPage.ToolbarItems>
+
+
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
+
+            <Label x:Name="mensajeView" Text="Alertas Activas"  HorizontalOptions="Center"
+                   VerticalOptions="Center" TextColor="White"/>
+
+            <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center">
+                <ScrollView>
+                    <StackLayout x:Name="StackAlertas" BackgroundColor="White" Padding="10" Margin="20" Opacity="35">
+                        <!--<Button Text="Hora, Fecha, Tipo Alerta, Nombre Usuario"
+                    TextColor="#d92027" FontAttributes="Bold"/>
+                        <Button Text="Hora, Fecha, Tipo Alerta, Nombre Usuario"
+                    TextColor="#ffcd3c" FontAttributes="Bold"/>
+                        <Button Text="Hora, Fecha, Tipo Alerta, Nombre Usuario"
+                    TextColor="#2FBB62" FontAttributes="Bold"/>-->
+                    </StackLayout>
+                </ScrollView>
+
+            </StackLayout>
+
+    </StackLayout>
+           
+    </ContentPage.Content>
+</ContentPage>

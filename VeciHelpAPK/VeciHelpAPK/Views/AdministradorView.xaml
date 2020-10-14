@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:VeciHelpAPK.Models"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.AdministradorView" Title="ADMINISTRADOR">
+
+    <ContentPage.ToolbarItems>
+
+
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage BackgroundColor="#242525">
+        <ContentPage.Content >
+            <StackLayout Padding="40">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p1.png}" WidthRequest="30" HeightRequest="30"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                </StackLayout>
+
+                <Label Text="ENROLAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand"
+                       Padding="10,10,10,190" HorizontalTextAlignment="Center"/>
+
+
+
+                <Label Text="Agrega un Usuario al Registro enviando Codigo de Verificacion" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+                <StackLayout Padding="10,10,10,90">
+                    <Entry x:Name="EnrolarCorreo" Placeholder="Ingrese un Correo" VerticalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center" Keyboard="Email"
+                       FontSize="Body" BackgroundColor="Azure"/>
+                    <ImageButton Clicked="ButtonEnrolar_Clicked" Source="{local:ImageResource VeciHelpAPK.Images.+.png}"
+                        Padding="50,10,50,50"
+                        WidthRequest="250"
+                         HeightRequest="250"
+                             BackgroundColor="#00000"
+                             x:Name="ButtonEnrolar"
+
+                        />
+                </StackLayout>
+
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage BackgroundColor="#242525">
+        <ContentPage.Content>
+            <StackLayout Padding="40">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p1.png}" WidthRequest="30" HeightRequest="30"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                </StackLayout>
+
+                <Label Text="ELIMINAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" Padding="10,10,10,190"  HorizontalTextAlignment="Center"/>
+
+                <Label Text="Elimina un Usuario de la Comunidad" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+
+                <StackLayout Padding="10,10,10,90">
+                    <Entry x:Name="EliminarCorreo" Placeholder="Ingrese un Correo" VerticalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center" Keyboard="Email"
+                       FontSize="Body" BackgroundColor="Azure"/>
+                    <Button
+                        ImageSource="{local:ImageResource VeciHelpAPK.Images.-.png}"
+                         Padding="50,10,50,50"
+                        WidthRequest="250"
+                    HeightRequest="250"
+                    x:Name="ButtonEliminar"
+                    BackgroundColor="#00000"
+                    Clicked="ButtonEliminar_Clicked"
+                        />
+                </StackLayout>
+
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage BackgroundColor="#242525">
+        <ContentPage.Content>
+            <StackLayout Padding="40">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p1.png}" WidthRequest="30" HeightRequest="30"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+
+                </StackLayout>
+                <Label  Text="ASOCIAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
+
+                <Label Text="Asocia Vecinos Cercanos para Alertas CASA VECINO" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+                <StackLayout Padding="10,10,10,90">
+                    <Entry x:Name="CorreoAsociar" Placeholder="Ingrese un Correo" VerticalTextAlignment="Start" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center"
+                       FontSize="Body" BackgroundColor="Azure" Keyboard="Email"/>
+                    <Button
+                        ImageSource="{local:ImageResource VeciHelpAPK.Images.unir.png}"
+                        Padding="50,10,50,50"
+                        WidthRequest="250"
+                    HeightRequest="250"
+                        BackgroundColor="#00000"
+                    x:Name="ButtonAsociar"
+                    Clicked="ButtonAsociar_Clicked"
+                        />
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+    </ContentPage>
+
+    <ContentPage BackgroundColor="#242525">
+        <ContentPage.Content>
+            <StackLayout Padding="40">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p2.png}" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="{local:ImageResource VeciHelpAPK.Images.p1.png}" WidthRequest="30" HeightRequest="30"/>
+
+                </StackLayout>
+                <Label Text="DESASOCIAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
+
+
+                <Label Text="Elimina Vecinos Cercanos para Alertas CASA VECINO" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+                <StackLayout Padding="10,10,10,90">
+                    <Entry x:Name="CorreoDesasociar" Placeholder="Ingrese un Correo" VerticalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center"
+                       FontSize="Body" BackgroundColor="Azure" Keyboard="Email"/>
+                    <Button
+                        ImageSource="{local:ImageResource VeciHelpAPK.Images.desasociar.png}"
+                        Padding="50,10,50,50"
+                        WidthRequest="250"
+                    HeightRequest="250"
+                    x:Name="ButtonDesasociar"
+                    Clicked="ButtonDesasociar_Clicked"
+                        BackgroundColor="#00000"
+                        />
+                </StackLayout>
+
+
+            </StackLayout>
+        </ContentPage.Content>
+
+    </ContentPage>
+</CarouselPage>

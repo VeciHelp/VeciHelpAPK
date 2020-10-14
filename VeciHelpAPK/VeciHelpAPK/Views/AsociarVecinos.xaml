@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:VeciHelpAPK.Models"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.AsociarVecinos"
+             BackgroundColor="#242525">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+
+        <StackLayout Padding="30">
+
+            <Label x:Name="Nombre" FontSize="Large" TextColor="White"/>
+
+
+            <Label Text="DIRECCION, NOMBRE VECINO" FontSize="Medium" TextColor="White"/>
+
+
+            <Frame BackgroundColor="#242525">
+                <StackLayout x:Name="sl">
+
+                </StackLayout>
+            </Frame>
+
+            <StackLayout>
+
+                <Button x:Name="ButtonAsociarVecino" Clicked="ButtonAsociarVecino_Clicked" Text="ASOCIAR VECINO" BackgroundColor="#1d83d4" TextColor="White" CornerRadius="25" />
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

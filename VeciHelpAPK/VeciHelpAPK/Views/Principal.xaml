@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.Principal"
+             xmlns:local="clr-namespace:VeciHelpAPK.Models"
+             Title="VeciHelp"
+             BackgroundColor="#242525">
+    <ContentPage.Content>
+        <StackLayout>
+
+
+
+            <StackLayout Padding="20" 
+                            >
+                <StackLayout Orientation="Horizontal">
+                    <Button x:Name="ButtonAdministrador" HorizontalOptions="StartAndExpand"
+                        ImageSource="adm.png"
+                        BackgroundColor="#242525"
+                        Clicked="ButtonAdministrador_Clicked"
+                       />
+
+                    <StackLayout Orientation="Vertical">
+                        <Button x:Name="ButtonAlertas" HorizontalOptions="EndAndExpand"
+                        ImageSource="alert.png"
+                                 BackgroundColor="#242525"
+                            Clicked="ButtonAlertas_Clicked"/>
+
+                        <Label Text="Alertas en Curso" TextColor="White"/>
+
+
+                    </StackLayout>
+                </StackLayout>
+                
+                
+                <StackLayout x:Name="imagenDinamica">
+
+                </StackLayout>
+
+                <StackLayout>
+                    <Label Text="VeciHelp" FontSize="Title" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+
+
+
+                <StackLayout>
+                    <StackLayout Orientation="Vertical"
+                         Padding="70,60, 70, 10"
+                         VerticalOptions="End"
+                         >
+
+                        <Button x:Name="ButtonSOSRobo"
+                        BackgroundColor="#d92027"
+                        TextColor="GhostWhite"
+                        CornerRadius="20"
+                        HeightRequest = "80"
+                        Text="SOS ROBO"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                            Clicked="ButtonSOSRobo_Clicked"
+                        />
+
+                        <Button x:Name="ButtonAyuda"
+                        BackgroundColor="#ffcd3c"
+                        CornerRadius="20"
+                        Text="EMERGENCIA"
+                        FontSize="20"
+                        HeightRequest = "80"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                            Clicked="ButtonAyuda_Clicked"
+                            />
+
+                        <Button x:Name="ButtonSospecha"
+                        HeightRequest = "80"
+                        Text="SOSPECHA"
+                        BackgroundColor="#2FBB62"
+                        CornerRadius="20"
+                        TextColor="White"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                            Clicked="ButtonSospecha_Clicked"
+                            />
+
+                        <Button x:Name="ButtonmisDatos"
+                        HeightRequest = "80"
+                        Text="Mis Datos"
+                        BackgroundColor="#2FBB62"
+                        CornerRadius="20"
+                        TextColor="White"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                            Clicked="ButtonmisDatos_Clicked"
+                            />
+
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

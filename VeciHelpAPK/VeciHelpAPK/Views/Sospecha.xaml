@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.Sospecha"
+             Title="SOSPECHA"
+             BackgroundColor="#2FBB62">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout x:Name="RobberImage" VerticalOptions="CenterAndExpand" Padding="10" >
+                <StackLayout HorizontalOptions="CenterAndExpand" Padding="10">
+                    <Label Text="SOSPECHA" TextColor="White" FontSize="40" FontAttributes="Bold"/>
+                </StackLayout>
+                <StackLayout Padding="10,10,10,10">
+                    <Image x:Name="ladronImage" Opacity="100" Source="objetivo.png"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   WidthRequest="180"
+                   HeightRequest="160"
+                   />
+                </StackLayout>
+                <StackLayout Padding="10,30,10,50">
+                    <Entry Placeholder="Ingrese su Sospecha..."
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       WidthRequest="80"
+                       HeightRequest="80"
+                       Opacity="0.8"
+                           BackgroundColor="White"
+                           
+                       />
+                    <Button x:Name="ButtonEnviar"
+                    VerticalOptions="Center"
+                    BackgroundColor="#25954e"
+                    Text="ENVIAR"
+                    TextColor="White"
+                    FontSize="Title"
+                    FontAttributes="Bold"
+                    HeightRequest = "80"
+                    CornerRadius="25"
+                    Clicked="ButtonEnviar_Clicked"
+                    />
+                </StackLayout>
+
+            </StackLayout>
+
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
