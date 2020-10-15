@@ -14,16 +14,19 @@
             <Label x:Name="LblTipoAlerta" Text="TIPO ALERTA"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
-                   TextColor="Azure"/>
+                   TextColor="Azure"
+                   FontSize="Subtitle"/>
             <StackLayout Orientation="Horizontal" Padding="30">
+
+                <Image x:Name="FotoPerfil" Source="profile.png"
+                       WidthRequest="120"
+                       HorizontalOptions="EndAndExpand"/>
                 <StackLayout>
                     <Label x:Name="LblNombre" Text="Nombre" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Azure" FontAttributes="Bold"/>
                     <Label x:Name="LblDireccion" Text="Dirección" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Azure" FontAttributes="Bold"/>
                     <Label x:Name="LblHoraAlerta" Text="Hora" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Azure" FontAttributes="Bold"/>
                 </StackLayout>
-                <Image x:Name="FotoPerfil" Source="profile.png"
-                       WidthRequest="120"
-                       HorizontalOptions="EndAndExpand"/>
+                
             </StackLayout>
             <StackLayout Orientation="Vertical">
                 <Label Text="Esperando Ayuda" HorizontalOptions="Center" TextColor="Azure"/>

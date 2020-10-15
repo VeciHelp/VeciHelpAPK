@@ -34,7 +34,7 @@
                 <StackLayout Padding="10,10,10,90">
                     <Entry x:Name="EnrolarCorreo" Placeholder="Ingrese un Correo" VerticalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center" Keyboard="Email"
                        FontSize="Body" BackgroundColor="Azure"/>
-                    <ImageButton Clicked="ButtonEnrolar_Clicked" Source="{local:ImageResource VeciHelpAPK.Images.+.png}"
+                    <ImageButton Clicked="ButtonEnrolar_Clicked" Source="{local:ImageResource VeciHelpAPK.Images.unir.png}"
                         Padding="50,10,50,50"
                         WidthRequest="250"
                          HeightRequest="250"
@@ -67,7 +67,7 @@
                     <Entry x:Name="EliminarCorreo" Placeholder="Ingrese un Correo" VerticalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center" Keyboard="Email"
                        FontSize="Body" BackgroundColor="Azure"/>
                     <Button
-                        ImageSource="{local:ImageResource VeciHelpAPK.Images.-.png}"
+                        ImageSource="{local:ImageResource VeciHelpAPK.Images.unir.png}"
                          Padding="50,10,50,50"
                         WidthRequest="250"
                     HeightRequest="250"

@@ -10,9 +10,10 @@
              BackgroundColor="#242525">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Actualizar Mis Datos" Priority="0" Order="Secondary" Clicked="ButtonActualizarDatos_Clicked" />
-        <ToolbarItem Text="Cerrar Sesion" Priority="1" Order="Secondary" Clicked="ButtonCerrarSesion_Clicked"/>
-        <ToolbarItem IconImageSource="Escudo.png" Priority="2" Order="Primary"/>
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+
+        <ToolbarItem Text="Actualizar Mis Datos" Priority="1" Order="Secondary" Clicked="ButtonActualizarDatos_Clicked" />
+        <ToolbarItem Text="Cerrar Sesion" Priority="2" Order="Secondary" Clicked="ButtonCerrarSesion_Clicked"/>
     </ContentPage.ToolbarItems>
     
     
@@ -21,20 +22,24 @@
 
            <StackLayout Padding="20" 
                             >
-                <StackLayout Orientation="Horizontal">
-                    <Button x:Name="ButtonAdministrador" HorizontalOptions="StartAndExpand"
+                <StackLayout Orientation="Horizontal" Padding="10" >
+                    <Button x:Name="ButtonAdministrador" 
                         ImageSource="adm.png"
                         BackgroundColor="#242525"
                         Clicked="ButtonAdministrador_Clicked"
+                            HorizontalOptions="StartAndExpand"
+                           
+                            
                        />
 
-                    <StackLayout Orientation="Vertical">
-                        <Button x:Name="ButtonAlertas" HorizontalOptions="EndAndExpand"
+                    <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                        <Button x:Name="ButtonAlertas" 
                         ImageSource="alert.png"
+                                HorizontalOptions="EndAndExpand"
                                  BackgroundColor="#242525"
                             Clicked="ButtonAlertas_Clicked"/>
 
-                        <Label Text="Alertas en Curso" TextColor="White"/>
+                        <Label Text="Alertas en Curso" TextColor="White" />
 
 
                     </StackLayout>
