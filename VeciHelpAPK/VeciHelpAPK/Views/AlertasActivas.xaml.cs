@@ -39,7 +39,8 @@ namespace VeciHelpAPK.Views
             {
 
                 Button btnAlertas = new Button();
-
+                btnAlertas.CornerRadius = 20;
+                btnAlertas.FontAttributes = FontAttributes.Bold;
 
                 if (item.TipoAlerta == "SOS")
                 {
@@ -47,6 +48,8 @@ namespace VeciHelpAPK.Views
                 }
                 else if (item.TipoAlerta == "Emergencia")
                 {
+                    btnAlertas.TextColor = Color.Black;
+
                     btnAlertas.BackgroundColor = Color.FromHex("#ffcd3c");
                 }
                 else if (item.TipoAlerta == "Sospecha")

@@ -14,17 +14,19 @@
             <Label x:Name="LblTipoAlerta" Text="TIPO ALERTA"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
-                   TextColor="Azure"
-                   FontSize="Subtitle"/>
+                   TextColor="White"
+                   FontSize="Title"/>
+            
             <StackLayout Orientation="Horizontal" Padding="30">
 
                 <Image x:Name="FotoPerfil" Source="profile.png"
                        WidthRequest="120"
-                       HorizontalOptions="EndAndExpand"/>
-                <StackLayout>
-                    <Label x:Name="LblNombre" Text="Nombre" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Azure" FontAttributes="Bold"/>
-                    <Label x:Name="LblDireccion" Text="Dirección" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Azure" FontAttributes="Bold"/>
-                    <Label x:Name="LblHoraAlerta" Text="Hora" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" TextColor="Azure" FontAttributes="Bold"/>
+                       HorizontalOptions="EndAndExpand"
+                       />
+                <StackLayout HorizontalOptions="StartAndExpand">
+                    <Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+                    <Label x:Name="LblHoraAlerta" Text="Hora" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
                 </StackLayout>
                 
             </StackLayout>
@@ -42,10 +44,10 @@
                 <Button x:Name="ButtonAcudir" Text="ACUDIR A LLAMADO" FontSize="Subtitle" TextColor="Azure" BackgroundColor="#2FBB62"
                         Clicked="ButtonAcudir_Clicked"
                         CornerRadius="25" Padding="10,20" FontAttributes="Bold" />
-            </StackLayout>
+            </StackLayout >
             <StackLayout Orientation="Horizontal" Padding="20">
-                <Button Text="BOMBEROS" HorizontalOptions="StartAndExpand" FontSize="Medium"/>
-                <Button Text="CARABIERNOS" HorizontalOptions="EndAndExpand" FontSize="Medium"/>
+                <Button Text="BOMBEROS" HorizontalOptions="StartAndExpand" TextColor="White" FontSize="Medium" BackgroundColor="#00000" BorderWidth="1" BorderColor="White" CornerRadius="25" WidthRequest="150"/>
+                <Button Text="CARABIERNOS" HorizontalOptions="EndAndExpand" TextColor="White" FontSize="Medium" BackgroundColor="#00000" BorderWidth="1" BorderColor="White" CornerRadius="25" WidthRequest="150"/>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
