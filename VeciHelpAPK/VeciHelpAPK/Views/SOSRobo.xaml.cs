@@ -19,92 +19,27 @@ namespace VeciHelpAPK.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SOSRobo : ContentPage
     {
-        public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
-        public string direccionBaseFirebase = "https://fcm.googleapis.com/";
-        public string tokenServerFireBase = "AAAAJsP8Zq8:APA91bG4UU1OvFpwQRq3Xl_uw4JC7MMYHcGm8d2mVwkF45Km0L0ztw3Gt1hjbInUweqWd9NqdV8OQmlOxa440aw4snOcUsDq0Ty8eDQg5KSe-IzI1GbLMPDDBlXIo1jTIwG-smyl_eTd";
-
+      
         public SOSRobo()
         {
             InitializeComponent();
         }
 
-        
-
         private async void ButtonPropia_Clicked(object sender, EventArgs e)
         {
-            RequestAlerta alerta = new RequestAlerta();
-            List<string> TokenFireBaseLst;
+            string datosAlerta;
+            var nombre=Preferences.Get("Ses_nombre", null);
+            var apellido=Preferences.Get("Ses_apellido", null);
+            var direccion=Preferences.Get("Ses_direccion", null);
 
-            var idUsuario = Preferences.Get("Ses_id_Usuario", null);
-
-            alerta.idUsuario = int.Parse(idUsuario);
-            alerta.idVecino = int.Parse(idUsuario);
-
-            var token = Preferences.Get("Ses_token", null);
-
-            var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
+            datosAlerta = nombre + " " + apellido + " Direccion:" + direccion;
 
 
-            var response = await endPoint.AlertaRobo(alerta);
+            var idVeci = int.Parse(Preferences.Get("Ses_id_Usuario", null));
 
+            var respuesta = await Alerta.EnviarAlerta(idVeci, "robo", datosAlerta);
 
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                var jsonString = await response.Content.ReadAsStringAsync();
-
-                TokenFireBaseLst = JsonConvert.DeserializeObject<List<string>>(jsonString);
-
-
-                string[] theArray = new string[TokenFireBaseLst.Count()];
-
-
-                for (int i = 0; i < TokenFireBaseLst.Count; i++)
-                {
-                    theArray[i] = TokenFireBaseLst[i].ToString();
-                }
-
-                EnviarNotificaciones(theArray,"Robo","dirijase a su aplicacion VeciHelp en la apestaña alertas para mas información");
-
-            }
-            else if (response.StatusCode == HttpStatusCode.NotFound)
-            {
-                await DisplayAlert("Error", "La alerta ya ha sido creada anteriormente", "Ok");
-            }
-        }
-
-        private async void EnviarNotificaciones(string[] tokenList,string titulo,string mensaje)
-        {
-            Rootobject fireBaserequest = new Rootobject();
-            Notification notifi = new Notification();
-            Data data = new Data();
-
-            notifi.body = mensaje;
-            notifi.title = "Alerta de "+titulo;
-
-            data.body = "curpo del mensaje";
-            data.title = "titulo";
-            data.key_1 = "key 1";
-            data.key_2 = "key 2";
-
-            fireBaserequest.registration_ids = tokenList;
-            fireBaserequest.collapse_key = "type_a";
-            fireBaserequest.notification = notifi;
-            fireBaserequest.data = data;
-
-
-            var endPoint = RestService.For<INotificaciones>(new HttpClient(new AuthenticatedHttpClientHandler(tokenServerFireBase)) { BaseAddress = new Uri(direccionBaseFirebase) });
-
-            var JsonObject = JsonConvert.SerializeObject(fireBaserequest);
-
-            var response = await endPoint.Push(JsonObject);
-
-            if (response.StatusCode == HttpStatusCode.OK)
-            {
-                var jsonobj = response.Content.ReadAsStringAsync();
-
-                await DisplayAlert("Mensaje", jsonobj.ToString(), "Ok");
-                
-            }
+            await DisplayAlert(" ", respuesta, "Ok");
         }
 
 

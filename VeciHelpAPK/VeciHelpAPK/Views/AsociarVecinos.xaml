@@ -14,26 +14,28 @@
 
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        <ScrollView>
 
-        <StackLayout Padding="30">
+            <StackLayout Padding="30">
 
-            <Label x:Name="Nombre" FontSize="Large" TextColor="White"/>
-
-
-            <Label Text="DIRECCION, NOMBRE VECINO" FontSize="Medium" TextColor="White"/>
+                <Label x:Name="Nombre" FontSize="Large" TextColor="White"/>
 
 
-            <Frame BackgroundColor="#242525">
-                <StackLayout x:Name="sl">
+                <Label Text="DIRECCION, NOMBRE VECINO" FontSize="Medium" TextColor="White"/>
+
+
+                <Frame BackgroundColor="#242525">
+                    <StackLayout x:Name="sl">
+
+                    </StackLayout>
+                </Frame>
+
+                <StackLayout>
+
+                    <Button x:Name="ButtonAsociarVecino" Clicked="ButtonAsociarVecino_Clicked" Text="ASOCIAR VECINO" BackgroundColor="#1d83d4" TextColor="White" CornerRadius="25" />
 
                 </StackLayout>
-            </Frame>
-
-            <StackLayout>
-
-                <Button x:Name="ButtonAsociarVecino" Clicked="ButtonAsociarVecino_Clicked" Text="ASOCIAR VECINO" BackgroundColor="#1d83d4" TextColor="White" CornerRadius="25" />
-
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

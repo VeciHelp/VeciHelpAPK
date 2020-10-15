@@ -17,7 +17,6 @@ namespace VeciHelpAPK.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Ayuda : ContentPage
     {
-        public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
         public Ayuda()
         {
             InitializeComponent();
@@ -25,23 +24,19 @@ namespace VeciHelpAPK.Views
 
         private async void ButtonPropia_Clicked(object sender, EventArgs e)
         {
-            RequestAlerta alerta = new RequestAlerta();
+            string datosAlerta;
+            var nombre = Preferences.Get("Ses_nombre", null);
+            var apellido = Preferences.Get("Ses_apellido", null);
+            var direccion = Preferences.Get("Ses_direccion", null);
 
-            var idUsuario = Preferences.Get("Ses_id_Usuario", null);
-
-            alerta.idUsuario = int.Parse(idUsuario);
-            alerta.idVecino = int.Parse(idUsuario);
-
-
-            var token = Preferences.Get("Ses_token", null);
-
-            var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
+            datosAlerta = nombre + " " + apellido + " Direccion:" + direccion;
 
 
-            var response = await endPoint.AlertaAyuda(alerta);
+            var idVeci = int.Parse(Preferences.Get("Ses_id_Usuario", null));
 
+            var respuesta = await Alerta.EnviarAlerta(idVeci, "ayuda", datosAlerta);
 
-            await DisplayAlert("Alerta", response.ToString(), "Ok");
+            await DisplayAlert(" ", respuesta, "Ok");
         }
 
         private async  void ButtonVecino_Clicked(object sender, EventArgs e)
