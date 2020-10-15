@@ -42,7 +42,7 @@ namespace VeciHelpAPK.Views
             {
                 Button btnCliente = new Button();
                 btnCliente.Text = item.direccion+" "+item.nombre+" "+item.apellido;
-                btnCliente.ClassId = item.id_Usuario.ToString();
+                btnCliente.CommandParameter = item;
                 btnCliente.Clicked += BtnCliente_Click;
                 btnCliente.BackgroundColor = Color.FromHex("#3b83bd");
                 btnCliente.TextColor = Color.White;
@@ -60,26 +60,19 @@ namespace VeciHelpAPK.Views
 
         private async void BtnCliente_Click(object sender, EventArgs args)
         {
-            RequestAlerta alerta = new RequestAlerta();
-
-
             var button = (Button)sender;
-            var IdVecino = button.ClassId;
-            var idUsuario = Preferences.Get("Ses_id_Usuario", null);
+            var vecino = (Usuario)button.CommandParameter;
 
-            alerta.idUsuario = int.Parse(idUsuario);
-            alerta.idVecino = int.Parse(IdVecino);
-
-
-            var token = Preferences.Get("Ses_token", null);
-
-            var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
+            string datosAlerta;
+            var nombre = vecino.nombre;
+            var apellido = vecino.apellido;
+            var direccion = vecino.direccion;
+            datosAlerta = nombre + " " + apellido + " Direccion:" + direccion;
 
 
-            var response = await endPoint.AlertaAyuda(alerta);
+            var respuesta = await Alerta.EnviarAlerta(vecino.id_Usuario, "ayuda", datosAlerta);
 
-
-            await DisplayAlert("Alerta", response.ToString(), "Ok");
+            await DisplayAlert(" ", respuesta, "Ok");
         }
     }
 }

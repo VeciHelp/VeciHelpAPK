@@ -32,7 +32,7 @@ namespace VeciHelpAPK.Interface
 
         [Get("/admin/GetUsuarios?idUsuario={idUsuario}")]
         [Headers("Authorization: Bearer")]
-        Task<List<Usuario>> GetUsuarios(int idUsuario);
+        Task<HttpResponseMessage> GetUsuarios(int idUsuario);
 
 
         [Post("/admin/InsAsocVecino")]

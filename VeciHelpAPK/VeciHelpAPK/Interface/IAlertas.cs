@@ -16,7 +16,7 @@ namespace VeciHelpAPK.Interface
 
         [Post("/alerta/emergencia")]
         [Headers("Authorization: Bearer")]
-        Task<string> AlertaAyuda(RequestAlerta alert);
+        Task<HttpResponseMessage> AlertaAyuda(RequestAlerta alert);
 
         [Get("/alerta/GetAll?idUsuario={idUsuario}")]
         [Headers("Authorization: Bearer")]

@@ -1,7 +1,9 @@
-﻿using Refit;
+﻿using Newtonsoft.Json;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -119,19 +121,36 @@ namespace VeciHelpAPK.Views
 
             private async void ButtonAsociarVecino_Clicked(object sender, EventArgs e)
             {
+                    List<Usuario> usrlista = new List<Usuario>();
+
                 try
                 {
                     var token = Preferences.Get("Ses_token", null);
 
                     var endPoint = RestService.For<IAdministrador>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
 
-                    //Guardo la respuesta del endPoint que es un arreglo de usuarios
+                    //Guardo la respuesta del endPoint que es el litado de usuarios con los cuales puedo asociar al id de usuario enviado
                     var response = await endPoint.GetUsuarios(usr.id_Usuario);
+
+
+                //pregunto la respuesta del endpoint para ver si encontro vecinos con quien asociar
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var jsonString = await response.Content.ReadAsStringAsync();
+
+                     usrlista = JsonConvert.DeserializeObject<List<Usuario>>(jsonString);
 
                     //rescato el id del administrador desde la variable guardada en el login
                     var idAdministrador = int.Parse(Preferences.Get("Ses_id_Usuario", null).ToString());
                     //usrLst = response;
-                    await Navigation.PushAsync(new ListadoComunidad(response,usr.id_Usuario,idAdministrador));
+                    await Navigation.PushAsync(new ListadoComunidad(usrlista, usr.id_Usuario, idAdministrador));
+
+                }
+                else if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    await DisplayAlert("Alerta", "No hay usuarios disponibles para asociar", "Ok");
+                }
+    
                 }
                 catch (Exception ex)
                 {

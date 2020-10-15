@@ -41,7 +41,21 @@ namespace VeciHelpAPK.Views
                 btnAlertas.Text = item.direccion + " " + item.nombreAyuda + " " + item.apellidoAyuda;
                 btnAlertas.ClassId = item.idAlerta.ToString();
                 btnAlertas.Clicked += btnAlertas_Click;
-                btnAlertas.BackgroundColor = Color.FromHex("#3b83bd");
+
+                if (item.TipoAlerta== "SOS")
+                {
+                    btnAlertas.BackgroundColor = Color.FromHex("#d92027");
+                }
+                else if (item.TipoAlerta == "Emergencia")
+                {
+                    btnAlertas.BackgroundColor = Color.FromHex("#ffcd3c");
+                }
+                else if (item.TipoAlerta == "Sospecha")
+                {
+                    btnAlertas.BackgroundColor = Color.FromHex("#2FBB62");
+                }
+                
+
                 btnAlertas.CommandParameter = item;
                 btnAlertas.TextColor = Color.White;
 
