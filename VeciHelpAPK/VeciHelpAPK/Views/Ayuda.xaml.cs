@@ -34,7 +34,7 @@ namespace VeciHelpAPK.Views
 
             var idVeci = int.Parse(Preferences.Get("Ses_id_Usuario", null));
 
-            var respuesta = await Alerta.EnviarAlerta(idVeci, "ayuda", datosAlerta);
+            var respuesta = await Alerta.EnviarAlerta(idVeci, "ayuda", datosAlerta,null);
 
             await DisplayAlert(" ", respuesta, "Ok");
         }

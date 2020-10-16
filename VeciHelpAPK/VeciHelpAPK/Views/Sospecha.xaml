@@ -14,15 +14,20 @@
                     <Label Text="SOSPECHA" TextColor="White" FontSize="40" FontAttributes="Bold"/>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,10">
-                    <Image x:Name="ladronImage" Opacity="100" Source="objetivo.png"
+                    <Image x:Name="FotoSospecha" Opacity="100" Source="objetivo.png"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
                    WidthRequest="180"
                    HeightRequest="160"
                    />
+                    <Button x:Name="ButtonFotoSospecha"
+                            Text="Tomar Foto"
+                            Clicked="ButtonFotoSospecha_Clicked"/>
                 </StackLayout>
                 <StackLayout Padding="10,30,10,50">
-                    <Entry Placeholder="Ingrese su Sospecha..."
+                    <Entry
+                        x:Name="textoSospecha"
+                        Placeholder="Ingrese su Sospecha..."
                        HorizontalTextAlignment="Center"
                        VerticalTextAlignment="Center"
                        WidthRequest="80"

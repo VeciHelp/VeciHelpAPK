@@ -78,7 +78,7 @@ namespace VeciHelpAPK.Models
             //}
         }
 
-        public static async Task<string> EnviarAlerta(int idVecino,string tipoAlerta,string datosAlerta)
+        public static async Task<string> EnviarAlerta(int idVecino,string tipoAlerta,string datosAlerta,string foto)
         {
             string mensaje=string.Empty;
             string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
@@ -88,6 +88,9 @@ namespace VeciHelpAPK.Models
 
             alerta.idUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
             alerta.idVecino = idVecino;
+            //utilizo la variable texto que es varchar max , para enviar la foto de la sospecha
+            alerta.texto = foto;
+            alerta.coordenadas = datosAlerta;
 
             var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
 
@@ -110,7 +113,11 @@ namespace VeciHelpAPK.Models
             }
             else if (tipoAlerta == "sospecha")
             {
-                //var response = await endPoint.(alerta);
+                var response = await endPoint.Sospecha(alerta);
+
+                mensaje = await validaRespuesta(response, datosAlerta, "Sospecha!!");
+
+                return mensaje;
             }
 
             return mensaje;

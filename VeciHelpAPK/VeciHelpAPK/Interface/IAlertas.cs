@@ -29,5 +29,9 @@ namespace VeciHelpAPK.Interface
         [Post("/alerta/Acudir")]
         [Headers("Authorization: Bearer")]
         Task<string> AcudirAlerta(RequestAlerta alert);
+
+        [Post("/alerta/sospecha")]
+        [Headers("Authorization: Bearer")]
+        Task<HttpResponseMessage> Sospecha(RequestAlerta alert);
     }
 }

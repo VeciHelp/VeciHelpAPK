@@ -70,7 +70,7 @@ namespace VeciHelpAPK.Views
             datosAlerta = nombre + " " + apellido + " Direccion:" + direccion;
 
 
-            var respuesta = await Alerta.EnviarAlerta(vecino.id_Usuario, "robo", datosAlerta);
+            var respuesta = await Alerta.EnviarAlerta(vecino.id_Usuario, "robo", datosAlerta,null);
 
             await DisplayAlert(" ", respuesta, "Ok");
 
