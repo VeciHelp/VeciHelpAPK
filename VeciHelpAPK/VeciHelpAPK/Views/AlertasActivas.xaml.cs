@@ -48,7 +48,6 @@ namespace VeciHelpAPK.Views
                 }
                 else if (item.TipoAlerta == "Emergencia")
                 {
-                    btnAlertas.TextColor = Color.Black;
 
                     btnAlertas.BackgroundColor = Color.FromHex("#ffcd3c");
                 }

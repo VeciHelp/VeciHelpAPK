@@ -20,38 +20,35 @@
     <ContentPage.Content>
         <StackLayout>
 
-           <StackLayout Padding="20" 
-                            >
-                <StackLayout Orientation="Horizontal" Padding="10" >
-                    <Button x:Name="ButtonAdministrador" 
+            <StackLayout Padding="20">
+                
+                <StackLayout Orientation="Horizontal" Padding="10">
+                    <StackLayout  Orientation="Vertical" VerticalOptions="Center">
+                        <Button x:Name="ButtonAdministrador" 
                         ImageSource="adm.png"
                         BackgroundColor="#242525"
                         Clicked="ButtonAdministrador_Clicked"
-                            HorizontalOptions="StartAndExpand"
-                           
-                            
+                            HorizontalOptions="StartAndExpand"        
                        />
+                        <Label Text="Administrador" TextColor="White"/>
+                    </StackLayout>
 
-                    <StackLayout Orientation="Vertical" VerticalOptions="Center">
+                    <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
                         <Button x:Name="ButtonAlertas" 
                         ImageSource="alert.png"
-                                HorizontalOptions="EndAndExpand"
-                                 BackgroundColor="#242525"
-                            Clicked="ButtonAlertas_Clicked"/>
+                        BackgroundColor="#242525"
+                        HorizontalOptions="EndAndExpand"
+                        Clicked="ButtonAlertas_Clicked"/>
 
                         <Label Text="Alertas en Curso" TextColor="White" />
 
 
                     </StackLayout>
                 </StackLayout>
-                
-                
+
+
                 <StackLayout x:Name="imagenDinamica">
 
-                </StackLayout>
-
-                <StackLayout>
-                    <Label Text="VeciHelp" FontSize="Title" TextColor="White" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
                 </StackLayout>
 
 

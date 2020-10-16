@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.AlertasActivas"
-             Title="ALERTAS"
+             Title="ALERTAS ACTIVAS"
              BackgroundColor="#242525">
 
     <ContentPage.ToolbarItems>
@@ -18,8 +18,6 @@
     <ContentPage.Content BackgroundColor="#242525">
         <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#242525" >
 
-            <Label x:Name="mensajeView" Text="Alertas Activas"  HorizontalOptions="Center"
-                   VerticalOptions="Center" TextColor="White" FontSize="Title"/>
 
             <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#242525">
                 <ScrollView>
