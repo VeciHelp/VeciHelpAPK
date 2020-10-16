@@ -18,6 +18,7 @@ namespace VeciHelpAPK.Views
     public partial class ListadoComunidad : ContentPage
     {
         public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
+        public Usuario usr;
         public List<Usuario> usrLst;
         public int idUsr;
         public int idAdmin;
@@ -39,6 +40,7 @@ namespace VeciHelpAPK.Views
 
         private void cargarVecinos()
         {
+            Nombre.Text = usr.nombre + " " + usr.apellido;
             foreach (var item in usrLst)
             {
                 Button btnCliente = new Button();

@@ -37,34 +37,44 @@ namespace VeciHelpAPK.Views
 
             foreach (var item in response)
             {
-
-                Button btnAlertas = new Button();
-                btnAlertas.CornerRadius = 20;
-                btnAlertas.FontAttributes = FontAttributes.Bold;
-
-                if (item.TipoAlerta == "SOS")
+                if(item == null)
                 {
-                    btnAlertas.BackgroundColor = Color.FromHex("#d92027");
+                    LabelAlertasActivas.Text = "Que bien, no hay alertas activas";
+                    LabelAlertasActivas.FontAttributes = FontAttributes.Bold;
+                    LabelAlertasActivas.TextColor = Color.White;
                 }
-                else if (item.TipoAlerta == "Emergencia")
+                else
                 {
+                    Button btnAlertas = new Button();
+                    btnAlertas.CornerRadius = 20;
+                    btnAlertas.FontAttributes = FontAttributes.Bold;
 
-                    btnAlertas.BackgroundColor = Color.FromHex("#ffcd3c");
+                    if (item.TipoAlerta == "SOS")
+                    {
+                        btnAlertas.BackgroundColor = Color.FromHex("#d92027");
+                    }
+                    else if (item.TipoAlerta == "Emergencia")
+                    {
+
+                        btnAlertas.BackgroundColor = Color.FromHex("#ffcd3c");
+                    }
+                    else if (item.TipoAlerta == "Sospecha")
+                    {
+                        btnAlertas.BackgroundColor = Color.FromHex("#d92027");
+                    }
+
+                    btnAlertas.Text = item.direccion + " " + item.nombreAyuda + " " + item.apellidoAyuda;
+                    btnAlertas.ClassId = item.idAlerta.ToString();
+
+                    btnAlertas.Clicked += btnAlertas_Click;
+
+                    btnAlertas.CommandParameter = item;
+                    btnAlertas.TextColor = Color.White;
+
+                    StackAlertas.Children.Add(btnAlertas);
                 }
-                else if (item.TipoAlerta == "Sospecha")
-                        {
-                    btnAlertas.BackgroundColor = Color.FromHex("#d92027");
-                }
 
-                btnAlertas.Text = item.direccion + " " + item.nombreAyuda + " " + item.apellidoAyuda;
-                btnAlertas.ClassId = item.idAlerta.ToString();
-
-                btnAlertas.Clicked += btnAlertas_Click;
-
-                btnAlertas.CommandParameter = item;
-                btnAlertas.TextColor = Color.White;
-
-                StackAlertas.Children.Add(btnAlertas);
+                
             }
         }
 

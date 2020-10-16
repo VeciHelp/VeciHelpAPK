@@ -23,27 +23,23 @@
             <StackLayout Padding="20">
                 
                 <StackLayout Orientation="Horizontal" Padding="10">
-                    <StackLayout  Orientation="Vertical" VerticalOptions="Center">
+                    
+                    <StackLayout  Orientation="Vertical" HorizontalOptions="StartAndExpand">
                         <Button x:Name="ButtonAdministrador" 
                         ImageSource="adm.png"
                         BackgroundColor="#242525"
-                        Clicked="ButtonAdministrador_Clicked"
-                            HorizontalOptions="StartAndExpand"        
-                       />
+                        Clicked="ButtonAdministrador_Clicked"/>
                         <Label Text="Administrador" TextColor="White"/>
                     </StackLayout>
 
-                    <StackLayout Orientation="Vertical" VerticalOptions="EndAndExpand">
+                    <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
                         <Button x:Name="ButtonAlertas" 
                         ImageSource="alert.png"
                         BackgroundColor="#242525"
-                        HorizontalOptions="EndAndExpand"
                         Clicked="ButtonAlertas_Clicked"/>
-
                         <Label Text="Alertas en Curso" TextColor="White" />
-
-
                     </StackLayout>
+                    
                 </StackLayout>
 
 

@@ -28,6 +28,7 @@ namespace VeciHelpAPK.Views
         {
             this.usrLst = lst;
             this.usr = usrIn;
+
             //Nombre.Text = usr.nombre + "" + usr.apellido;
 
             InitializeComponent();

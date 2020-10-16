@@ -22,6 +22,7 @@
             <StackLayout Padding="10" Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#242525">
                 <ScrollView>
                     <StackLayout x:Name="StackAlertas" BackgroundColor="#242525" Padding="10" Margin="20" Opacity="35">
+                        <Label x:Name="LabelAlertasActivas"/>
                         <!--<Button Text="Hora, Fecha, Tipo Alerta, Nombre Usuario"
                     TextColor="#d92027" FontAttributes="Bold"/>
                         <Button Text="Hora, Fecha, Tipo Alerta, Nombre Usuario"
