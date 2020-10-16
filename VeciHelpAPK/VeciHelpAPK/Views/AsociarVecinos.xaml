@@ -6,7 +6,8 @@
              xmlns:local="clr-namespace:VeciHelpAPK.Models"
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.AsociarVecinos"
-             BackgroundColor="#242525">
+             BackgroundColor="#242525"
+             Title="VECINOS ASOCIADOS A:">
 
     <ContentPage.ToolbarItems>
 

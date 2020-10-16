@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.ListadoComunidad"
-             Title="COMUNIDAD"
+             Title="VECINOS X ASOCIAR"
              BackgroundColor="#242525">
     <ContentPage.Content>
         <StackLayout Padding="30">
@@ -14,10 +14,7 @@
                 <Image Source="comunidad.png"/>
             </StackLayout>
             
-            <Frame>
-                <StackLayout x:Name="sl2">
-                </StackLayout>
-            </Frame>
+            
             
         </StackLayout>
 
