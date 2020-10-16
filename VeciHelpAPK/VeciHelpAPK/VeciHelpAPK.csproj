@@ -12,35 +12,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\+.png" />
-    <None Remove="Images\-.png" />
-    <None Remove="Images\adm.png" />
-    <None Remove="Images\alert.png" />
-    <None Remove="Images\alerta.png" />
-    <None Remove="Images\desasociar.png" />
-    <None Remove="Images\ladron.png" />
-    <None Remove="Images\Logo.png" />
-    <None Remove="Images\objetivo.png" />
-    <None Remove="Images\p1.png" />
-    <None Remove="Images\p2.png" />
-    <None Remove="Images\sirena.png" />
-    <None Remove="Images\unir.png" />
+    <Compile Remove="Images\**" />
+    <EmbeddedResource Remove="Images\**" />
+    <None Remove="Images\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Images\+.png" />
-    <EmbeddedResource Include="Images\-.png" />
-    <EmbeddedResource Include="Images\adm.png" />
-    <EmbeddedResource Include="Images\alert.png" />
-    <EmbeddedResource Include="Images\alerta.png" />
-    <EmbeddedResource Include="Images\desasociar.png" />
-    <EmbeddedResource Include="Images\ladron.png" />
-    <EmbeddedResource Include="Images\Logo.png" />
-    <EmbeddedResource Include="Images\objetivo.png" />
-    <EmbeddedResource Include="Images\p1.png" />
-    <EmbeddedResource Include="Images\p2.png" />
-    <EmbeddedResource Include="Images\sirena.png" />
-    <EmbeddedResource Include="Images\unir.png" />
+    <Compile Remove="Models\ImageResourceExtension.cs" />
   </ItemGroup>
 
   <ItemGroup>
