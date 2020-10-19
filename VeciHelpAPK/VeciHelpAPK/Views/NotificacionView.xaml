@@ -16,19 +16,19 @@
                    VerticalOptions="Center"
                    TextColor="White"
                    FontSize="Title"/>
-            
-            <StackLayout Orientation="Horizontal" Padding="30">
 
-                <Image x:Name="FotoPerfil" Source="profile.png"
-                       WidthRequest="120"
+            <StackLayout Orientation="Horizontal" Padding="30">
+                <Frame CornerRadius="100" IsClippedToBounds="true" Padding="0" Margin="0" BackgroundColor="#00000" >
+                    <Image x:Name="FotoPerfil" Source="profile.png"
+                       WidthRequest="150"
                        HorizontalOptions="EndAndExpand"
                        />
+                </Frame>
                 <StackLayout HorizontalOptions="StartAndExpand">
                     <Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
                     <Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
                     <Label x:Name="LblHoraAlerta" Text="Hora" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
                 </StackLayout>
-                
             </StackLayout>
             <StackLayout Orientation="Vertical">
                 <Label Text="Esperando Ayuda" HorizontalOptions="Center" TextColor="Azure"/>

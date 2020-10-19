@@ -67,6 +67,7 @@ namespace VeciHelpAPK.Views
 
             FotoPerfil.Source = Xamarin.Forms.ImageSource.FromStream(
                () => new MemoryStream(Convert.FromBase64String(alerta.foto)));
+           
         }
     }
 }
