@@ -35,16 +35,22 @@ namespace VeciHelpAPK.Views
 
             var response = await endPoint.AlertasActivas(idUsuario);
 
+            if (response == null)
+            {
+                LabelAlertasActivas.Text = "Que bien, no hay alertas activas";
+                LabelAlertasActivas.FontAttributes = FontAttributes.Bold;
+                LabelAlertasActivas.TextColor = Color.White;
+            }
+
             foreach (var item in response)
             {
-                if(item == null)
+                if(response == null)
                 {
                     LabelAlertasActivas.Text = "Que bien, no hay alertas activas";
                     LabelAlertasActivas.FontAttributes = FontAttributes.Bold;
                     LabelAlertasActivas.TextColor = Color.White;
                 }
-                else
-                {
+               
                     Button btnAlertas = new Button();
                     btnAlertas.CornerRadius = 20;
                     btnAlertas.FontAttributes = FontAttributes.Bold;
@@ -63,7 +69,7 @@ namespace VeciHelpAPK.Views
                         btnAlertas.BackgroundColor = Color.FromHex("#2FBB62");
                     }
 
-                    btnAlertas.Text = item.direccion + " " + item.nombreAyuda + " " + item.apellidoAyuda;
+                    btnAlertas.Text = item.direccion + " " + item.nombreAyuda + " " + item.apellidoAyuda + " " + item.horaAlerta.ToString("HH:mm");
                     btnAlertas.ClassId = item.idAlerta.ToString();
 
                     btnAlertas.Clicked += btnAlertas_Click;
@@ -72,7 +78,7 @@ namespace VeciHelpAPK.Views
                     btnAlertas.TextColor = Color.White;
 
                     StackAlertas.Children.Add(btnAlertas);
-                }
+                
 
                 
             }

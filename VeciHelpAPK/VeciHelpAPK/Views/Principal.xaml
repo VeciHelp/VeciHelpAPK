@@ -10,9 +10,9 @@
              BackgroundColor="#242525">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+        <ToolbarItem IconImageSource="Escudo.png" Priority="1" Order="Primary"/>
 
-        <ToolbarItem Text="Actualizar Mis Datos" Priority="1" Order="Secondary" Clicked="ButtonActualizarDatos_Clicked" />
+        <ToolbarItem Text="Actualizar Mis Datos" Priority="0" Order="Secondary" Clicked="ButtonActualizarDatos_Clicked" />
         <ToolbarItem Text="Cerrar Sesion" Priority="2" Order="Secondary" Clicked="ButtonCerrarSesion_Clicked"/>
     </ContentPage.ToolbarItems>
     

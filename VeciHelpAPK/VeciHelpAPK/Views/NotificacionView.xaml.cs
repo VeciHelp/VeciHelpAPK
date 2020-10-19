@@ -62,11 +62,12 @@ namespace VeciHelpAPK.Views
             LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda;
             LblDireccion.Text = alerta.direccion;
             LblTipoAlerta.Text = alerta.TipoAlerta;
-            LblHoraAlerta.Text = alerta.horaAlerta.ToString();
+            LblHoraAlerta.Text = alerta.horaAlerta.ToString("HH:mm");
             LblContadorPersonas.Text = alerta.participantes.ToString();
 
             FotoPerfil.Source = Xamarin.Forms.ImageSource.FromStream(
                () => new MemoryStream(Convert.FromBase64String(alerta.foto)));
+           
         }
     }
 }
