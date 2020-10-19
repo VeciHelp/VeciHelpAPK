@@ -69,7 +69,7 @@ namespace VeciHelpAPK.Views
                         btnAlertas.BackgroundColor = Color.FromHex("#d92027");
                     }
 
-                    btnAlertas.Text = item.direccion + " " + item.nombreAyuda + " " + item.apellidoAyuda;
+                    btnAlertas.Text = item.direccion + " " + item.nombreAyuda + " " + item.apellidoAyuda + " " + item.horaAlerta.ToString("HH:mm");
                     btnAlertas.ClassId = item.idAlerta.ToString();
 
                     btnAlertas.Clicked += btnAlertas_Click;
