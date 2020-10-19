@@ -32,6 +32,10 @@ namespace VeciHelpAPK.Interface
 
         [Post("/alerta/sospecha")]
         [Headers("Authorization: Bearer")]
-        Task<HttpResponseMessage> Sospecha(RequestAlerta alert);
+        Task<HttpResponseMessage> Sospecha([Body(BodySerializationMethod.Serialized)] RequestAlerta alert);
+
+        [Post("/alerta/sospecha")]
+        [Headers("Authorization: Bearer")]
+        Task<HttpResponseMessage> sospechoso(RequestAlerta alert);
     }
 }

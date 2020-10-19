@@ -87,7 +87,7 @@ namespace VeciHelpAPK.Views
 
         private async void ButtonRegistrate_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Crear_Usuario());
+            await Navigation.PushAsync(new CodigoValidacion());
         }
     }
 }

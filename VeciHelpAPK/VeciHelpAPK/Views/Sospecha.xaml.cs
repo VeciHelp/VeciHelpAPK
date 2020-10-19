@@ -1,4 +1,5 @@
-﻿using Plugin.Media;
+﻿using Newtonsoft.Json;
+using Plugin.Media;
 using Refit;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace VeciHelpAPK.Views
     public partial class Sospecha : ContentPage
     {
 
-        string foto;
+        byte[] foto;
         public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
 
         public Sospecha()
@@ -30,29 +31,38 @@ namespace VeciHelpAPK.Views
 
         private async void ButtonEnviar_Clicked(object sender, EventArgs e)
         {
-            var idUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
-
-            if (FotoSospecha.Source==null)
+            try
             {
+                var idUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
 
-                var action = await DisplayAlert("Confirmacion?", "Esta seguro que quiere enviar la alerta sin foto", "Yes", "No");
-
-                if (action)
+                if (FotoSospecha.Source == null)
                 {
-                    var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text,null);
+
+                    var action = await DisplayAlert("Confirmacion?", "Esta seguro que quiere enviar la alerta sin foto", "Yes", "No");
+
+                    if (action)
+                    {
+                        var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, null);
+
+                        await DisplayAlert(" ", respuesta, "Ok");
+                    }
+
+                }
+                else
+                {
+                    //var jsonfoto = JsonConvert.SerializeObject(foto);
+                    var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, foto);
+
+                    
 
                     await DisplayAlert(" ", respuesta, "Ok");
                 }
-                
             }
-            else
+            catch (Exception ex)
             {
-                var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text,foto);
-
-                await DisplayAlert(" ", respuesta, "Ok");
-            }
-
-            
+                Console.WriteLine(ex.Message.ToString());
+                throw;
+            }          
 
         }
 
@@ -90,17 +100,19 @@ namespace VeciHelpAPK.Views
             });
 
             //asigno la foto recien tomada a la alerta
-            foto= ConvertToBase64(file.GetStream());
+            //foto= ConvertToBase64(file.GetStream());
+            foto = ConvertToBase64(file.GetStream());
         }
 
-        public string ConvertToBase64(Stream stream)
+        public byte[] ConvertToBase64(Stream stream)
         {
             var bytes = new Byte[(int)stream.Length];
 
             stream.Seek(0, SeekOrigin.Begin);
             stream.Read(bytes, 0, (int)stream.Length);
 
-            return Convert.ToBase64String(bytes);
+            return bytes;
+            //return Convert.ToBase64String(bytes);
         }
     }
 }

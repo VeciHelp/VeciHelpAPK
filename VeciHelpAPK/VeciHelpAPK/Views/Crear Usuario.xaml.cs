@@ -33,6 +33,14 @@ namespace VeciHelpAPK.Views
             
         }
 
+        public Crear_Usuario(Usuario user, int validacion)
+        {
+            this.usr = user;
+            InitializeComponent();
+            CargarUsuarioValidado();
+
+        }
+
         private  async void ButtonCrear_Clicked(object sender, EventArgs e)
         {
             asignarDatos();
@@ -154,8 +162,12 @@ namespace VeciHelpAPK.Views
             direccion.IsReadOnly = true;
             clave.IsVisible = false;
             codigoVerificacion.IsVisible = false;
+        }
 
-        
+        private void CargarUsuarioValidado()
+        {
+            correo.Text = usr.correo;
+            codigoVerificacion.Text = usr.codigoVerificacion;
         }
 
 

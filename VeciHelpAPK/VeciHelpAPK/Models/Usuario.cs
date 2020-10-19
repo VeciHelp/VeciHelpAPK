@@ -26,5 +26,19 @@ namespace VeciHelpAPK.Models
         public string mensaje { get; set; }
         public int existe { get; set; }
         public string rolename { get; set; }
+
+        public Usuario(string correo , string codigo)
+        {
+            this.correo = correo;
+            this.codigoVerificacion = codigo;
+            this.digito = '1';
+        }
+
+        public Usuario()
+        { 
+
+        }
+
+
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using VeciHelpAPK.Interface;
@@ -78,7 +79,7 @@ namespace VeciHelpAPK.Models
             //}
         }
 
-        public static async Task<string> EnviarAlerta(int idVecino,string tipoAlerta,string datosAlerta,string foto)
+        public static async Task<string> EnviarAlerta(int idVecino,string tipoAlerta,string datosAlerta,byte[] foto)
         {
             string mensaje=string.Empty;
             string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
@@ -94,31 +95,41 @@ namespace VeciHelpAPK.Models
 
             var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
 
-            if (tipoAlerta == "robo")
+            try
             {
-                var response = await endPoint.AlertaRobo(alerta); 
+                if (tipoAlerta == "robo")
+                {
+                    var response = await endPoint.AlertaRobo(alerta);
 
-                mensaje =  await validaRespuesta(response,datosAlerta,"Alerta de Robo");
+                    mensaje = await validaRespuesta(response, datosAlerta, "Alerta de Robo");
 
-                return mensaje;
+                    return mensaje;
 
+                }
+                else if (tipoAlerta == "ayuda")
+                {
+                    var response = await endPoint.AlertaAyuda(alerta);
+
+                    mensaje = await validaRespuesta(response, datosAlerta, "Ayuda!!");
+
+                    return mensaje;
+                }
+                else if (tipoAlerta == "sospecha")
+                {
+                    var jsonobjt = JsonConvert.SerializeObject(alerta);
+                    var response =  await endPoint.Sospecha(alerta);
+
+                    mensaje = await validaRespuesta(response, datosAlerta, "Sospecha!!");
+
+                    return mensaje;
+                }
             }
-            else if (tipoAlerta == "ayuda")
+            catch (Exception ex)
             {
-                var response = await endPoint.AlertaAyuda(alerta);
-
-                 mensaje = await validaRespuesta(response, datosAlerta,"Ayuda!!");
-
-                return mensaje;
+                Console.WriteLine(ex.Message.ToString());
+                throw;
             }
-            else if (tipoAlerta == "sospecha")
-            {
-                var response = await endPoint.Sospecha(alerta);
-
-                mensaje = await validaRespuesta(response, datosAlerta, "Sospecha!!");
-
-                return mensaje;
-            }
+            
 
             return mensaje;
         }
@@ -141,6 +152,7 @@ namespace VeciHelpAPK.Models
 
             return mensaje;
         }
+
     }
 
 }

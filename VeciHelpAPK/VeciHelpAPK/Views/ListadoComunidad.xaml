@@ -8,18 +8,16 @@
              Title="VECINOS X ASOCIAR A"
              BackgroundColor="#242525">
     <ContentPage.Content>
-        
-        <StackLayout Padding="30">
+        <ScrollView>
 
-            <Label x:Name="Nombre" FontSize="Large" TextColor="White"/> 
+            <StackLayout Padding="30">
 
-            <StackLayout x:Name="sl">
-                <Image Source="comunidad.png"/>
+                <Label x:Name="Nombre" FontSize="Large" TextColor="White"/>
+
+                <StackLayout x:Name="sl">
+                    <Image Source="comunidad.png"/>
+                </StackLayout>
             </StackLayout>
-            
-            
-            
-        </StackLayout>
-
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

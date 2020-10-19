@@ -10,6 +10,6 @@ namespace VeciHelpAPK.Models
         public int idVecino { get; set; }
         public int idAlerta { get; set; }
         public string coordenadas { get; set; }
-        public string texto { get; set; }
+        public byte[] texto { get; set; }
     }
 }

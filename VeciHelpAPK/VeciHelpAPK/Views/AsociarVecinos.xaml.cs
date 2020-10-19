@@ -120,6 +120,7 @@ namespace VeciHelpAPK.Views
             }
         }
 
+            //boton asociar vecino de la pantalla asociar Vecinos
             private async void ButtonAsociarVecino_Clicked(object sender, EventArgs e)
             {
                     List<Usuario> usrlista = new List<Usuario>();
@@ -142,9 +143,9 @@ namespace VeciHelpAPK.Views
                      usrlista = JsonConvert.DeserializeObject<List<Usuario>>(jsonString);
 
                     //rescato el id del administrador desde la variable guardada en el login
-                    var idAdministrador = int.Parse(Preferences.Get("Ses_id_Usuario", null).ToString());
-                    //usrLst = response;
-                    await Navigation.PushAsync(new ListadoComunidad(usrlista, usr.id_Usuario, idAdministrador));
+                    var idAdministrador = int.Parse(Preferences.Get("Ses_id_Usuario", null));
+                     //usrLst = response;
+                     await Navigation.PushAsync(new ListadoComunidad(usrlista, usr.id_Usuario, idAdministrador));
 
                 }
                 else if (response.StatusCode == HttpStatusCode.NotFound)

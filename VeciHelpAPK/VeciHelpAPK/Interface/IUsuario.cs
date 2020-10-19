@@ -13,6 +13,9 @@ namespace VeciHelpAPK.Interface
         Task<List<Usuario>> GetListaVecinos(int id);
 
 
+        [Get("/user/validarcodigo")]
+        Task<string> ValidarCodigo([Body(BodySerializationMethod.Serialized)] Usuario usr);
+
 
         [Post("/user/CrearUser")]
         Task<string> RegistrarUsuario(Usuario usr);
