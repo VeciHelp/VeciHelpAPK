@@ -14,7 +14,11 @@
                 
                 <StackLayout>
                     <Image x:Name="ImagenPerfil" Source="profile.png" WidthRequest="100"/>
-                    <Button x:Name="ButtonAgregarFoto" Clicked="ButtonAgregarFoto_Clicked" Text="Agregar Fotografia" BackgroundColor="#1d83d4" TextColor="White" HorizontalOptions="Center" Padding="10" CornerRadius="25"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Button x:Name="ButtonAgregarFoto" Clicked="ButtonAgregarFoto_Clicked" Text="Tomar Fotografia" BackgroundColor="#1d83d4" TextColor="White" HorizontalOptions="Center" Padding="10" CornerRadius="25"/>
+                        <Button x:Name="ButtoncargarFoto" Clicked="ButtonCargarFoto_Clicked" Text="Seleccionar Foto" BackgroundColor="#1d83d4" TextColor="White" HorizontalOptions="Center" Padding="10" CornerRadius="25"/>
+                        <Button x:Name="ButtonSubirCambios" Clicked="ButtonSubirCambios_Clicked" Text="Actualizar Foto" BackgroundColor="#1d83d4" TextColor="White" HorizontalOptions="Center" Padding="10" CornerRadius="25"/>
+                    </StackLayout>
                 </StackLayout>
 
                 <ScrollView>

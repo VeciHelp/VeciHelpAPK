@@ -31,7 +31,7 @@ namespace VeciHelpAPK.Models
         {
             this.correo = correo;
             this.codigoVerificacion = codigo;
-            this.digito = '1';
+            this.Foto = "vacio";
         }
 
         public Usuario()

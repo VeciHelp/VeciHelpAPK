@@ -3,6 +3,7 @@ using Refit;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using VeciHelpAPK.Models;
+using System.Net.Http;
 
 namespace VeciHelpAPK.Interface
 {
@@ -18,6 +19,17 @@ namespace VeciHelpAPK.Interface
 
 
         [Post("/user/CrearUser")]
-        Task<string> RegistrarUsuario(Usuario usr);
+        Task<HttpResponseMessage> RegistrarUsuario([Body(BodySerializationMethod.Serialized)] Usuario usr);
+
+        [Put("/user/UpdateUser")]
+        [Headers("Authorization: Bearer")]
+        Task<HttpResponseMessage> ActualizarPerfil([Body(BodySerializationMethod.Serialized)] Usuario usr);
+
+
+        [Put("/user/UpdatePhoto")]
+        [Headers("Authorization: Bearer")]
+        Task<HttpResponseMessage> UpdatePhoto([Body(BodySerializationMethod.Serialized)] RequestFotoUpd foto);
+
+        
     }
 }
