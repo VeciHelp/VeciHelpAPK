@@ -26,6 +26,7 @@ namespace VeciHelpAPK.Views
         public ListadoComunidad()
         {
             InitializeComponent();
+            
         }
 
         public ListadoComunidad(List<Usuario> lst,int idUsuario, int idAdministrador)
@@ -39,6 +40,7 @@ namespace VeciHelpAPK.Views
 
         private void cargarVecinos()
         {
+            
             foreach (var item in usrLst)
             {
                 Button btnCliente = new Button();

@@ -18,7 +18,7 @@
             </StackLayout>
 
             <StackLayout>
-                <Image Source="Logo2.png"
+                <Image Source="Logo.png"
                         WidthRequest="150"/>
             </StackLayout>
 

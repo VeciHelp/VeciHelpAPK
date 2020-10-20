@@ -26,7 +26,7 @@
                    WidthRequest="180"
                    HeightRequest="160"
                    />
-                    <Button x:Name="ButtonFotoSospecha"
+                    <Button x:Name="ButtonFotoSospecha" WidthRequest="180" Padding="50"
                             Text="Tomar Foto"
                             Clicked="ButtonFotoSospecha_Clicked"/>
                 </StackLayout>
