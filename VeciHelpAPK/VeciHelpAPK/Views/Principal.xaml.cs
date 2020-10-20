@@ -26,8 +26,11 @@ namespace VeciHelpAPK.Views
         public Principal(Usuario usr)
         {
             InitializeComponent();
+            NavigationPage.SetHasBackButton(this, false);
             ButtonAdministrador.IsEnabled = false;
             ButtonAdministrador.IsVisible = false;
+            lblAdministrador.IsVisible = false;
+            lblAdministrador.IsEnabled = false;
             user = usr;
 
             var rolename = Preferences.Get("Ses_rolename",null);
@@ -35,6 +38,8 @@ namespace VeciHelpAPK.Views
             {
                 ButtonAdministrador.IsEnabled = true;
                 ButtonAdministrador.IsVisible = true;
+                lblAdministrador.IsEnabled = true;
+                lblAdministrador.IsVisible = true;
             }
 
             ToolbarItem item = new ToolbarItem();

@@ -10,10 +10,8 @@
              BackgroundColor="#242525">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="Escudo.png" Priority="1" Order="Primary"/>
-
-        <ToolbarItem Text="Actualizar Mis Datos" Priority="0" Order="Secondary" Clicked="ButtonActualizarDatos_Clicked" />
-        <ToolbarItem Text="Cerrar Sesion" Priority="2" Order="Secondary" Clicked="ButtonCerrarSesion_Clicked"/>
+        <ToolbarItem x:name="misDatos"  Text="Mis Datos"/>
+        <ToolbarItem x:Name="cerrarSesion" Text="Hola"/>
     </ContentPage.ToolbarItems>
     
     
@@ -29,7 +27,7 @@
                         ImageSource="adm.png"
                         BackgroundColor="#242525"
                         Clicked="ButtonAdministrador_Clicked"/>
-                        <Label Text="Administrador" TextColor="White"/>
+                        <Label x:Name="lblAdministrador" Text="Administrador" TextColor="White"/>
                     </StackLayout>
 
                     <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
