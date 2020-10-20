@@ -52,14 +52,10 @@ namespace VeciHelpAPK.Views
 
                 foreach (var item in usrLst)
                 {
-                Label lblVecinos = new Label();
-                lblVecinos.Text = "Direccion: " + item.direccion + " Usuario: " + item.nombre;
-                lblVecinos.BackgroundColor = Color.FromHex("#3b83bd");
-                lblVecinos.TextColor = Color.White;
-                lblVecinos.FontSize = 15;
-                lblVecinos.HeightRequest = 50;
-  
+                lblVecinos.Text = item.direccion;
+                lblVecinos2.Text =  item.nombre + " " + item.apellido;
                 sl.Children.Add(lblVecinos);
+                sl.Children.Add(lblVecinos2);
             }
         }
 

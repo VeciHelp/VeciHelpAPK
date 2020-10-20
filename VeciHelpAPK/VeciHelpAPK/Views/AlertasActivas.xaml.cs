@@ -44,7 +44,7 @@ namespace VeciHelpAPK.Views
 
             foreach (var item in response)
             {
-                if(response == null)
+                if(item == null)
                 {
                     LabelAlertasActivas.Text = "Que bien, no hay alertas activas";
                     LabelAlertasActivas.FontAttributes = FontAttributes.Bold;

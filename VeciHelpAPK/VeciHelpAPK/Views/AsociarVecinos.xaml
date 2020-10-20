@@ -19,21 +19,39 @@
 
             <StackLayout Padding="30">
 
-                <Label x:Name="Nombre" FontSize="Large" TextColor="White"/>
+                <Label x:Name="Nombre" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center"/>
 
 
-                <Label Text="DIRECCION, NOMBRE VECINO" FontSize="Medium" TextColor="White"/>
-
-
-                <Frame BackgroundColor="#242525">
-                    <StackLayout x:Name="sl">
-
+                <StackLayout Orientation="Horizontal" Padding="40, 10">
+                    
+                    <StackLayout HorizontalOptions="StartAndExpand">
+                        <Label Text="NOMBRE" FontSize="Medium" TextColor="White"/>
                     </StackLayout>
-                </Frame>
+                    <StackLayout HorizontalOptions="EndAndExpand">
+                        <Label Text="APELLIDO" FontSize="Medium" TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+
+                <StackLayout x:Name="sl" Orientation="Horizontal" Padding="10" BackgroundColor="#1d83d4">
+
+                    <StackLayout >
+                        <Label x:Name= "lblVecinos" FontSize="Medium" HorizontalOptions="StartAndExpand"
+                        TextColor="White"/>
+                        </StackLayout>
+
+                    <StackLayout >
+                        <Label x:Name= "lblVecinos2" FontSize="Medium" HorizontalOptions="EndAndExpand"
+                        TextColor="White"/>
+                    </StackLayout>
+                </StackLayout>
+
+                    
+
 
                 <StackLayout>
 
-                    <Button x:Name="ButtonAsociarVecino" Clicked="ButtonAsociarVecino_Clicked" Text="ASOCIAR VECINO" BackgroundColor="#1d83d4" TextColor="White" CornerRadius="25" />
+                    <Button x:Name="ButtonAsociarVecino" Clicked="ButtonAsociarVecino_Clicked" 
+                            Text="ASOCIAR VECINO" BackgroundColor="#1d83d4" TextColor="White" CornerRadius="25" />
 
                 </StackLayout>
             </StackLayout>

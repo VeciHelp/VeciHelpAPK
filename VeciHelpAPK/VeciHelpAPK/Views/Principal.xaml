@@ -10,8 +10,14 @@
              BackgroundColor="#242525">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:name="misDatos"  Text="Mis Datos"/>
-        <ToolbarItem x:Name="cerrarSesion" Text="Hola"/>
+        <ToolbarItem IconImageSource="setup.png" Text="Mis Datos" Clicked="ButtonActualizarDatos_Clicked"/>
+        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos" />
+        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
+        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
+        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
+        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
+        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
+        <ToolbarItem IconImageSource="escudo.png" Text="Mis Datos"/>
     </ContentPage.ToolbarItems>
     
     

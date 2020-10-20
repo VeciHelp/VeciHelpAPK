@@ -6,6 +6,13 @@
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.SOSRobo"
              BackgroundColor="#d92027">
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
 

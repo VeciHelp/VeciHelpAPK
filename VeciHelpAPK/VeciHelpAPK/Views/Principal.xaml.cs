@@ -74,10 +74,7 @@ namespace VeciHelpAPK.Views
                     await Navigation.PushAsync(new AlertasActivas());
         }
 
-        private async void ButtonmisDatos_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Crear_Usuario(user));
-        }
+        
 
         private async void ButtonActualizarDatos_Clicked(object sender, EventArgs e)
         {
@@ -85,9 +82,9 @@ namespace VeciHelpAPK.Views
         }
 
 
-            private async void ButtonCerrarSesion_Clicked(object sender, EventArgs e)
-        {
-        }
+         
+
+        
     }
 
 }

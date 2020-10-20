@@ -7,6 +7,12 @@
              x:Class="VeciHelpAPK.Views.Sospecha"
              Title="SOSPECHA"
              BackgroundColor="#2FBB62">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+
+    </ContentPage.ToolbarItems>
+    
     <ContentPage.Content>
         <StackLayout>
             <StackLayout x:Name="RobberImage" VerticalOptions="CenterAndExpand" Padding="10" >

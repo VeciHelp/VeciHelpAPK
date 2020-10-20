@@ -6,11 +6,15 @@
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.ListadoComunidad"
              Title="VECINOS X ASOCIAR A"
+             
              BackgroundColor="#242525">
     <ContentPage.Content>
         <ScrollView>
 
             <StackLayout Padding="30">
+                <StackLayout HorizontalOptions="StartAndExpand">
+                    <Label Text="NOMBRE" FontSize="Medium" TextColor="White"/>
+                </StackLayout>
 
                 <Label x:Name="Nombre" FontSize="Large" TextColor="White"/>
 
