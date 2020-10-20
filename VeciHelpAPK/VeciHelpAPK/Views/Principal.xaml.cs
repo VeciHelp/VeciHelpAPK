@@ -88,6 +88,8 @@ namespace VeciHelpAPK.Views
             private async void ButtonCerrarSesion_Clicked(object sender, EventArgs e)
         {
         }
+
+        
     }
 
 }

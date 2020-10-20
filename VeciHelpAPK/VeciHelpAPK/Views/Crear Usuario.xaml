@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:VeciHelpAPK.Models"
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.Crear_Usuario"
-             Title="NUEVOS USUARIO"
+             Title="MIS DATOS"
              BackgroundColor=" #242525">
     <ContentPage.Content>
         <ScrollView>
@@ -18,28 +18,28 @@
                 </StackLayout>
 
                 <ScrollView>
-                    <StackLayout Padding="10,20">
-                        <Entry x:Name="correo" Placeholder="Correo Electronico" HorizontalOptions="Center" WidthRequest="400" Keyboard="Email" BackgroundColor="White"/>
-                        <Entry x:Name="nombre" Placeholder="Nombre" HorizontalOptions="Center" WidthRequest="400" BackgroundColor="White"/>
-                        <Entry x:Name="apellido" Placeholder="Apellido" HorizontalOptions="Center" WidthRequest="400" BackgroundColor="White"/>
+                    <StackLayout Padding="10,20" WidthRequest="400" Orientation="Vertical">
+                        <Entry x:Name="correo" Placeholder="Correo Electronico" WidthRequest="400" HorizontalOptions="Center"  Keyboard="Email" BackgroundColor="White"/>
+                        <Entry x:Name="nombre" Placeholder="Nombre" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="White"/>
+                        <Entry x:Name="apellido" Placeholder="Apellido" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="White"/>
                         <StackLayout Orientation="Horizontal">
-                            <Entry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="180" Keyboard="Numeric" BackgroundColor="White"/>
+                            <Entry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="210" Keyboard="Numeric" BackgroundColor="White"/>
                             <Entry x:Name="digito" Placeholder="DV" HorizontalOptions="Center" WidthRequest="30" BackgroundColor="White" />
                         </StackLayout>
-                        <Entry x:Name="AntecedentesSalud" Placeholder="Antecedendes Salud" HorizontalOptions="Center" WidthRequest="400" BackgroundColor="White" />
+                        <Entry x:Name="AntecedentesSalud" WidthRequest="400" Placeholder="Antecedendes Salud" HorizontalOptions="Center"  BackgroundColor="White" />
 
-                        <DatePicker x:Name="DPFechaNacimiento" Format="D" Margin="0,0,20,0" DateSelected="DPFechaNacimiento_DateSelected" HorizontalOptions="Center" WidthRequest="400" BackgroundColor="White"/>
+                        <DatePicker x:Name="DPFechaNacimiento" WidthRequest="400" Format="D" Margin="0,0,20,0" DateSelected="DPFechaNacimiento_DateSelected" HorizontalOptions="Center" BackgroundColor="White"/>
 
-                        <Entry x:Name="celular" Placeholder="Telefono" HorizontalOptions="Center" WidthRequest="400" Keyboard="Telephone" BackgroundColor="White"/>
-                        <Entry x:Name="direccion" Placeholder="Direccion" HorizontalOptions="Center" WidthRequest="400" BackgroundColor="White"/>
-                        <Entry  x:Name="clave" Placeholder="Clave" HorizontalOptions="Center" WidthRequest="400" IsPassword="True" BackgroundColor="White"/>
-                        <Entry x:Name="codigoVerificacion" Placeholder="Codigo de Verificacion" HorizontalOptions="Center" WidthRequest="400" BackgroundColor="White"/>
+                        <Entry x:Name="celular" Placeholder="Telefono" WidthRequest="400" HorizontalOptions="Center" Keyboard="Telephone" BackgroundColor="White"/>
+                        <Entry x:Name="direccion" Placeholder="Direccion" WidthRequest="400" HorizontalOptions="Center"  BackgroundColor="White"/>
+                        <Entry  x:Name="clave" Placeholder="Clave" WidthRequest="400" HorizontalOptions="Center"  IsPassword="True" BackgroundColor="White"/>
+                        <Entry x:Name="codigoVerificacion" WidthRequest="400" Placeholder="Codigo de Verificacion" HorizontalOptions="Center"  BackgroundColor="White"/>
 
                     </StackLayout>
                 </ScrollView>
                 <StackLayout>
 
-                    <Button x:Name="ButtonCrear" Clicked="ButtonCrear_Clicked" Text="REGISTRARSE" BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" />
+                    <Button x:Name="ButtonCrear" Clicked="ButtonCrear_Clicked" Text="ACEPTAR" BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" />
 
                 </StackLayout>
 
