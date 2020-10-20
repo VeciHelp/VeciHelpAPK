@@ -10,8 +10,8 @@
              BackgroundColor="#242525">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="setup.png" Text="Mis Datos"  Clicked="ButtonActualizarDatos_Clicked"/>
-        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
+        <ToolbarItem IconImageSource="setup.png" Text="Mis Datos" Clicked="ButtonActualizarDatos_Clicked"/>
+        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos" />
         <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
         <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
         <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>

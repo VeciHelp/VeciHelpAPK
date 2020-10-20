@@ -27,18 +27,20 @@
                 <Entry  x:Name="clave" Placeholder="Ingrese su Contraseña" BackgroundColor="Azure" HorizontalTextAlignment="Center" IsPassword="True"/>
             </StackLayout>
 
-            <StackLayout WidthRequest="300" Padding="20,40,20,20">
-                
-            <Button x:Name="ButtonLogin"
-                        Text="Iniciar Sesión" 
-                        TextColor="#2FBB62"
-                        FontSize="Medium"
-                    FontAttributes="Bold"
-                    BackgroundColor="#00000"
-                    Clicked="ButtonLogin_Clicked"/>
+            <StackLayout WidthRequest="300" Padding="20,2,20,20">
+
+                <Button x:Name="ButtonLogin"
+                            Padding="0,0,0,30"
+                            Text="Iniciar Sesión" 
+                            TextColor="#2FBB62"
+                            FontSize="Medium"
+                            FontAttributes="Bold"
+                            BackgroundColor="#00000"
+                            Clicked="ButtonLogin_Clicked"/>     
 
 
-            <Button x:Name="ButtonRegistrarse"
+
+                <Button x:Name="ButtonRegistrarse"
                     Text="Registrarse"
                         TextColor="#ffcd3c"
                         FontSize="Medium"
