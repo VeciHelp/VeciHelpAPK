@@ -52,10 +52,8 @@ namespace VeciHelpAPK.Views
 
                 foreach (var item in usrLst)
                 {
-                lblVecinos.Text = item.direccion;
-                lblVecinos2.Text =  item.nombre + " " + item.apellido;
+                lblVecinos.Text = item.direccion + "\n" + item.nombre + " " + item.apellido;
                 sl.Children.Add(lblVecinos);
-                sl.Children.Add(lblVecinos2);
             }
         }
 

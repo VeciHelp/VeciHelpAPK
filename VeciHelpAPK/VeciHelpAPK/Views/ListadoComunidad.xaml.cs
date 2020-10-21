@@ -26,6 +26,7 @@ namespace VeciHelpAPK.Views
         public ListadoComunidad()
         {
             InitializeComponent();
+            
         }
 
         public ListadoComunidad(List<Usuario> lst,int idUsuario, int idAdministrador)
@@ -33,23 +34,21 @@ namespace VeciHelpAPK.Views
             this.usrLst = lst;
             this.idUsr = idUsuario;
             this.idAdmin = idAdministrador;
+           
             InitializeComponent();
             cargarVecinos();
         }
 
         private void cargarVecinos()
         {
+            
             foreach (var item in usrLst)
             {
-                Button btnCliente = new Button();
-                btnCliente.Text = item.direccion + " " + item.nombre + " " + item.apellido;
+                btnCliente.Text = item.direccion + "\n" + item.nombre + " " + item.apellido;
                 btnCliente.ClassId = item.id_Usuario.ToString();
                 btnCliente.Clicked += BtnCliente_Click;
-                btnCliente.BackgroundColor = Color.FromHex("#1d83d4");
-                btnCliente.TextColor = Color.White;
-                btnCliente.CornerRadius = 25;
-
                 sl.Children.Add(btnCliente);
+                
             }
         }
 

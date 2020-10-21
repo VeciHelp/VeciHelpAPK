@@ -10,23 +10,28 @@
              BackgroundColor="#242525">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="setup.png" Text="Mis Datos" Clicked="ButtonActualizarDatos_Clicked"/>
-        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos" />
-        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
-        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
-        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
-        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
-        <ToolbarItem IconImageSource="rec.png" Text="Mis Datos"/>
-        <ToolbarItem IconImageSource="escudo.png" Text="Mis Datos"/>
+        <ToolbarItem IconImageSource="setup.png"  Clicked="ButtonActualizarDatos_Clicked"/>
+        <ToolbarItem IconImageSource="rec.png"  />
+        <ToolbarItem IconImageSource="rec.png" />
+        <ToolbarItem IconImageSource="rec.png" />
+        <ToolbarItem IconImageSource="rec.png" />
+        <ToolbarItem IconImageSource="rec.png" />
+        <ToolbarItem IconImageSource="rec.png" />
+        <ToolbarItem IconImageSource="escudo.png"/>
     </ContentPage.ToolbarItems>
     
     
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Padding="20">
-                
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label Text="Veci" TextColor="White" FontSize="40" Margin="0"/>
+                    <Label Text="Help" TextColor="#1d83d4" FontSize="40" Margin="0"/>
+                </StackLayout>
+
                 <StackLayout Orientation="Horizontal" Padding="10">
-                    
+
                     <StackLayout  Orientation="Vertical" HorizontalOptions="StartAndExpand">
                         <Button x:Name="ButtonAdministrador" 
                         ImageSource="adm.png"
@@ -42,19 +47,20 @@
                         Clicked="ButtonAlertas_Clicked"/>
                         <Label Text="Alertas en Curso" TextColor="White" />
                     </StackLayout>
-                    
+
                 </StackLayout>
-
-
                 <StackLayout x:Name="imagenDinamica">
-
                 </StackLayout>
 
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="20">
+                    <!--<Label Text="VeciHelp" FontSize="Large" TextColor="White" FontAttributes="Bold"/>-->
+                </StackLayout>
+                
 
 
                 <StackLayout>
                     <StackLayout Orientation="Vertical"
-                         Padding="70,60, 70, 10"
+                         Padding="30,40,30,50"
                          VerticalOptions="End"
                          >
 
@@ -90,6 +96,10 @@
                         FontAttributes="Bold"
                             Clicked="ButtonSospecha_Clicked"
                             />
+
+                        
+
+
 
                     </StackLayout>
                 </StackLayout>
