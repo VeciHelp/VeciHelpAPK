@@ -50,34 +50,33 @@ namespace VeciHelpAPK.Views
                     LabelAlertasActivas.FontAttributes = FontAttributes.Bold;
                     LabelAlertasActivas.TextColor = Color.White;
                 }
-               
-                  
+
+                Button alertBtn = new Button();
 
                     if (item.TipoAlerta == "SOS")
                     {
-                        btnAlertas.BackgroundColor = Color.FromHex("#d92027");
+                    alertBtn.BackgroundColor = Color.FromHex("#d92027");
                     }
                     else if (item.TipoAlerta == "Emergencia")
                     {
-                        btnAlertas.BackgroundColor = Color.FromHex("#ffcd3c");
+                    alertBtn.BackgroundColor = Color.FromHex("#ffcd3c");
                     }
                     else if (item.TipoAlerta == "Sospecha")
                     {
-                        btnAlertas.BackgroundColor = Color.FromHex("#2FBB62");
+                    alertBtn.BackgroundColor = Color.FromHex("#2FBB62");
                     }
 
-                    btnAlertas.Text = item.direccion + "\n " + item.nombreAyuda + " " + item.apellidoAyuda + " \n " + item.horaAlerta.ToString("HH:mm");
-                    btnAlertas.ClassId = item.idAlerta.ToString();
+                    
 
-                    btnAlertas.Clicked += btnAlertas_Click;
+                alertBtn.Text = item.direccion + "\n " + item.nombreAyuda + " " + item.apellidoAyuda + " \n " + item.horaAlerta.ToString("HH:mm");
+                alertBtn.Clicked += btnAlertas_Click;
+                alertBtn.CommandParameter = item;
+                alertBtn.TextColor = Color.White;
+                StackAlertas.Children.Add(alertBtn);
+                alertBtn.FontAttributes =FontAttributes.Bold;
+                alertBtn.CornerRadius = 10;
 
-                    btnAlertas.CommandParameter = item;
-                    btnAlertas.TextColor = Color.White;
 
-                    StackAlertas.Children.Add(btnAlertas);
-                
-
-                
             }
         }
 
