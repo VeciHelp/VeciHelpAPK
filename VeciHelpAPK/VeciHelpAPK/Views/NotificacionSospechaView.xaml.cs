@@ -8,19 +8,23 @@ using VeciHelpAPK.Models;
 using VeciHelpAPK.Security;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace VeciHelpAPK.Views
 {
-    public partial class NotificacionView : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class NotificacionSospechaView : ContentPage
     {
         public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
         Alerta alerta = new Alerta();
-        public NotificacionView(Alerta alert)
+        public NotificacionSospechaView(Alerta alert)
         {
             this.alerta = alert;
             InitializeComponent();
             ActualizarAlerta();
         }
+
+
 
         private async void ButtonAcudir_Clicked(object sender, EventArgs e)
         {
@@ -28,7 +32,7 @@ namespace VeciHelpAPK.Views
             var token = Preferences.Get("Ses_token", null);
 
             var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
-            
+
 
 
             RequestAlerta aler = new RequestAlerta();
@@ -86,5 +90,4 @@ namespace VeciHelpAPK.Views
 
         }
     }
-
 }

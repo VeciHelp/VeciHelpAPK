@@ -64,6 +64,7 @@ namespace VeciHelpAPK.Views
                     else if (item.TipoAlerta == "Sospecha")
                     {
                         btnAlertas.BackgroundColor = Color.FromHex("#2FBB62");
+                 
                     }
 
                     btnAlertas.Text = item.direccion + "\n " + item.nombreAyuda + " " + item.apellidoAyuda + " \n " + item.horaAlerta.ToString("HH:mm");
@@ -88,6 +89,7 @@ namespace VeciHelpAPK.Views
             var alert = (Alerta)button.CommandParameter;
 
             await Navigation.PushAsync(new NotificacionView(alert));
+            
         }
     }
 }
