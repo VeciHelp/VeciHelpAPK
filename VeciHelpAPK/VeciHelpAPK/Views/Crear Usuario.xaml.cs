@@ -181,22 +181,50 @@ namespace VeciHelpAPK.Views
             }
 
             nombre.Text = usr.nombre;
+            nombre.IsReadOnly = true;
+            if (nombre.IsReadOnly)
+            {
+                nombre.Opacity = 0.7;
+            }
             apellido.Text=usr.apellido;
+            apellido.IsReadOnly = true;
+            if (apellido.IsReadOnly)
+            {
+                apellido.Opacity = 0.7;
+            }
             correo.Text=usr.correo;
             correo.IsReadOnly = true;
+            if (correo.IsReadOnly)
+            {
+                correo.Opacity = 0.7;
+            }
             rut.Text=usr.rut;
             rut.IsReadOnly = true;
+            if (rut.IsReadOnly)
+            {
+                rut.Opacity = 0.7;
+            }
             digito.Text=usr.digito.ToString();
             digito.IsReadOnly = true;
+            if (digito.IsReadOnly)
+            {
+                digito.Opacity = 0.7;
+            }
             AntecedentesSalud.Text=usr.antecedentesSalud;
             celular.Text=usr.celular.ToString();
             direccion.Text=usr.direccion;
             direccion.IsReadOnly = true;
+            if (direccion.IsReadOnly)
+            {
+                direccion.Opacity = 0.7;
+            }
             clave.IsVisible = false;
             codigoVerificacion.IsVisible = false;
             ButtonCrear.Text = "Actualizar";
             ButtonCrear.BackgroundColor = Color.FromHex("#ffcd3c");
             DPFechaNacimiento.Date = usr.fechaNacimiento;
+            
+
         }
 
         private void CargarUsuarioValidado()
@@ -211,9 +239,9 @@ namespace VeciHelpAPK.Views
         private void mostrarcampos()
         {
             correo.IsVisible = true;
-            correo.IsReadOnly = false;
+            correo.IsReadOnly = true;
             nombre.IsVisible = true;
-            nombre.IsReadOnly = false;
+            nombre.IsReadOnly = true;
             apellido.IsVisible = true;
             apellido.IsReadOnly = false;
             rut.IsVisible = true;

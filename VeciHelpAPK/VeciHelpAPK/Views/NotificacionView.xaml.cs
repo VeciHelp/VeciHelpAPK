@@ -43,7 +43,6 @@ namespace VeciHelpAPK.Views
 
             ActualizarAlerta();
         }
-
         private async void ActualizarAlerta()
         {
             var IdUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
@@ -67,7 +66,6 @@ namespace VeciHelpAPK.Views
             LblDireccion.Text = alerta.direccion;
             LblTipoAlerta.Text = alerta.TipoAlerta;
 
-         
 
             if (LblTipoAlerta.Text == "SOS")
             {
