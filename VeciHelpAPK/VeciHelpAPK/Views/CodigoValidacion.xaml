@@ -12,7 +12,8 @@
             <StackLayout >
                 <Label Text="Ingrese correo y codigo de validacion"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"
+                HorizontalOptions="CenterAndExpand" 
+                       HorizontalTextAlignment="Center"
                    FontSize="Medium"
                    WidthRequest="160"
                    HeightRequest="80"
