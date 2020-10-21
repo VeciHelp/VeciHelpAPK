@@ -5,10 +5,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using VeciHelpAPK.Interface;
 using VeciHelpAPK.Models;
+using VeciHelpAPK.Security;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -19,7 +22,10 @@ namespace VeciHelpAPK.Views
     public partial class Crear_Usuario : ContentPage
     {
         public string BaseAddress = "http://201.238.247.59/vecihelp/api/v1/";
+        public string token= Preferences.Get("Ses_token", null);
         Usuario usr = new Usuario();
+        int cambioFoto=0;
+
         public Crear_Usuario()
         {
             InitializeComponent();
@@ -30,29 +36,55 @@ namespace VeciHelpAPK.Views
             this.usr = user;
             InitializeComponent();
             CargarUsuario();
-            
         }
 
+        //constructor para entrar por la vista de validacion de codigo
         public Crear_Usuario(Usuario user, int validacion)
         {
             this.usr = user;
             InitializeComponent();
+            mostrarcampos();
             CargarUsuarioValidado();
 
         }
 
         private  async void ButtonCrear_Clicked(object sender, EventArgs e)
         {
-            asignarDatos();
-            var endPoint = RestService.For<IUsuario>(BaseAddress);
+            if (ButtonCrear.Text == "Actualizar")
+            {
+                asignarDatos();
 
-            var usuariostring = JsonConvert.SerializeObject(usr);
-            Console.WriteLine("");
+                var endPoint = RestService.For<IUsuario>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
 
-            var request = await endPoint.RegistrarUsuario(usr);
+                var request = await endPoint.ActualizarPerfil(usr);
 
-            await DisplayAlert("Mensaje", request.ToString(), "Ok");
+                if (request.StatusCode == HttpStatusCode.OK)
+                {
+                    var jsonString = await request.Content.ReadAsStringAsync();
+
+                    await DisplayAlert("Exito", jsonString, "OK");
+
+                    await Navigation.PushAsync(new Principal(usr));
+                }
+            }
+            else
+            {
+                asignarDatos();
+                var endPoint = RestService.For<IUsuario>(BaseAddress);
+
+                var request = await endPoint.RegistrarUsuario(usr);
+
+                if (request.StatusCode == HttpStatusCode.OK)
+                {
+                    var jsonString = await request.Content.ReadAsStringAsync();
+
+                    await DisplayAlert("Exito", jsonString, "OK");
+
+                    await Navigation.PushAsync(new LoginView());
+                }
+            }
         }
+
 
         private void DPFechaNacimiento_DateSelected(object sender, DateChangedEventArgs e)
         {
@@ -71,7 +103,6 @@ namespace VeciHelpAPK.Views
             usr.direccion = direccion.Text;
             usr.clave = clave.Text;
             usr.codigoVerificacion = codigoVerificacion.Text;
-            
         }
 
         private async void ButtonAgregarFoto_Clicked(object sender, EventArgs e)
@@ -109,6 +140,7 @@ namespace VeciHelpAPK.Views
 
             //asigno la foto recien tomada al usuario que se esta llenando
             usr.Foto=ConvertToBase64(file.GetStream());
+            cambioFoto = 1;
         }
 
         private async void ButtonCargarFoto_Clicked(object sender, EventArgs e)
@@ -135,21 +167,21 @@ namespace VeciHelpAPK.Views
                     return stream;
                 });
 
-            ConvertToBase64(file.GetStream());
-
-
+            usr.Foto=ConvertToBase64(file.GetStream());
+            cambioFoto = 1;
         }
 
         private void CargarUsuario()
         {
-            //cargo la foto de la base de datos
-            ImagenPerfil.Source = Xamarin.Forms.ImageSource.FromStream(
-                () => new MemoryStream(Convert.FromBase64String(usr.Foto)));
+            if (usr.Foto!="vacio")
+            {
+                //cargo la foto de la base de datos
+                ImagenPerfil.Source = Xamarin.Forms.ImageSource.FromStream(
+                    () => new MemoryStream(Convert.FromBase64String(usr.Foto)));
+            }
 
             nombre.Text = usr.nombre;
-            nombre.IsReadOnly = true;
             apellido.Text=usr.apellido;
-            apellido.IsReadOnly = true;
             correo.Text=usr.correo;
             correo.IsReadOnly = true;
             rut.Text=usr.rut;
@@ -162,12 +194,41 @@ namespace VeciHelpAPK.Views
             direccion.IsReadOnly = true;
             clave.IsVisible = false;
             codigoVerificacion.IsVisible = false;
+            ButtonCrear.Text = "Actualizar";
+            ButtonCrear.BackgroundColor = Color.FromHex("#ffcd3c");
+            DPFechaNacimiento.Date = usr.fechaNacimiento;
         }
 
         private void CargarUsuarioValidado()
         {
+            correo.IsReadOnly = true;
             correo.Text = usr.correo;
+
+            codigoVerificacion.IsReadOnly = true;
             codigoVerificacion.Text = usr.codigoVerificacion;
+        }
+
+        private void mostrarcampos()
+        {
+            correo.IsVisible = true;
+            correo.IsReadOnly = false;
+            nombre.IsVisible = true;
+            nombre.IsReadOnly = false;
+            apellido.IsVisible = true;
+            apellido.IsReadOnly = false;
+            rut.IsVisible = true;
+            rut.IsReadOnly = false;
+            digito.IsVisible = true;
+            digito.IsReadOnly = false;
+            AntecedentesSalud.IsVisible = true;
+            AntecedentesSalud.IsReadOnly = false;
+            DPFechaNacimiento.IsVisible = true;
+            celular.IsVisible = true;
+            celular.IsReadOnly = false;
+            direccion.IsVisible = true;
+            direccion.IsReadOnly = false;
+            codigoVerificacion.IsVisible = true;
+            codigoVerificacion.IsReadOnly = false;
         }
 
 
@@ -181,8 +242,32 @@ namespace VeciHelpAPK.Views
             return Convert.ToBase64String(bytes);
         }
 
+        private async void ButtonSubirCambios_Clicked(object sender, EventArgs e)
+        {
+            RequestFotoUpd foto = new RequestFotoUpd();
 
+            foto.id_Usuario = usr.id_Usuario;
+            foto.Foto = usr.Foto;
 
+            if (cambioFoto==1)
+            {
+                var endPoint = RestService.For<IUsuario>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
 
+                var request = await endPoint.UpdatePhoto(foto);
+
+                if (request.StatusCode == HttpStatusCode.OK)
+                {
+                    var jsonString = await request.Content.ReadAsStringAsync();
+
+                    await DisplayAlert("Exito", jsonString, "OK");
+
+                    await Navigation.PushAsync(new LoginView());
+                }
+            }
+            else
+            {
+                await DisplayAlert("Mensaje", "Favor Cargue una foto nueva para actualizar", "OK");
+            }
+        }
     }
 }

@@ -23,7 +23,6 @@
     
     <ContentPage.Content>
         <StackLayout>
-
             <StackLayout Padding="20">
 
                 <StackLayout Orientation="Horizontal" Padding="10">
@@ -93,7 +92,18 @@
                             Clicked="ButtonSospecha_Clicked"
                             />
 
-                        
+                        <Button x:Name="ButtonMisDatos"
+                        HeightRequest = "80"
+                        Text="SOSPECHA"
+                        BackgroundColor="#2FBB62"
+                        CornerRadius="20"
+                        TextColor="White"
+                        FontSize="20"
+                        FontAttributes="Bold"
+                            Clicked="ButtonmisDatos_Clicked"
+                            />
+
+
 
                     </StackLayout>
                 </StackLayout>

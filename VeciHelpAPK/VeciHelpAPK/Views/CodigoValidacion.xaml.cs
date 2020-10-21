@@ -40,7 +40,7 @@ namespace VeciHelpAPK.Views
                 {
                     await DisplayAlert("Exito", response, "Ok");
 
-                    await Navigation.PushAsync(new Crear_Usuario(usr));
+                    await Navigation.PushAsync(new Crear_Usuario(usr,1));
                 }
                 else
                     await DisplayAlert("Error", response, "Ok");
