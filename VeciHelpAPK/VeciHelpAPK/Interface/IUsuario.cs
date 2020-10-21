@@ -13,6 +13,10 @@ namespace VeciHelpAPK.Interface
         [Headers("Authorization: Bearer")]
         Task<List<Usuario>> GetListaVecinos(int id);
 
+        [Get("/user/GetUserId?idUsuario={idUsuario}")]
+        [Headers("Authorization: Bearer")]
+        Task<Usuario> GetUserId(int idUsuario);
+
 
         [Get("/user/validarcodigo")]
         Task<string> ValidarCodigo([Body(BodySerializationMethod.Serialized)] Usuario usr);

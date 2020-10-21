@@ -19,6 +19,7 @@ namespace VeciHelpAPK.Views
         {
             this.alerta = alert;
             InitializeComponent();
+            LblDetalle.IsVisible = false;
             ActualizarAlerta();
         }
 
@@ -59,6 +60,11 @@ namespace VeciHelpAPK.Views
 
         private void LlenarCamposDeAlerta()
         {
+            if (alerta.TipoAlerta=="Sospecha")
+            {
+                LblDetalle.IsVisible = true;
+                LblDetalle.Text = alerta.coordenadaSospecha;
+            }
             LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda;
             LblDireccion.Text = alerta.direccion;
             LblTipoAlerta.Text = alerta.TipoAlerta;

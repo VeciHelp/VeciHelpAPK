@@ -80,11 +80,6 @@ namespace VeciHelpAPK.Views
         {
             await Navigation.PushAsync(new Crear_Usuario(user));
         }
-
-
-         
-
-        
     }
 
 }
