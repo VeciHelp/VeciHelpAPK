@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout Padding ="30" >
             <StackLayout >
-                <Label Text="Ingrese correo y codigo de validacion"
+                <Label Text="Ingrese correo y codigo de verificacion"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                        HorizontalTextAlignment="Center"
@@ -31,7 +31,7 @@
                        WidthRequest="400" BackgroundColor="White"/>
             </StackLayout>
             
-            <Button x:Name="ButtonValidar" Clicked="ButtonValidar_Clicked" Text="Validar Datos"
+            <Button x:Name="ButtonValidar" Clicked="ButtonValidar_Clicked" Text="Verificar Datos"
                     BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" Padding="10" FontAttributes="Bold" />
         </StackLayout>
     </ContentPage.Content>
