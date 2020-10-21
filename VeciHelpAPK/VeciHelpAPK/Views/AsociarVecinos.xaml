@@ -18,43 +18,22 @@
         <ScrollView>
 
             <StackLayout Padding="30">
-
                 <Label x:Name="Nombre" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center"/>
 
-
-                <StackLayout Orientation="Horizontal" Padding="40, 10">
-                    
-                    <StackLayout HorizontalOptions="StartAndExpand">
-                        <Label Text="NOMBRE" FontSize="Medium" TextColor="White"/>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="EndAndExpand">
-                        <Label Text="APELLIDO" FontSize="Medium" TextColor="White"/>
+                <StackLayout x:Name="sl" Padding="25,5" BackgroundColor="#00000">
+                    <StackLayout >
+                        <Button x:Name= "lblVecinos" FontSize="Medium" 
+                        TextColor="#242525" HorizontalOptions="CenterAndExpand" BackgroundColor="#b2b2b2"
+                        FontAttributes="Bold" WidthRequest="400" CornerRadius="25"/>
                     </StackLayout>
                 </StackLayout>
-
-                <StackLayout x:Name="sl" Orientation="Horizontal" Padding="10" BackgroundColor="#1d83d4">
-
-                    <StackLayout >
-                        <Label x:Name= "lblVecinos" FontSize="Medium" HorizontalOptions="StartAndExpand"
-                        TextColor="White"/>
-                        </StackLayout>
-
-                    <StackLayout >
-                        <Label x:Name= "lblVecinos2" FontSize="Medium" HorizontalOptions="EndAndExpand"
-                        TextColor="White"/>
-                    </StackLayout>
-                </StackLayout>
-
-                    
-
 
                 <StackLayout>
-
                     <Button x:Name="ButtonAsociarVecino" Clicked="ButtonAsociarVecino_Clicked" 
                             Text="ASOCIAR VECINO" BackgroundColor="#1d83d4" TextColor="White" CornerRadius="25" />
-
                 </StackLayout>
             </StackLayout>
+            
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
