@@ -24,10 +24,7 @@
                 <ScrollView>
                     
                     <StackLayout x:Name="StackAlertas" BackgroundColor="#242525" Padding="10" Margin="20,10">
-                            <Button x:Name="btnAlertas"
-                                FontAttributes="Bold"
-                                CornerRadius="20"/>
-                        
+                       
 
 
                     </StackLayout>

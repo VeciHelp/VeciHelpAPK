@@ -26,7 +26,7 @@ namespace VeciHelpAPK.Views
         Usuario usr = new Usuario();
         int cambioFoto=0;
 
-        public Crear_Usuario()
+        public  Crear_Usuario()
         {
             InitializeComponent();
         }
@@ -48,6 +48,14 @@ namespace VeciHelpAPK.Views
 
         }
 
+
+        //private async void RecargarDatosUsuario()
+        //{
+        //    var endPoint = RestService.For<IUsuario>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
+        //    var result= await endPoint.GetUserId(usr.id_Usuario);
+        //    usr= result;
+        //}
+
         private  async void ButtonCrear_Clicked(object sender, EventArgs e)
         {
             if (ButtonCrear.Text == "Actualizar")
@@ -55,8 +63,12 @@ namespace VeciHelpAPK.Views
                 asignarDatos();
 
                 var endPoint = RestService.For<IUsuario>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
+                
+                var jsonstring = JsonConvert.SerializeObject(usr);
 
                 var request = await endPoint.ActualizarPerfil(usr);
+
+                
 
                 if (request.StatusCode == HttpStatusCode.OK)
                 {
@@ -283,13 +295,14 @@ namespace VeciHelpAPK.Views
 
                 var request = await endPoint.UpdatePhoto(foto);
 
+
                 if (request.StatusCode == HttpStatusCode.OK)
                 {
                     var jsonString = await request.Content.ReadAsStringAsync();
 
                     await DisplayAlert("Exito", jsonString, "OK");
 
-                    await Navigation.PushAsync(new LoginView());
+                    await Navigation.PushAsync(new Crear_Usuario(usr));
                 }
             }
             else
