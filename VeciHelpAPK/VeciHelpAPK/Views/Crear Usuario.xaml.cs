@@ -251,7 +251,7 @@ namespace VeciHelpAPK.Views
         private void mostrarcampos()
         {
             correo.IsVisible = true;
-            correo.IsReadOnly = true;
+            correo.IsReadOnly = false;
             nombre.IsVisible = true;
             nombre.IsReadOnly = true;
             apellido.IsVisible = true;

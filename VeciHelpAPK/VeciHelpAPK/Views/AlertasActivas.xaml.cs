@@ -50,33 +50,35 @@ namespace VeciHelpAPK.Views
                     LabelAlertasActivas.FontAttributes = FontAttributes.Bold;
                     LabelAlertasActivas.TextColor = Color.White;
                 }
-
-                Button alertBtn = new Button();
+               
+                  
 
                     if (item.TipoAlerta == "SOS")
                     {
-                    alertBtn.BackgroundColor = Color.FromHex("#d92027");
+                        btnAlertas.BackgroundColor = Color.FromHex("#d92027");
                     }
                     else if (item.TipoAlerta == "Emergencia")
                     {
-                    alertBtn.BackgroundColor = Color.FromHex("#ffcd3c");
+                        btnAlertas.BackgroundColor = Color.FromHex("#ffcd3c");
                     }
                     else if (item.TipoAlerta == "Sospecha")
                     {
-                    alertBtn.BackgroundColor = Color.FromHex("#2FBB62");
+                        btnAlertas.BackgroundColor = Color.FromHex("#2FBB62");
+                 
                     }
 
-                    
+                    btnAlertas.Text = item.direccion + "\n " + item.nombreAyuda + " " + item.apellidoAyuda + " \n " + item.horaAlerta.ToString("HH:mm");
+                    btnAlertas.ClassId = item.idAlerta.ToString();
 
-                alertBtn.Text = item.direccion + "\n " + item.nombreAyuda + " " + item.apellidoAyuda + " \n " + item.horaAlerta.ToString("HH:mm");
-                alertBtn.Clicked += btnAlertas_Click;
-                alertBtn.CommandParameter = item;
-                alertBtn.TextColor = Color.White;
-                StackAlertas.Children.Add(alertBtn);
-                alertBtn.FontAttributes =FontAttributes.Bold;
-                alertBtn.CornerRadius = 10;
+                    btnAlertas.Clicked += btnAlertas_Click;
 
+                    btnAlertas.CommandParameter = item;
+                    btnAlertas.TextColor = Color.White;
 
+                    StackAlertas.Children.Add(btnAlertas);
+                
+
+                
             }
         }
 
@@ -87,6 +89,7 @@ namespace VeciHelpAPK.Views
             var alert = (Alerta)button.CommandParameter;
 
             await Navigation.PushAsync(new NotificacionView(alert));
+            
         }
     }
 }
