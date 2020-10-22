@@ -117,6 +117,7 @@ namespace VeciHelpAPK.Views
             usr.codigoVerificacion = codigoVerificacion.Text;
         }
 
+        //aqui se abre la camara para tomar una foto
         private async void ButtonAgregarFoto_Clicked(object sender, EventArgs e)
         {
             await CrossMedia.Current.Initialize();
@@ -155,6 +156,8 @@ namespace VeciHelpAPK.Views
             cambioFoto = 1;
         }
 
+
+        //aqui se busca una foto en la galeria
         private async void ButtonCargarFoto_Clicked(object sender, EventArgs e)
         {
                 if (!CrossMedia.Current.IsPickPhotoSupported)

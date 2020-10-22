@@ -44,6 +44,7 @@ namespace VeciHelpAPK.Views
 
             foreach (var item in response)
             {
+                Button btnAlertas = new Button();
                 if(item == null)
                 {
                     LabelAlertasActivas.Text = "Que bien, no hay alertas activas";
