@@ -76,7 +76,7 @@ namespace VeciHelpAPK.Views
 
                     await DisplayAlert("Exito", jsonString, "OK");
 
-                    await Navigation.PushAsync(new Principal(usr));
+                    CargarUsuario();
                 }
             }
             else
@@ -305,7 +305,8 @@ namespace VeciHelpAPK.Views
 
                     await DisplayAlert("Exito", jsonString, "OK");
 
-                    await Navigation.PushAsync(new Crear_Usuario(usr));
+                    CargarUsuario();
+
                 }
             }
             else

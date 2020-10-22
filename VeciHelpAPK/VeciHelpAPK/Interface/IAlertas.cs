@@ -30,6 +30,10 @@ namespace VeciHelpAPK.Interface
         [Headers("Authorization: Bearer")]
         Task<string> AcudirAlerta(RequestAlerta alert);
 
+        [Put("/alerta/FinalizarAlerta")]
+        [Headers("Authorization: Bearer")]
+        Task<string> FinalizarAlerta(RequestAlerta alert);
+
         [Post("/alerta/sospecha")]
         [Headers("Authorization: Bearer")]
         Task<HttpResponseMessage> Sospecha([Body(BodySerializationMethod.Serialized)] RequestAlerta alert);
