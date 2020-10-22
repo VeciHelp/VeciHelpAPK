@@ -32,16 +32,15 @@ namespace VeciHelpAPK.Views
             var apellido=Preferences.Get("Ses_apellido", null);
             var direccion=Preferences.Get("Ses_direccion", null);
 
-            datosAlerta = nombre + " " + apellido + " Direccion:" + direccion;
+            datosAlerta = "Dirección:" + direccion +"\n" + nombre + " " + apellido;
 
 
             var idVeci = int.Parse(Preferences.Get("Ses_id_Usuario", null));
 
-            var respuesta = await Alerta.EnviarAlerta(idVeci, "robo", datosAlerta,null);
+            var respuesta = await Alerta.EnviarAlerta(idVeci, "Robo", datosAlerta,null);
 
-            await DisplayAlert(" ", respuesta, "Ok");
+            await DisplayAlert("Atención", respuesta, "Aceptar");
         }
-
 
         private async void ButtonVecino_Clicked(object sender, EventArgs e)
         {

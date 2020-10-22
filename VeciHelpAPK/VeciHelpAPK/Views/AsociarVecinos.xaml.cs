@@ -104,7 +104,7 @@ namespace VeciHelpAPK.Views
                 var token = Preferences.Get("Ses_token", null);
 
 
-                var action = await DisplayAlert("Confirmacion?", "Esta seguro que quiere Desasociar este vecino", "Yes", "No");
+                var action = await DisplayAlert("Atención", "Desea desasociar este vecino", "Si", "No");
 
                 if (action)
                 {
@@ -112,7 +112,7 @@ namespace VeciHelpAPK.Views
 
                         var response = await endPoint.EliminarAsociacion(asociacion);
 
-                        await DisplayAlert("Exito", response, "Ok");
+                        await DisplayAlert("Atención", response, "Aceptar");
                 }
             }
             catch (Exception ex)
@@ -152,7 +152,7 @@ namespace VeciHelpAPK.Views
                 }
                 else if (response.StatusCode == HttpStatusCode.NotFound)
                 {
-                    await DisplayAlert("Alerta", "No hay usuarios disponibles para asociar", "Ok");
+                    await DisplayAlert("Atención", "No hay usuarios disponibles para asociar", "Aceptar");
                 }
     
                 }

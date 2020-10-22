@@ -27,7 +27,7 @@ namespace VeciHelpAPK.Views
         {
             InitializeComponent();
             this.Title = "COMUNIDAD";
-                ;
+                
 
         }
 
@@ -80,14 +80,14 @@ namespace VeciHelpAPK.Views
                 //token del administrador
                 var token = Preferences.Get("Ses_token", null);
 
-                var action = await DisplayAlert("Confirmacion?", "Esta seguro que quiere asociar este vecino", "Yes", "No");
+                var action = await DisplayAlert("Atención", "Desea asociar este vecino", "Si", "No");
 
                 if (action)
                 {
                     var endPoint = RestService.For<IAdministrador>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
                     var response = await endPoint.AsociarVecinos(asociacion);
 
-                    await DisplayAlert("Mensaje", response, "Ok");
+                    await DisplayAlert("Atención", response, "Aceptar");
                 }
             }
             catch (Exception ex)

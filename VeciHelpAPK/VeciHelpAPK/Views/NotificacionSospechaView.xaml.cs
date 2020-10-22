@@ -41,7 +41,7 @@ namespace VeciHelpAPK.Views
 
             var response = await endPoint.AcudirAlerta(aler);
 
-            await DisplayAlert("Exito", response, "Ok");
+            await DisplayAlert("Atención", response, "Aceptar");
 
             ActualizarAlerta();
         }

@@ -53,7 +53,7 @@ namespace VeciHelpAPK.Views
 
             if (usrLst.Count == 0)
             {
-                await DisplayAlert("Alerta", "El Usuario no posee vecinos enrolados", "Ok");
+                await DisplayAlert("Atención", "Usuario no posee vecinos enrolados", "Aceptar");
                 await Navigation.PushAsync(new SOSRobo());
             }
         }
@@ -73,7 +73,7 @@ namespace VeciHelpAPK.Views
 
             var respuesta = await Alerta.EnviarAlerta(vecino.id_Usuario, "robo", datosAlerta,null);
 
-            await DisplayAlert(" ", respuesta, "Ok");
+            await DisplayAlert(" ", respuesta, "Aceptar");
 
         }
     }

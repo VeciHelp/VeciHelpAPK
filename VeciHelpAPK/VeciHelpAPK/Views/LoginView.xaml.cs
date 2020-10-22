@@ -36,7 +36,7 @@ namespace VeciHelpAPK.Views
                 log.Clave = clave.Text;
                 log.TokenFireBase = Preferences.Get("TokenFirebase", null);
 
-                string mensaje = "Usuario o contraseña invalida";
+                string mensaje = "Usuario o Contraseña inválida";
                           
 
                 var endPoint = RestService.For<ILogin>(BaseAddress);
@@ -58,12 +58,12 @@ namespace VeciHelpAPK.Views
                 }
                 else if(response.StatusCode == HttpStatusCode.NotFound)
                 {
-                    await DisplayAlert("Error", mensaje, "Ok");
+                    await DisplayAlert("Atención", mensaje, "Aceptar");
                 }
             }
             else
             {
-                await DisplayAlert("Error", "Ingrese datos validos", "Ok");
+                await DisplayAlert("Atención", "Ingrese datos validos", "Aceptar");
             }
         }
 

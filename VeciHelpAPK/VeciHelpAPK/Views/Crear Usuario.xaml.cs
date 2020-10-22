@@ -74,7 +74,7 @@ namespace VeciHelpAPK.Views
                 {
                     var jsonString = await request.Content.ReadAsStringAsync();
 
-                    await DisplayAlert("Exito", jsonString, "OK");
+                    await DisplayAlert("Atención", jsonString, "Aceptar");
 
                     CargarUsuario();
                 }
@@ -90,7 +90,7 @@ namespace VeciHelpAPK.Views
                 {
                     var jsonString = await request.Content.ReadAsStringAsync();
 
-                    await DisplayAlert("Exito", jsonString, "OK");
+                    await DisplayAlert("Exito", jsonString, "Aceptar");
 
                     await Navigation.PushAsync(new LoginView());
                 }
@@ -124,7 +124,7 @@ namespace VeciHelpAPK.Views
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                await DisplayAlert("No Camera", ":( No camera available.", "OK");
+                await DisplayAlert("Atención", "No hay cámara disponible", "Aceptar");
                 return;
             }
 
@@ -143,7 +143,7 @@ namespace VeciHelpAPK.Views
             if (file == null)
                 return;
 
-            await DisplayAlert("File Location", file.Path, "OK");
+            //await DisplayAlert("File Location", file.Path, "OK");
 
             ImagenPerfil.Source = ImageSource.FromStream(() =>
             {
@@ -162,7 +162,7 @@ namespace VeciHelpAPK.Views
         {
                 if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
-                    await DisplayAlert("Photos Not Supported", ":( Permission not granted to photos.", "OK");
+                    await DisplayAlert("Atención", "No tiene los permisos correspondientes", "Aceptar");
                     return;
                 }
                 var file = await Plugin.Media.CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions
@@ -303,7 +303,7 @@ namespace VeciHelpAPK.Views
                 {
                     var jsonString = await request.Content.ReadAsStringAsync();
 
-                    await DisplayAlert("Exito", jsonString, "OK");
+                    await DisplayAlert("Atención", jsonString, "Aceptar");
 
                     CargarUsuario();
 
@@ -311,7 +311,7 @@ namespace VeciHelpAPK.Views
             }
             else
             {
-                await DisplayAlert("Mensaje", "Favor Cargue una foto nueva para actualizar", "OK");
+                await DisplayAlert("Atención", "Cargue una fotografia nueva para actualizar", "Aceptar");
             }
         }
     }

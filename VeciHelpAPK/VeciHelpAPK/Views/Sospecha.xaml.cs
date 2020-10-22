@@ -38,13 +38,13 @@ namespace VeciHelpAPK.Views
                 if (FotoSospecha.Source == null)
                 {
 
-                    var action = await DisplayAlert("Confirmacion?", "Esta seguro que quiere enviar la alerta sin foto", "Yes", "No");
+                    var action = await DisplayAlert("Atención", "Desea enviar la alerta sin foto", "Si", "No");
 
                     if (action)
                     {
                         var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, null);
 
-                        await DisplayAlert(" ", respuesta, "Ok");
+                        await DisplayAlert("Atención", respuesta, "Aceptar");
                     }
 
                 }
@@ -55,7 +55,7 @@ namespace VeciHelpAPK.Views
 
                     
 
-                    await DisplayAlert(" ", respuesta, "Ok");
+                    await DisplayAlert("Atención", respuesta, "Aceptar");
                 }
             }
             catch (Exception ex)
@@ -72,7 +72,7 @@ namespace VeciHelpAPK.Views
 
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                await DisplayAlert("No Camera", ":( No camera available.", "OK");
+                await DisplayAlert("Atención", "La cámara no se encuentra disponible", "Aceptar");
                 return;
             }
 
@@ -91,7 +91,7 @@ namespace VeciHelpAPK.Views
             if (file == null)
                 return;
 
-            await DisplayAlert("File Location", file.Path, "OK");
+            //await DisplayAlert("File Location", file.Path, "OK");
 
             FotoSospecha.Source = ImageSource.FromStream(() =>
             {

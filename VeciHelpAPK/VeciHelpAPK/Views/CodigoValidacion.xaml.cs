@@ -38,16 +38,16 @@ namespace VeciHelpAPK.Views
 
                 if (response.Equals("Codigo Validado Correctamente"))
                 {
-                    await DisplayAlert("Exito", response, "Ok");
+                    await DisplayAlert("Atención", response, "Aceptar");
 
                     await Navigation.PushAsync(new Crear_Usuario(usr,1));
                 }
                 else
-                    await DisplayAlert("Error", response, "Ok");
+                    await DisplayAlert("Atención", response, "Aceptar");
             }
             else
             {
-                await DisplayAlert("Error", "Ingrese datos validos", "Ok");
+                await DisplayAlert("Atención", "Ingrese datos validos", "Aceptar");
             }
 
         }

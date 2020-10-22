@@ -36,13 +36,13 @@ namespace VeciHelpAPK.Views
 
                 var response = await endPoint.EnrolarUsuario(adm);
 
-                await DisplayAlert("Mensaje", response.ToString(), "Ok");
+                await DisplayAlert("Atención", response.ToString(), "Aceptar");
 
                 correo.Text = string.Empty;
             }
             else
             {
-                await DisplayAlert("Error","Favor ingrese un correo valido", "Ok");
+                await DisplayAlert("Atención", "Favor ingrese un correo valido", "Aceptar");
             }
            
         }
