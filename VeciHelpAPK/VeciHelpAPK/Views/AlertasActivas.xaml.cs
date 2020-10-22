@@ -70,9 +70,9 @@ namespace VeciHelpAPK.Views
 
                     btnAlertas.Text = item.direccion + "\n " + item.nombreAyuda + " " + item.apellidoAyuda + " \n " + item.horaAlerta.ToString("HH:mm");
                     btnAlertas.ClassId = item.idAlerta.ToString();
-
+                    btnAlertas.CornerRadius = 25;
                     btnAlertas.Clicked += btnAlertas_Click;
-
+                    btnAlertas.FontAttributes = FontAttributes.Bold;
                     btnAlertas.CommandParameter = item;
                     btnAlertas.TextColor = Color.White;
 
