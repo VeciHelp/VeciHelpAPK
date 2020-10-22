@@ -52,8 +52,14 @@ namespace VeciHelpAPK.Views
 
                 foreach (var item in usrLst)
                 {
-                lblVecinos.Text = item.direccion + "\n" + item.nombre + " " + item.apellido;
-                sl.Children.Add(lblVecinos);
+                Button btnVecinos = new Button();
+                btnVecinos.Text = item.direccion + "\n" + item.nombre + " " + item.apellido;
+                btnVecinos.FontSize = 20;
+                btnVecinos.BackgroundColor = Color.FromHex("#b2b2b2");
+                btnVecinos.FontAttributes = FontAttributes.Bold;
+                btnVecinos.CornerRadius = 25;
+                btnVecinos.WidthRequest = 400;
+                sl.Children.Add(btnVecinos);
             }
         }
 
@@ -66,12 +72,14 @@ namespace VeciHelpAPK.Views
                 foreach (var item in usrLst)
                 {
                     Button ButtonDesasociarVecino = new Button();
-                    ButtonDesasociarVecino.Text = item.direccion + " " + item.nombre;
-                    ButtonDesasociarVecino.BackgroundColor = Color.FromHex("#3b83bd");
-                    ButtonDesasociarVecino.TextColor = Color.White;
-                    ButtonDesasociarVecino.Clicked += ButtonDesasociarVecino_Clicked;
+                    ButtonDesasociarVecino.Text = item.direccion + "\n" + item.nombre + " " + item.apellido;
                     ButtonDesasociarVecino.ClassId = item.id_Usuario.ToString();
-
+                    ButtonDesasociarVecino.FontSize = 20;
+                    ButtonDesasociarVecino.BackgroundColor = Color.FromHex("#b2b2b2");
+                    ButtonDesasociarVecino.FontAttributes = FontAttributes.Bold;
+                    ButtonDesasociarVecino.CornerRadius = 25;
+                    ButtonDesasociarVecino.WidthRequest = 400;
+                    ButtonDesasociarVecino.Clicked += ButtonDesasociarVecino_Clicked;
                     sl.Children.Add(ButtonDesasociarVecino);
                 }
             }
@@ -104,7 +112,7 @@ namespace VeciHelpAPK.Views
 
                         var response = await endPoint.EliminarAsociacion(asociacion);
 
-                        await DisplayAlert("Error", response, "Ok");
+                        await DisplayAlert("Exito", response, "Ok");
                 }
             }
             catch (Exception ex)

@@ -21,11 +21,7 @@
                 <Label x:Name="Nombre" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center"/>
 
                 <StackLayout x:Name="sl" Padding="25,5" BackgroundColor="#00000">
-                    <StackLayout >
-                        <Button x:Name= "lblVecinos" FontSize="Medium" 
-                        TextColor="#242525" HorizontalOptions="CenterAndExpand" BackgroundColor="#b2b2b2"
-                        FontAttributes="Bold" WidthRequest="400" CornerRadius="25"/>
-                    </StackLayout>
+                    
                 </StackLayout>
 
                 <StackLayout>
