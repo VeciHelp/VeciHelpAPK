@@ -37,23 +37,19 @@ namespace VeciHelpAPK.Views
 
             if (response == null)
             {
+                Image caraFeliz = new Image();
+                caraFeliz.Source = "happy.png";
                 LabelAlertasActivas.Text = "Que bien, no hay alertas activas";
                 LabelAlertasActivas.FontAttributes = FontAttributes.Bold;
                 LabelAlertasActivas.TextColor = Color.White;
+                LabelAlertasActivas.HorizontalTextAlignment = TextAlignment.Center;
+                
             }
 
             foreach (var item in response)
             {
                 Button btnAlertas = new Button();
-                if(item == null)
-                {
-                    LabelAlertasActivas.Text = "Que bien, no hay alertas activas";
-                    LabelAlertasActivas.FontAttributes = FontAttributes.Bold;
-                    LabelAlertasActivas.TextColor = Color.White;
-                }
                
-                  
-
                     if (item.TipoAlerta == "SOS")
                     {
                         btnAlertas.BackgroundColor = Color.FromHex("#d92027");

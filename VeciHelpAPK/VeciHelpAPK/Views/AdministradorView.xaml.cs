@@ -40,13 +40,13 @@ namespace VeciHelpAPK.Views
 
                 var response = await endPoint.EnrolarUsuario(adm);
 
-                await DisplayAlert("Mensaje", response.ToString(), "Ok");
+                await DisplayAlert("Atención", response.ToString(), "Aceptar");
 
                 EnrolarCorreo.Text = string.Empty;
             }
             else
             {
-                await DisplayAlert("Error", "Favor ingrese un correo valido", "Ok");
+                await DisplayAlert("Atención", "Ingrese un correo valido", "Aceptar");
             }
         }
 
@@ -70,24 +70,24 @@ namespace VeciHelpAPK.Views
 
                         usr = JsonConvert.DeserializeObject<Usuario>(jsonString);
 
-                        var action = await DisplayAlert("Confirmacion?", "Esta seguro que quiere borrar al usuario: " + usr.nombre + " " + usr.apellido, "Yes", "No");
+                        var action = await DisplayAlert("Atención", "Desea borrar al usuario: " + usr.nombre + " " + usr.apellido, "Si", "No");
 
                         if (action)
                         {
                             var response2 = await endPoint.EliminarUsuario(usr.id_Usuario);
-                            await DisplayAlert("Mensaje", "Usuario eliminado correctamente", "Ok");
+                            await DisplayAlert("Atención", "Usuario eliminado correctamente", "Aceptar");
                             EliminarCorreo.Text = string.Empty;
                         }
                     }
                     else if (response.StatusCode == HttpStatusCode.NotFound)
                     {
-                        await DisplayAlert("Error", "El correo Ingresado no pertenece a la comunidad", "Ok");
+                        await DisplayAlert("Atención", "Correo no pertenece a la comunidad", "Aceptar");
                     }
 
                 }
                 else
                 {
-                    await DisplayAlert("Error", "Favor ingrese un correo valido", "Ok");
+                    await DisplayAlert("Atención", "Ingrese un correo valido", "Aceptar");
                 }
             }
             catch (ApiException ex)
@@ -137,7 +137,7 @@ namespace VeciHelpAPK.Views
 
                         if (response2.Count == 0)
                         {
-                            await DisplayAlert("Alerta", "El Usuario no posee vecinos enrolados", "Ok");
+                            await DisplayAlert("Atención", "Usuario no posee vecinos enrolados", "Aceptar");
                             await Navigation.PushAsync(new AsociarVecinos(usr, response2, 1));
                         }
                         else
@@ -148,13 +148,13 @@ namespace VeciHelpAPK.Views
                     }
                     else if (response.StatusCode == HttpStatusCode.NotFound)
                     {
-                        await DisplayAlert("Error", "El correo Ingresado no pertenece a la comunidad", "Ok");
+                        await DisplayAlert("Atención", "Correo no pertenece a la comunidad", "Aceptar");
                     }
 
                 }
                 else
                 {
-                    await DisplayAlert("Error", "Favor ingrese un correo valido", "Ok");
+                    await DisplayAlert("Atención", "Ingrese un correo válido", "Aceptar");
                 }
             }
 
@@ -194,7 +194,7 @@ namespace VeciHelpAPK.Views
 
                         if (response2.Count == 0)
                         {
-                            await DisplayAlert("Alerta", "El Usuario no posee vecinos enrolados", "Ok");
+                            await DisplayAlert("Atención", "Usuario no posee vecinos enrolados", "Aceptar");
                         }
                         else
                         {
@@ -204,13 +204,13 @@ namespace VeciHelpAPK.Views
                     }
                     else if (response.StatusCode == HttpStatusCode.NotFound)
                     {
-                        await DisplayAlert("Error", "El correo Ingresado no pertenece a la comunidad", "Ok");
+                        await DisplayAlert("Atención", "Correo ingresado no pertenece a la comunidad", "Aceptar");
                     }
 
                 }
                 else
                 {
-                    await DisplayAlert("Error", "Favor ingrese un correo valido", "Ok");
+                    await DisplayAlert("Atención", "Favor ingrese un correo valido", "Aceptar");
                 }
             }
 
