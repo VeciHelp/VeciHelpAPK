@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -33,7 +34,7 @@ namespace VeciHelpAPK.Views
                 Usuario usr = new Usuario();
                 log = new Models.Login();
                 log.Correo = correo.Text;
-                log.Clave = clave.Text;
+                log.Clave = Encriptar(clave.Text);
                 log.TokenFireBase = Preferences.Get("TokenFirebase", null);
 
                 string mensaje = "Usuario o Contraseña inválida";
@@ -88,6 +89,14 @@ namespace VeciHelpAPK.Views
         private async void ButtonRegistrate_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CodigoValidacion());
+        }
+
+        private string Encriptar(string clave)
+        {
+            using (var sha256 = new SHA256Managed())
+            {
+                return BitConverter.ToString(sha256.ComputeHash(Encoding.UTF8.GetBytes(clave))).Replace("-", "");
+            }
         }
     }
 }

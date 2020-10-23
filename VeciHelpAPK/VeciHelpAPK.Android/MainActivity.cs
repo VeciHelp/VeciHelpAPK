@@ -40,5 +40,25 @@ namespace VeciHelpAPK.Droid
             bool isGooglePlayService = resultCode != ConnectionResult.Success;
             Preferences.Set("isGooglePlayService", isGooglePlayService);
         }
+
+        // Confirm with dialog
+        public override void OnBackPressed()
+        {
+            if (((VeciHelpAPK.App)App.Current).PromptToConfirmExit)
+            {
+                using (var alert = new AlertDialog.Builder(this))
+                {
+                    alert.SetTitle("Salir de la aplicación");
+                    alert.SetMessage("Esta seguro que desea salir?");
+                    alert.SetPositiveButton("SI", (sender, args) => { FinishAffinity(); }); // inform Android that we are done with the activity
+                    alert.SetNegativeButton("No", (sender, args) => { }); // do nothing
+
+                    var dialog = alert.Create();
+                    dialog.Show();
+                }
+                return;
+            }
+            base.OnBackPressed();
+        }
     }
 }

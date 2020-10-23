@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.ActualizarClave">
+    <ContentPage.Content>
+        <StackLayout Padding ="30" >
+            <StackLayout >
+                <Label Text="Actualizacion de contraseña"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                       HorizontalTextAlignment="Center"
+                   FontSize="Medium"
+                   WidthRequest="160"
+                   HeightRequest="80"
+                   TextColor="White"
+                   BackgroundColor="#00000"
+                   FontAttributes="Bold"
+                   />
+            </StackLayout>
+
+            <StackLayout Padding="20">
+                <Entry x:Name="txtOldPass" Placeholder="Contraseña Antigua" HorizontalOptions="Center" 
+                       WidthRequest="400" Keyboard="Email" BackgroundColor="White"/>
+                <Entry x:Name="txtNewPass" Placeholder="Contraseña Nueva" HorizontalOptions="Center"
+                       WidthRequest="400" BackgroundColor="White"/>
+                <Entry x:Name="txtNewPass2" Placeholder="Repetir Contraseña" HorizontalOptions="Center"
+                       WidthRequest="400" BackgroundColor="White"/>
+            </StackLayout>
+
+            <Button x:Name="ButtonValidar" Clicked="ButtonValidar_Clicked" Text="Actualizar"
+                    BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" Padding="10" FontAttributes="Bold" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

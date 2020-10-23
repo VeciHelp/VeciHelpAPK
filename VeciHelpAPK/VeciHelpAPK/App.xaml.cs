@@ -25,5 +25,21 @@ namespace VeciHelpAPK
         protected override void OnResume()
         {
         }
+
+        public bool PromptToConfirmExit
+        {
+            get
+            {
+                bool promptToConfirmExit = false;
+                
+                 if (MainPage is NavigationPage mainPage)
+                {
+                        promptToConfirmExit = mainPage.Navigation.NavigationStack.Count <= 2;
+                }
+              
+                return promptToConfirmExit;
+            }
+        }
+
     }
 }

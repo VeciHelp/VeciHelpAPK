@@ -60,6 +60,9 @@
     <PackageReference Include="Refit">
       <Version>5.2.1</Version>
     </PackageReference>
+    <PackageReference Include="System.Security.Cryptography.Algorithms">
+      <Version>4.3.1</Version>
+    </PackageReference>
     <PackageReference Include="Xam.Plugin.Media">
       <Version>5.0.1</Version>
     </PackageReference>

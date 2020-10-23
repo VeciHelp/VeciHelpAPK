@@ -74,11 +74,14 @@ namespace VeciHelpAPK.Views
                     await Navigation.PushAsync(new AlertasActivas());
         }
 
-        
-
         private async void ButtonActualizarDatos_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Crear_Usuario(user));
+        }
+
+        private async void ButtonActualizarClave_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ActualizarClave(user));
         }
     }
 

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.RecuperarClave">
+    <ContentPage.Content>
+        <StackLayout Padding ="30" >
+            <StackLayout >
+                <Label Text="Ingrese su correo para recuperar su contraseña"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" 
+                       HorizontalTextAlignment="Center"
+                   FontSize="Medium"
+                   WidthRequest="160"
+                   HeightRequest="80"
+                   TextColor="White"
+                   BackgroundColor="#00000"
+                   FontAttributes="Bold"
+                   />
+            </StackLayout>
+
+            <StackLayout Padding="20">
+                <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" HorizontalOptions="Center" 
+                       WidthRequest="400" Keyboard="Email" BackgroundColor="White"/>
+            </StackLayout>
+
+            <Button x:Name="ButtonRecuperar" Clicked="ButtonRecuperar_Clicked" Text="Recuperar"
+                    BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" Padding="10" FontAttributes="Bold" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

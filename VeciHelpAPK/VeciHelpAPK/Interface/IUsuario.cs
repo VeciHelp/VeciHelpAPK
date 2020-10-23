@@ -34,6 +34,16 @@ namespace VeciHelpAPK.Interface
         [Headers("Authorization: Bearer")]
         Task<HttpResponseMessage> UpdatePhoto([Body(BodySerializationMethod.Serialized)] RequestFotoUpd foto);
 
-        
+        [Put("/user/UpdatePass")]
+        [Headers("Authorization: Bearer")]
+        Task<HttpResponseMessage> UpdatePass(RequestPass password);
+
+
+        //no pide token
+        [Put("/user/RecuperarClave?correo={correo}")]
+
+        Task<string> RecuperarClave(string correo);
+
+
     }
 }
