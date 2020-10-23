@@ -21,30 +21,38 @@ namespace VeciHelpAPK.Views
         {
             this.alerta = alert;
             InitializeComponent();
+            LblDetalle.IsVisible = false;
             ActualizarAlerta();
         }
-
-
-
         private async void ButtonAcudir_Clicked(object sender, EventArgs e)
         {
             var IdUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
             var token = Preferences.Get("Ses_token", null);
 
             var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
-
-
-
             RequestAlerta aler = new RequestAlerta();
+
             aler.idUsuario = IdUsuario;
             aler.idAlerta = alerta.idAlerta;
 
-            var response = await endPoint.AcudirAlerta(aler);
 
-            await DisplayAlert("Atención", response, "Aceptar");
+
+            if (alerta.opcionBoton == "Finalizar")
+            {
+                var response = await endPoint.FinalizarAlerta(aler);
+                await DisplayAlert("Exito", response, "Ok");
+                await Navigation.PopAsync();
+            }
+            else if (alerta.opcionBoton == "Acudir")
+            {
+                var response = await endPoint.AcudirAlerta(aler);
+
+                await DisplayAlert("Exito", response, "Ok");
+            }
 
             ActualizarAlerta();
         }
+
         private async void ActualizarAlerta()
         {
             var IdUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
@@ -58,12 +66,15 @@ namespace VeciHelpAPK.Views
             alerta = response;
 
             LlenarCamposDeAlerta();
-
-
         }
 
         private void LlenarCamposDeAlerta()
         {
+            if (alerta.TipoAlerta == "Sospecha")
+            {
+                LblDetalle.IsVisible = true;
+                LblDetalle.Text = alerta.coordenadaSospecha;
+            }
             LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda;
             LblDireccion.Text = alerta.direccion;
             LblTipoAlerta.Text = alerta.TipoAlerta;
@@ -88,6 +99,24 @@ namespace VeciHelpAPK.Views
             FotoPerfil.Source = Xamarin.Forms.ImageSource.FromStream(
                () => new MemoryStream(Convert.FromBase64String(alerta.foto)));
 
+
+
+            //cambio el boton dependiendo de lo que le corresponda
+            if (alerta.opcionBoton == "Ocultar")
+            {
+                ButtonAcudir.IsVisible = false;
+                ButtonAcudir.IsEnabled = false;
+            }
+            else if (alerta.opcionBoton == "Finalizar")
+            {
+                ButtonAcudir.BackgroundColor = Color.FromHex("#d92027");
+                ButtonAcudir.Text = "Finalizar alerta";
+            }
+
         }
+
+
+
+
     }
 }
