@@ -30,8 +30,8 @@
             
 
             <StackLayout WidthRequest="300" Padding="20">
-                <Entry  x:Name="correo" Keyboard="Email" Placeholder="Correo" BackgroundColor="Azure" HorizontalTextAlignment="Center"/>
-                <Entry  x:Name="clave" Placeholder="Ingrese su Contraseña" BackgroundColor="Azure" HorizontalTextAlignment="Center" IsPassword="True"/>
+                <Entry  x:Name="correo" Keyboard="Email" Placeholder="Correo" BackgroundColor="Azure" HorizontalTextAlignment="Center" ReturnType="Next"/>
+                <Entry  x:Name="clave" Placeholder="Ingrese su Contraseña" BackgroundColor="Azure" HorizontalTextAlignment="Center" IsPassword="True" ReturnType="Done"/>
             </StackLayout>
 
             <StackLayout WidthRequest="300" Padding="20,2,20,20">

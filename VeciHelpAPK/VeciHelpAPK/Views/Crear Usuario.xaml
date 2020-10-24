@@ -33,22 +33,33 @@
                 </StackLayout>
 
                 <ScrollView>
-                    <StackLayout Padding="10,20" WidthRequest="400" Orientation="Vertical">
-                        <Entry x:Name="correo" Placeholder="Correo Electronico" WidthRequest="400" HorizontalOptions="Center"  Keyboard="Email" BackgroundColor="White"/>
-                        <Entry x:Name="nombre" Placeholder="Nombre" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="White"/>
-                        <Entry x:Name="apellido" Placeholder="Apellido" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="White"/>
+                    <StackLayout Padding="10" WidthRequest="400" Orientation="Vertical">
+                        <Entry x:Name="correo" Placeholder="Correo Electronico" WidthRequest="400" HorizontalOptions="Center" 
+                               Keyboard="Email" BackgroundColor="White" ReturnType="Next" />
+                        <Entry x:Name="nombre" Placeholder="Nombre" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="White" 
+                               ReturnType="Next"/>
+                        <Entry x:Name="apellido" Placeholder="Apellido" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="White"
+                               ReturnType="Next"/>
                         <StackLayout Orientation="Horizontal">
-                            <Entry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="210" Keyboard="Numeric" BackgroundColor="White"/>
-                            <Entry x:Name="digito" Placeholder="DV" HorizontalOptions="Center" WidthRequest="30" BackgroundColor="White" />
+                            <Entry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="270" Keyboard="Numeric" 
+                                   ReturnType="Next" BackgroundColor="White"/>
+                            <Entry x:Name="digito" Placeholder="DV" HorizontalOptions="Center" WidthRequest="50" BackgroundColor="White" ReturnType="Next" />
                         </StackLayout>
-                        <Entry x:Name="AntecedentesSalud" WidthRequest="400" Placeholder="Antecedendes Salud" HorizontalOptions="Center"  BackgroundColor="White" />
+                        <Entry x:Name="AntecedentesSalud" WidthRequest="400" Placeholder="Antecedendes Salud" HorizontalOptions="Center" 
+                               ReturnType="Next" BackgroundColor="White" />
 
-                        <DatePicker x:Name="DPFechaNacimiento" WidthRequest="400" Format="D" Margin="0,0,20,0" DateSelected="DPFechaNacimiento_DateSelected" HorizontalOptions="Center" BackgroundColor="White"/>
+                        <DatePicker x:Name="DPFechaNacimiento" WidthRequest="400" Format="dd/MMMM/yyyy"
+                                    DateSelected="DPFechaNacimiento_DateSelected" HorizontalOptions="CenterAndExpand" 
+                                    BackgroundColor="White"/>
 
-                        <Entry x:Name="celular" Placeholder="Telefono" WidthRequest="400" HorizontalOptions="Center" Keyboard="Telephone" BackgroundColor="White"/>
-                        <Entry x:Name="direccion" Placeholder="Direccion" WidthRequest="400" HorizontalOptions="Center"  BackgroundColor="White"/>
-                        <Entry  x:Name="clave" Placeholder="Clave" WidthRequest="400" HorizontalOptions="Center"  IsPassword="True" BackgroundColor="White"/>
-                        <Entry x:Name="codigoVerificacion" WidthRequest="400" Placeholder="Codigo de Verificacion" HorizontalOptions="Center"  BackgroundColor="White"/>
+                        <Entry x:Name="celular" Placeholder="Telefono" WidthRequest="400" HorizontalOptions="Center"
+                               ReturnType="Next" Keyboard="Telephone" BackgroundColor="White"/>
+                        <Entry x:Name="direccion" Placeholder="Direccion" WidthRequest="400" HorizontalOptions="Center"
+                               ReturnType="Next" BackgroundColor="White"/>
+                        <Entry  x:Name="clave" Placeholder="Clave" WidthRequest="400"
+                                ReturnType="Next" HorizontalOptions="Center"  IsPassword="True" BackgroundColor="White"/>
+                        <Entry x:Name="codigoVerificacion" WidthRequest="400" Placeholder="Codigo de Verificacion"
+                               ReturnType="Done" HorizontalOptions="Center"  BackgroundColor="White"/>
 
                     </StackLayout>
                 </ScrollView>
