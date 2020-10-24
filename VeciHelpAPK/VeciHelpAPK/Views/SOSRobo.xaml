@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.SOSRobo"
+             Title="SOS ROBO"
              BackgroundColor="#d92027">
 
     <ContentPage.ToolbarItems>
@@ -16,14 +17,7 @@
     <ContentPage.Content>
         <StackLayout>
 
-
-            <StackLayout x:Name="RobberImage" VerticalOptions="CenterAndExpand" Padding="40" >
-                <StackLayout HorizontalOptions="CenterAndExpand" Padding="10">
-                    <Label Text="SOS ROBO" TextColor="White" FontSize="35" FontAttributes="Bold"/>
-                </StackLayout>
-            
-            </StackLayout>
-            <StackLayout Padding="10">
+            <StackLayout Padding="10,60">
                 <Image x:Name="ladronImage" Opacity="100" Source="ladron.png"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
@@ -31,7 +25,7 @@
                    HeightRequest="160"
                    />
             </StackLayout>
-            <StackLayout Padding="10, 80,10,50">
+            <StackLayout Padding="40,0">
             <Button x:Name="ButtonPropia"
                     VerticalOptions="Center"
                     BackgroundColor="#1d83d4"

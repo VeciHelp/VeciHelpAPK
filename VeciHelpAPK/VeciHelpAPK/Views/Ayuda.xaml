@@ -13,26 +13,21 @@
         <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
 
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <StackLayout>
 
-            <StackLayout x:Name="RobberImage" VerticalOptions="CenterAndExpand" Padding="40" >
-                <StackLayout HorizontalOptions="CenterAndExpand" Padding="10">
-                    <Label Text="EMERGENCIA" TextColor="White" FontSize="35" FontAttributes="Bold"/>
-                </StackLayout>
-
-            </StackLayout>
-            <StackLayout Padding="10">
-                <Image x:Name="ladronImage" Opacity="100" Source="alerta.png"
+        
+        <StackLayout Padding="10,60">
+            <Image x:Name="ladronImage" Opacity="100" Source="alerta.png"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
                    WidthRequest="180"
                    HeightRequest="160"
                    />
-            </StackLayout>
-            <StackLayout Padding="10, 80,10,50">
-                <Button
+        </StackLayout>
+        <StackLayout Padding="40,0">
+            <Button
                 x:Name="ButtonPropia"
                     VerticalOptions="Center"
                     BackgroundColor="#1d83d4"
@@ -45,7 +40,7 @@
                 Clicked="ButtonPropia_Clicked"
                     />
 
-                <Button
+            <Button
                 x:Name="ButtonVecino"
                     VerticalOptions="Center"
                     BackgroundColor="#c0c0c0"
@@ -58,9 +53,6 @@
                 Clicked="ButtonVecino_Clicked"
                     />
             </StackLayout>
-
         </StackLayout>
-
-
     </ContentPage.Content>
 </ContentPage>

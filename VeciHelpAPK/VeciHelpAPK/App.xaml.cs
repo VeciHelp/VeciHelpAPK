@@ -1,7 +1,5 @@
-﻿using System;
-using VeciHelpAPK.Views;
+﻿using VeciHelpAPK.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace VeciHelpAPK
 {

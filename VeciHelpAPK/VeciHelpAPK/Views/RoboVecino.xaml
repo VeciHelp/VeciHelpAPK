@@ -9,8 +9,9 @@
              BackgroundColor="#d92027">
     <ContentPage.Content>
         <ScrollView>
+            <StackLayout>
             <StackLayout Padding="30">
-                <StackLayout Padding="10,100">
+                <StackLayout Padding="10,50">
                     <Image x:Name="ladronImage" Opacity="100" Source="ladron.png"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"
@@ -18,10 +19,10 @@
                        HeightRequest="160"
                        />
                 </StackLayout>
-
-                <StackLayout x:Name="sl" Padding="10,30,10,10" VerticalOptions="CenterAndExpand">
+                <StackLayout x:Name="sl" Padding="10,20,10,10" VerticalOptions="CenterAndExpand">
                 </StackLayout>
             </StackLayout>
-         </ScrollView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

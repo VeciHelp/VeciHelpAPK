@@ -41,13 +41,14 @@ namespace VeciHelpAPK.Views
             foreach (var item in usrLst)
             {
                 Button btnCliente = new Button();
-                btnCliente.Text = item.direccion + " " + item.nombre + " " + item.apellido;
+                btnCliente.Text = item.direccion + "\n " + item.nombre + " " + item.apellido;
                 btnCliente.CommandParameter = item;
                 btnCliente.Clicked += BtnCliente_Click;
                 btnCliente.BackgroundColor = Color.FromHex("#3b83bd");
                 btnCliente.TextColor = Color.White;
                 btnCliente.FontAttributes = FontAttributes.Bold;
                 btnCliente.CornerRadius = 25;
+                
                 sl.Children.Add(btnCliente);
             }
 
@@ -73,7 +74,7 @@ namespace VeciHelpAPK.Views
 
             var respuesta = await Alerta.EnviarAlerta(vecino.id_Usuario, "robo", datosAlerta,null);
 
-            await DisplayAlert(" ", respuesta, "Aceptar");
+            await DisplayAlert("Atención", respuesta, "Aceptar");
 
         }
     }
