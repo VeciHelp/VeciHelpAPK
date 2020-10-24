@@ -14,11 +14,22 @@
                 
                 <StackLayout>
                     <Image x:Name="ImagenPerfil" Source="profile.png" WidthRequest="100"/>
-                    <StackLayout Orientation="Horizontal">
-                        <Button x:Name="ButtonAgregarFoto" Clicked="ButtonAgregarFoto_Clicked" Text="Tomar Fotografia" BackgroundColor="#1d83d4" TextColor="White" HorizontalOptions="Center" Padding="10" CornerRadius="25"/>
-                        <Button x:Name="ButtoncargarFoto" Clicked="ButtonCargarFoto_Clicked" Text="Seleccionar Foto" BackgroundColor="#1d83d4" TextColor="White" HorizontalOptions="Center" Padding="10" CornerRadius="25"/>
+                    
+                    <StackLayout Orientation="Horizontal" Padding="40,10">
+                        <Button x:Name="ButtonAgregarFoto" Clicked="ButtonAgregarFoto_Clicked"
+                                ImageSource="camara.png"
+                                BackgroundColor="#00000"
+                                HorizontalOptions="StartAndExpand"/> 
+                        <Button x:Name="ButtoncargarFoto"
+                                Clicked="ButtonCargarFoto_Clicked" 
+                                ImageSource="cargarFoto.png" BackgroundColor="#00000"
+                                HorizontalOptions="CenterAndExpand"/>
+                    
+                    <Button x:Name="ButtonSubirCambios" Clicked="ButtonSubirCambios_Clicked"
+                            ImageSource="aceptar.png"
+                            BackgroundColor="#00000"
+                            HorizontalOptions="EndAndExpand"/>
                     </StackLayout>
-                    <Button x:Name="ButtonSubirCambios" Clicked="ButtonSubirCambios_Clicked" Text="Actualizar Foto" BackgroundColor="#1d83d4" TextColor="White" HorizontalOptions="Center" Padding="10" CornerRadius="25"/>
                 </StackLayout>
 
                 <ScrollView>
@@ -42,9 +53,7 @@
                     </StackLayout>
                 </ScrollView>
                 <StackLayout>
-
                     <Button x:Name="ButtonCrear" Clicked="ButtonCrear_Clicked" Text="ACEPTAR" BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" />
-
                 </StackLayout>
 
             </StackLayout>
