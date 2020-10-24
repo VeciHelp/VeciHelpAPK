@@ -71,6 +71,7 @@ namespace VeciHelpAPK.Views
                     btnAlertas.FontAttributes = FontAttributes.Bold;
                     btnAlertas.CommandParameter = item;
                     btnAlertas.TextColor = Color.White;
+                    btnAlertas.FontSize = 17;
 
                     StackAlertas.Children.Add(btnAlertas);
                 
