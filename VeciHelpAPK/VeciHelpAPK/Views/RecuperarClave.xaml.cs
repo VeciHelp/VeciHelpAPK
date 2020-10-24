@@ -29,14 +29,14 @@ namespace VeciHelpAPK.Views
 
                 if (response == "Exito")
                 {
-                    await DisplayAlert("Exito", response, "ok");
+                    await DisplayAlert("Atención", response, "Aceptar");
                     await Navigation.PopAsync();
                 }
                 else
-                    await DisplayAlert("Error", response, "ok");
+                    await DisplayAlert("Atención", response, "Aceptar");
             }
             else
-                await DisplayAlert("Error", "las contraseñas no coinciden", "ok");
+                await DisplayAlert("Atención", "Contraseñas no coinciden", "Aceptar");
         }
     }
 }

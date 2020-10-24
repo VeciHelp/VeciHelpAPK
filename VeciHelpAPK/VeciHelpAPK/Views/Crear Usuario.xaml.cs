@@ -90,7 +90,7 @@ namespace VeciHelpAPK.Views
                 {
                     var jsonString = await request.Content.ReadAsStringAsync();
 
-                    await DisplayAlert("Exito", jsonString, "Aceptar");
+                    await DisplayAlert("Atención", jsonString, "Aceptar");
 
                     await Navigation.PushAsync(new LoginView());
                 }

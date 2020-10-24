@@ -39,14 +39,14 @@ namespace VeciHelpAPK.Views
             if(alerta.opcionBoton == "Finalizar")
             {
                 var response = await endPoint.FinalizarAlerta(aler);
-                await DisplayAlert("Exito", response, "Ok");
+                await DisplayAlert("Atención", response, "Aceptar");
                 await Navigation.PopAsync();
             }
             else if(alerta.opcionBoton == "Acudir")
             {
                 var response = await endPoint.AcudirAlerta(aler);
 
-                await DisplayAlert("Exito", response, "Ok");
+                await DisplayAlert("Atención", response, "Aceptar");
             }
 
             ActualizarAlerta();

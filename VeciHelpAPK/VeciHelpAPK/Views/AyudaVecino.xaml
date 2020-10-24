@@ -14,6 +14,7 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
+        <StackLayout Padding="10">
         <ScrollView>
             <StackLayout>
                 <StackLayout Padding="30">
@@ -31,5 +32,6 @@
                 </StackLayout>
             </StackLayout>
         </ScrollView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

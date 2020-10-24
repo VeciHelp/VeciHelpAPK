@@ -54,10 +54,10 @@ namespace VeciHelpAPK.Views
                     await Navigation.PopAsync();
                 }
                 else
-                    await DisplayAlert("Error", "Hubo un problema", "ok");
+                    await DisplayAlert("Atención", "Hubo un problema", "Aceptar");
             }
             else
-                await DisplayAlert("Error", "las contraseñas no coinciden", "ok");
+                await DisplayAlert("Atención", "Contraseñas no coinciden", "Aceptar");
         }
 
         private string Encriptar(string clave)
