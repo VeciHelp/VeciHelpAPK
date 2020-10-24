@@ -12,7 +12,8 @@
             <StackLayout Padding="30">
 
                 <StackLayout  Padding="25,5" BackgroundColor="#00000">
-                    <StackLayout x:Name="sl" >
+                     
+                    <StackLayout x:Name="sl" WidthRequest="300" >
 
                     </StackLayout>
                 </StackLayout>

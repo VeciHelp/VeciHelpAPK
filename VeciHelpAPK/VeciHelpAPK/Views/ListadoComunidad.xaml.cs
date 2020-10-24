@@ -50,11 +50,9 @@ namespace VeciHelpAPK.Views
                 btnCliente.Text = item.direccion + "\n" + item.nombre + " " + item.apellido;
                 btnCliente.ClassId = item.id_Usuario.ToString();
                 btnCliente.Clicked += BtnCliente_Click;
-                btnCliente.FontSize = 20;
+                btnCliente.FontSize = 17;
                 btnCliente.BackgroundColor = Color.FromHex("#b2b2b2");
-                btnCliente.FontAttributes = FontAttributes.Bold;
                 btnCliente.CornerRadius = 25;
-                btnCliente.WidthRequest = 400;
 
 
                 sl.Children.Add(btnCliente);

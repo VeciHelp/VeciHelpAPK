@@ -26,7 +26,7 @@
 
                 <StackLayout>
                     <Button x:Name="ButtonAsociarVecino" Clicked="ButtonAsociarVecino_Clicked" 
-                            Text="ASOCIAR VECINO" BackgroundColor="#1d83d4" TextColor="White" CornerRadius="25" />
+                            Text="ASOCIAR VECINO" BackgroundColor="#1d83d4" TextColor="White" CornerRadius="25" WidthRequest="300"/>
                 </StackLayout>
             </StackLayout>
             

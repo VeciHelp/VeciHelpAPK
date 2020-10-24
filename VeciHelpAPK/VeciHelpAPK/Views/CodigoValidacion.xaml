@@ -8,27 +8,24 @@
              Title="VERIFICACION"
              BackgroundColor="#242525">
     <ContentPage.Content>
-        <StackLayout Padding ="30" >
+        <StackLayout Padding ="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <StackLayout >
                 <Label Text="Ingrese correo y codigo de verificacion"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
-                       HorizontalTextAlignment="Center"
-                   FontSize="Medium"
-                   WidthRequest="160"
-                   HeightRequest="80"
+                HorizontalTextAlignment="Center"
+                   FontSize="Large"
                    TextColor="White"
                    BackgroundColor="#00000"
                    FontAttributes="Bold"
                    />
-
             </StackLayout>
 
             <StackLayout Padding="20">
                 <Entry x:Name="correo" Placeholder="Correo Electronico" HorizontalOptions="Center" 
-                       WidthRequest="400" Keyboard="Email" BackgroundColor="White"/>
+                       WidthRequest="400" Keyboard="Email" BackgroundColor="White" HorizontalTextAlignment="Center"/>
                 <Entry x:Name="codigoVerificacion" Placeholder="Codigo de Verificacion" HorizontalOptions="Center"
-                       WidthRequest="400" BackgroundColor="White"/>
+                       WidthRequest="400" BackgroundColor="White" HorizontalTextAlignment="Center"/>
             </StackLayout>
             
             <Button x:Name="ButtonValidar" Clicked="ButtonValidar_Clicked" Text="Verificar Datos"

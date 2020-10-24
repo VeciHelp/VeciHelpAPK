@@ -54,11 +54,9 @@ namespace VeciHelpAPK.Views
                 {
                 Button btnVecinos = new Button();
                 btnVecinos.Text = item.direccion + "\n" + item.nombre + " " + item.apellido;
-                btnVecinos.FontSize = 20;
                 btnVecinos.BackgroundColor = Color.FromHex("#b2b2b2");
-                btnVecinos.FontAttributes = FontAttributes.Bold;
                 btnVecinos.CornerRadius = 25;
-                btnVecinos.WidthRequest = 400;
+                btnVecinos.FontSize = 17;
                 sl.Children.Add(btnVecinos);
             }
         }
@@ -74,11 +72,9 @@ namespace VeciHelpAPK.Views
                     Button ButtonDesasociarVecino = new Button();
                     ButtonDesasociarVecino.Text = item.direccion + "\n" + item.nombre + " " + item.apellido;
                     ButtonDesasociarVecino.ClassId = item.id_Usuario.ToString();
-                    ButtonDesasociarVecino.FontSize = 20;
                     ButtonDesasociarVecino.BackgroundColor = Color.FromHex("#b2b2b2");
-                    ButtonDesasociarVecino.FontAttributes = FontAttributes.Bold;
                     ButtonDesasociarVecino.CornerRadius = 25;
-                    ButtonDesasociarVecino.WidthRequest = 400;
+                    ButtonDesasociarVecino.FontSize = 17;
                     ButtonDesasociarVecino.Clicked += ButtonDesasociarVecino_Clicked;
                     sl.Children.Add(ButtonDesasociarVecino);
                 }
