@@ -17,12 +17,19 @@
                    TextColor="Azure"/>
             </StackLayout>
 
-            <StackLayout>
-                <Image Source="Logo.png"
+            <StackLayout Orientation="Vertical">
+                <StackLayout>
+                    <Image Source="Logo.png"
                         WidthRequest="150"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="UNA APP PARA ALERTAS VECINALES" TextColor="White" Background="#00000" FontSize="Small" HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                
             </StackLayout>
+            
 
-            <StackLayout WidthRequest="300" Padding="20,40,20,20">
+            <StackLayout WidthRequest="300" Padding="20">
                 <Entry  x:Name="correo" Keyboard="Email" Placeholder="Correo" BackgroundColor="Azure" HorizontalTextAlignment="Center"/>
                 <Entry  x:Name="clave" Placeholder="Ingrese su Contraseña" BackgroundColor="Azure" HorizontalTextAlignment="Center" IsPassword="True"/>
             </StackLayout>
