@@ -71,7 +71,7 @@ namespace VeciHelpAPK.Views
             datosAlerta = nombre + " " + apellido + " Direccion:" + direccion;
 
 
-            var respuesta = await Alerta.EnviarAlerta(vecino.id_Usuario, "Ayuda", datosAlerta,null);
+            var respuesta = await Alerta.EnviarAlerta(vecino.id_Usuario, "ayuda", datosAlerta,null);
 
             await DisplayAlert("Atención", respuesta, "Aceptar");
         }

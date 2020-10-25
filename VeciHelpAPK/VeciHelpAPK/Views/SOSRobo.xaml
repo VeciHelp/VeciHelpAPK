@@ -40,13 +40,14 @@
             
             <Button x:Name="ButtonVecino"
                     VerticalOptions="Center"
-                    BackgroundColor="#c0c0c0"
+                    BackgroundColor="white"
                     Text="CASA VECINO"
-                    TextColor="White"
+                    TextColor="#1d83d4"
                     FontSize="Title"
                     FontAttributes="Bold"
                     HeightRequest = "80"
                     CornerRadius="25"
+                    
                     Clicked="ButtonVecino_Clicked"
                     />
             </StackLayout>

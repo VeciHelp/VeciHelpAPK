@@ -16,20 +16,20 @@
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content BackgroundColor="#242525">
-        <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#242525" >
+       
+            <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#242525" >
 
             <Label x:Name="LabelAlertasActivas"/>
             <StackLayout>
                 <ScrollView >
-                    <StackLayout x:Name="StackAlertas" BackgroundColor="#242525" Padding="20,50" 
+                    <StackLayout x:Name="StackAlertas" BackgroundColor="#242525" Padding="20" 
                                  HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" WidthRequest="300">
                     </StackLayout>
                 </ScrollView>
             </StackLayout>
 
-
-
         </StackLayout>
-           
+       
+
     </ContentPage.Content>
 </ContentPage>

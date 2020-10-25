@@ -54,24 +54,27 @@ namespace VeciHelpAPK.Views
                     if (item.TipoAlerta == "SOS")
                     {
                         btnAlertas.BackgroundColor = Color.FromHex("#d92027");
-                    }
+                        btnAlertas.TextColor = Color.White;
+                }
                     else if (item.TipoAlerta == "Emergencia")
                     {
                         btnAlertas.BackgroundColor = Color.FromHex("#ffcd3c");
-                    }
+                        btnAlertas.TextColor = Color.FromHex("#242525");
+                }
                     else if (item.TipoAlerta == "Sospecha")
                     {
                         btnAlertas.BackgroundColor = Color.FromHex("#2FBB62");
-                 
-                    }
+                        btnAlertas.TextColor = Color.White;
 
-                    btnAlertas.Text = item.direccion + "\n " + item.nombreAyuda + " " + item.apellidoAyuda + " \n " + item.horaAlerta.ToString("HH:mm");
+                }
+                
+                btnAlertas.Text = item.TipoAlerta.ToUpper() + " " + item.horaAlerta.ToString("HH:mm") + "\n " + item.direccion + "\n " + item.nombreAyuda + " " + 
+                    item.apellidoAyuda;
                     btnAlertas.ClassId = item.idAlerta.ToString();
                     btnAlertas.CornerRadius = 25;
                     btnAlertas.Clicked += btnAlertas_Click;
-                    btnAlertas.FontAttributes = FontAttributes.Bold;
                     btnAlertas.CommandParameter = item;
-                    btnAlertas.TextColor = Color.White;
+                    //btnAlertas.TextColor = Color.White;
                     btnAlertas.FontSize = 17;
 
                     StackAlertas.Children.Add(btnAlertas);

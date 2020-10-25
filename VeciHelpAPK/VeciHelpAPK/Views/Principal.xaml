@@ -78,7 +78,7 @@
                         <Button x:Name="ButtonAyuda"
                         BackgroundColor="#ffcd3c"
                         CornerRadius="20"
-                        Text="AYUDA"
+                        Text="EMERGENCIA"
                         FontSize="20"
                         HeightRequest = "80"
                         TextColor="White"
