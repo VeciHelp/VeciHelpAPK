@@ -31,8 +31,8 @@
                             HorizontalOptions="EndAndExpand"/>
                     </StackLayout>
                 </StackLayout>
-
-                <ScrollView>
+                <StackLayout>
+                    <ScrollView>
                     <StackLayout Padding="10" WidthRequest="400" Orientation="Vertical">
                         <Entry x:Name="correo" Placeholder="Correo Electronico" WidthRequest="400" HorizontalOptions="Center" 
                                Keyboard="Email" BackgroundColor="White" ReturnType="Next" />
@@ -63,7 +63,8 @@
 
                     </StackLayout>
                 </ScrollView>
-                <StackLayout>
+            </StackLayout>
+            <StackLayout>
                     <Button x:Name="ButtonCrear" Clicked="ButtonCrear_Clicked" Text="ACEPTAR" BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" />
                 </StackLayout>
 

@@ -12,11 +12,19 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="30">
-                <Label x:Name="LblTipoAlerta" Text="TIPO ALERTA"
+                <Label x:Name="LblTipoAlerta"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
                    TextColor="White"
+                       FontAttributes="Bold"
                    FontSize="Title"/>
+                
+                <Label x:Name="LblHoraAlerta" Text="Hora"
+                       HorizontalTextAlignment="Center" 
+                       TextColor="White" 
+                       HorizontalOptions="CenterAndExpand" 
+                       FontSize="17"/>
+
 
                 <StackLayout Orientation="Horizontal" Padding="30">
                     <Frame CornerRadius="100" IsClippedToBounds="true" Padding="0" Margin="0" BackgroundColor="#00000" >
@@ -26,9 +34,12 @@
                        />
                     </Frame>
                     <StackLayout HorizontalOptions="StartAndExpand">
-                        <Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
-                        <Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
-                        <Label x:Name="LblHoraAlerta" Text="Hora" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand"/>
+
+                        <Label x:Name="LblNombre"  VerticalOptions="CenterAndExpand" TextColor="White" 
+                               FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>
+
+                        <!--<Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>
+                        <Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>-->
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Orientation="Vertical">

@@ -73,25 +73,27 @@ namespace VeciHelpAPK.Views
                 LblDetalle.IsVisible = true;
                 LblDetalle.Text = alerta.coordenadaSospecha;
             }
-            LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda;
-            LblDireccion.Text = alerta.direccion;
-            LblTipoAlerta.Text = alerta.TipoAlerta;
+            LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda + "\n\n" + alerta.direccion;
+            
+            //LblDireccion.Text = alerta.direccion;
+            LblTipoAlerta.Text =   alerta.TipoAlerta.ToUpper();
+            
 
 
             if (LblTipoAlerta.Text == "SOS")
             {
                 LblTipoAlerta.TextColor = Color.FromHex("#d92027");
             }
-            else if (LblTipoAlerta.Text == "Emergencia")
+            else if (LblTipoAlerta.Text == "EMERGENCIA")
             {
                 LblTipoAlerta.TextColor = Color.FromHex("#ffcd3c");
             }
-            else if (LblTipoAlerta.Text == "Sospecha")
+            else if (LblTipoAlerta.Text == "SOSPECHA")
             {
                 LblTipoAlerta.TextColor = Color.FromHex("#2FBB62");
             }
 
-            LblHoraAlerta.Text = alerta.horaAlerta.ToString("HH:mm");
+            LblHoraAlerta.Text = "Generada a las "+ alerta.horaAlerta.ToString("HH:mm");
             LblContadorPersonas.Text = alerta.participantes.ToString();
 
             FotoPerfil.Source = Xamarin.Forms.ImageSource.FromStream(

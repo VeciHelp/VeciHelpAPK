@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using VeciHelpAPK.Interface;
@@ -11,6 +12,7 @@ using VeciHelpAPK.Security;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 
 namespace VeciHelpAPK.Views
 {
@@ -21,14 +23,12 @@ namespace VeciHelpAPK.Views
         public List<Usuario> usrLst;
         public int idUsr;
         public int idAdmin;
-
+        public string nombre = "";
 
         public ListadoComunidad()
         {
             InitializeComponent();
-            this.Title = "COMUNIDAD";
-                
-
+            
         }
 
         public ListadoComunidad(List<Usuario> lst,int idUsuario, int idAdministrador)
@@ -53,10 +53,8 @@ namespace VeciHelpAPK.Views
                 btnCliente.FontSize = 17;
                 btnCliente.BackgroundColor = Color.FromHex("#b2b2b2");
                 btnCliente.CornerRadius = 25;
-
-
+               
                 sl.Children.Add(btnCliente);
-                
             }
         }
 
