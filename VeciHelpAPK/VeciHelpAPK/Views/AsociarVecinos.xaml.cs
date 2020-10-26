@@ -56,7 +56,7 @@ namespace VeciHelpAPK.Views
                 Button btnVecinos = new Button();
                 btnVecinos.Text = item.direccion + "\n" + item.nombre + " " + item.apellido;
                 btnVecinos.BackgroundColor = Color.FromHex("#b2b2b2");
-                btnVecinos.CornerRadius = 25;
+                btnVecinos.CornerRadius = 20;
                 btnVecinos.FontSize = 17;
                 sl.Children.Add(btnVecinos);
             }

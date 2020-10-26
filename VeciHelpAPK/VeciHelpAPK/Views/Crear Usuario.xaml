@@ -43,7 +43,9 @@
                         <StackLayout Orientation="Horizontal">
                             <Entry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="270" Keyboard="Numeric" 
                                    ReturnType="Next" BackgroundColor="White"/>
-                            <Entry x:Name="digito" Placeholder="DV" HorizontalOptions="Center" WidthRequest="50" BackgroundColor="White" ReturnType="Next" />
+                            <Entry x:Name="digito" Placeholder="DV" HorizontalOptions="Center" 
+                                   WidthRequest="55" BackgroundColor="White" ReturnType="Next" 
+                                   HorizontalTextAlignment="Center"/>
                         </StackLayout>
                         <Entry x:Name="AntecedentesSalud" WidthRequest="400" Placeholder="Antecedendes Salud" HorizontalOptions="Center" 
                                ReturnType="Next" BackgroundColor="White" />
