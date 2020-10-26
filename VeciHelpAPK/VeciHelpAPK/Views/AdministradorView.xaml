@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:VeciHelpAPK.Models"
-             mc:Ignorable="d"
+             xmlns:local="clr-namespace:VeciHelpAPK.Models" xmlns:control="clr-namespace:VeciHelpAPK.Controls"
+              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.AdministradorView" Title="ADMINISTRADOR">
 
     <ContentPage.ToolbarItems>
@@ -30,8 +30,20 @@
                 <Label Text="ENROLAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
                 <Label Text="Ingresa al sistema y envia un codigo de verificacion via correo" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
                 <StackLayout Padding="10,10,10,90">
-                    <Entry x:Name="EnrolarCorreo" Placeholder="Ingrese un Correo" VerticalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center"
-                       FontSize="Body" BackgroundColor="Azure" Keyboard="Email"/>
+                    <control:StanndardEntry
+                        x:Name="EnrolarCorreo"
+                        Placeholder="Ingrese un Correo" 
+                        BackgroundColor="#31FFFFFF" 
+                        BorderColor="White"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        HeightRequest="42"
+                        PlaceholderColor="#ededed"
+                        VerticalTextAlignment="Center" 
+                        HorizontalOptions="Center" 
+                        WidthRequest="400" 
+                        HorizontalTextAlignment="Center"
+                        Keyboard="Email"/>
                     <Button
                         ImageSource="enrolarUsuario.png"
                         Padding="50,10,50,50"
@@ -62,8 +74,21 @@
                 <Label Text="ELIMINAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
                 <Label Text="Elimina Usuario buscando por correo registrado" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
                 <StackLayout Padding="10,10,10,90">
-                    <Entry x:Name="EliminarCorreo" Placeholder="Ingrese un Correo" VerticalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center"
-                       FontSize="Body" BackgroundColor="Azure" Keyboard="Email"/>
+                    <control:StanndardEntry 
+                        x:Name="EliminarCorreo" 
+                        BackgroundColor="#31FFFFFF" 
+                        BorderColor="White"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        TextColor="White"
+                        HeightRequest="42"
+                        PlaceholderColor="#ededed"
+                        Placeholder="Ingrese un Correo" 
+                        VerticalTextAlignment="Center"
+                        HorizontalOptions="Center" 
+                        WidthRequest="400" 
+                        HorizontalTextAlignment="Center"
+                        Keyboard="Email"/>
                     <Button
                         ImageSource="eliminarUsuario.png"
                         Padding="50,10,50,50"
@@ -95,8 +120,21 @@
                 <Label Text="Asocia Vecinos Cercanos para Alertas CASA VECINO" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
 
                 <StackLayout Padding="10,10,10,90">
-                    <Entry x:Name="CorreoAsociar" Placeholder="Ingrese un Correo" VerticalTextAlignment="Start" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center"
-                       FontSize="Body" BackgroundColor="Azure" Keyboard="Email"/>
+                    <control:StanndardEntry
+                        x:Name="CorreoAsociar" 
+                        BackgroundColor="#31FFFFFF" 
+                        BorderColor="White"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        TextColor="White"
+                        HeightRequest="42"
+                        PlaceholderColor="#ededed"
+                        Placeholder="Ingrese un Correo" 
+                        HorizontalOptions="Center" 
+                        WidthRequest="400" 
+                        HorizontalTextAlignment="Center"
+                        VerticalTextAlignment="Center"
+                        Keyboard="Email"/>
                     <Button
                         ImageSource="asociar.png"
                         Padding="50,10,50,50"
@@ -126,8 +164,21 @@
                 <Label Text="Elimina Vecinos Cercanos para Alertas CASA VECINO" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
 
                 <StackLayout Padding="10,10,10,90">
-                    <Entry x:Name="CorreoDesasociar" Placeholder="Ingrese un Correo" VerticalTextAlignment="Center" HorizontalOptions="Center" WidthRequest="400" HorizontalTextAlignment="Center"
-                       FontSize="Body" BackgroundColor="Azure" Keyboard="Email"/>
+                    <control:StanndardEntry 
+                        x:Name="CorreoDesasociar" 
+                        BackgroundColor="#31FFFFFF" 
+                        BorderColor="White"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        TextColor="White"
+                        HeightRequest="42"
+                        PlaceholderColor="#ededed"
+                        Placeholder="Ingrese un Correo" 
+                        VerticalTextAlignment="Center" 
+                        HorizontalOptions="Center"
+                        WidthRequest="400" 
+                        HorizontalTextAlignment="Center"
+                        Keyboard="Email"/>
                     <Button
                         ImageSource="desasociar.png"
                         Padding="50,10,50,50"
