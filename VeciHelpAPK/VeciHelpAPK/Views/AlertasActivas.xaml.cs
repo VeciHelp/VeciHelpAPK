@@ -35,6 +35,7 @@ namespace VeciHelpAPK.Views
             var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
 
             var response = await endPoint.AlertasActivas(idUsuario);
+            
 
             if (response == null)
             {

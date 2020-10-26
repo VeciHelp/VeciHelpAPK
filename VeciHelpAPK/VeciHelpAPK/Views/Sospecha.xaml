@@ -49,10 +49,10 @@
                     BackgroundColor="#25954e"
                     Text="ENVIAR"
                     TextColor="White"
-                    FontSize="Title"
+                    FontSize="20"
                     FontAttributes="Bold"
                     HeightRequest = "80"
-                    CornerRadius="25"
+                    CornerRadius="20"
                     Clicked="ButtonEnviar_Clicked"
                     />
                 </StackLayout>

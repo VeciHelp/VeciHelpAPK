@@ -12,15 +12,14 @@
         <ScrollView>
             <StackLayout>
             <StackLayout Padding="30">
-                <StackLayout Padding="10,50">
-                    <Image x:Name="ladronImage" Opacity="100" Source="ladron.png"
+                <StackLayout Padding="10">
+                    <Image x:Name="ladronImage" Source="ladron.png"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"
-                       WidthRequest="180"
-                       HeightRequest="160"
+                       WidthRequest="100"
                        />
                 </StackLayout>
-                <StackLayout x:Name="sl" Padding="10,20,10,10" VerticalOptions="CenterAndExpand">
+                <StackLayout x:Name="sl" Padding="10,20" VerticalOptions="CenterAndExpand">
                 </StackLayout>
             </StackLayout>
             </StackLayout>

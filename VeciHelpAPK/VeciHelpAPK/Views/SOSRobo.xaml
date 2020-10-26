@@ -18,7 +18,7 @@
         <StackLayout>
 
             <StackLayout Padding="10,60">
-                <Image x:Name="ladronImage" Opacity="100" Source="ladron.png"
+                <Image x:Name="ladronImage" Source="ladron.png"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="CenterAndExpand"
                    WidthRequest="180"
@@ -34,7 +34,7 @@
                     FontSize="Title"
                     FontAttributes="Bold"
                     HeightRequest = "80"
-                    CornerRadius="25"
+                    CornerRadius="20"
                     Clicked="ButtonPropia_Clicked"
                     />
             
@@ -43,10 +43,10 @@
                     BackgroundColor="white"
                     Text="CASA VECINO"
                     TextColor="#1d83d4"
-                    FontSize="Title"
+                    FontSize="20"
                     FontAttributes="Bold"
                     HeightRequest = "80"
-                    CornerRadius="25"
+                    CornerRadius="20"
                     
                     Clicked="ButtonVecino_Clicked"
                     />

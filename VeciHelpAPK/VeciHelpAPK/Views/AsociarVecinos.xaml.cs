@@ -23,13 +23,13 @@ namespace VeciHelpAPK.Views
 
         public Usuario usr;
         public List<Usuario> usrLst;
+        public string nombreUsuario;
 
         public AsociarVecinos(Usuario usrIn,List<Usuario> lst,int tipo)
         {
             this.usrLst = lst;
             this.usr = usrIn;
 
-            //Nombre.Text = usr.nombre + "" + usr.apellido;
 
             InitializeComponent();
 
@@ -49,6 +49,7 @@ namespace VeciHelpAPK.Views
         private void cargarVecinosLabel()
         {
             Nombre.Text = usr.nombre+" "+usr.apellido;
+            
 
                 foreach (var item in usrLst)
                 {
@@ -64,7 +65,8 @@ namespace VeciHelpAPK.Views
         private void cargarVecinosButton()
         {
             ButtonAsociarVecino.IsVisible = false;
-            
+            Nombre.Text = usr.nombre + " " + usr.apellido;
+
             if (usrLst.Count > 0)
             {
                 foreach (var item in usrLst)
@@ -84,6 +86,7 @@ namespace VeciHelpAPK.Views
 
         private async void ButtonDesasociarVecino_Clicked(object sender, EventArgs e)
         {
+            Nombre.Text = usr.nombre + " " + usr.apellido;
             try
             {
                 var button = (Button)sender;
@@ -109,6 +112,8 @@ namespace VeciHelpAPK.Views
                         var response = await endPoint.EliminarAsociacion(asociacion);
 
                         await DisplayAlert("Atención", response, "Aceptar");
+                        
+                        
                 }
             }
             catch (Exception ex)

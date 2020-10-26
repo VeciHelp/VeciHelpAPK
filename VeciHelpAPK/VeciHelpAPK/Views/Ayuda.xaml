@@ -33,10 +33,10 @@
                     BackgroundColor="#1d83d4"
                     Text="CASA PROPIA"
                     TextColor="White"
-                    FontSize="Title"
+                    FontSize="20"
                     FontAttributes="Bold"
                     HeightRequest = "80"
-                    CornerRadius="25"
+                    CornerRadius="20"
                 Clicked="ButtonPropia_Clicked"
                     />
 
@@ -46,10 +46,10 @@
                     BackgroundColor="#c0c0c0"
                     Text="CASA VECINO"
                     TextColor="White"
-                    FontSize="Title"
+                    FontSize="20"
                     FontAttributes="Bold"
                     HeightRequest = "80"
-                    CornerRadius="25"
+                    CornerRadius="20"
                 Clicked="ButtonVecino_Clicked"
                     />
             </StackLayout>
