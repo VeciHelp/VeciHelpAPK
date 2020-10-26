@@ -18,7 +18,7 @@
     <ContentPage.Content BackgroundColor="#242525">
        
             <StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#242525" >
-
+               
             <Label x:Name="LabelAlertasActivas"/>
             <StackLayout>
                 <ScrollView >

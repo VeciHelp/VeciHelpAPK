@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:VeciHelpAPK.Models"
+             xmlns:local="clr-namespace:VeciHelpAPK.Models" xmlns:control="clr-namespace:VeciHelpAPK.Controls"
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.LoginView"
              BackgroundColor="#242525">
@@ -30,8 +30,34 @@
             
 
             <StackLayout WidthRequest="300" Padding="20">
-                <Entry  x:Name="correo" Keyboard="Email" Placeholder="Correo" BackgroundColor="Azure" HorizontalTextAlignment="Center" ReturnType="Next"/>
-                <Entry  x:Name="clave" Placeholder="Ingrese su Contraseña" BackgroundColor="Azure" HorizontalTextAlignment="Center" IsPassword="True" ReturnType="Done"/>
+                <control:StanndardEntry
+                    x:Name="correo" 
+                    Keyboard="Email" 
+                    Placeholder="Correo" 
+                    BackgroundColor="#31FFFFFF" 
+                    BorderColor="White"
+                    BorderThickness="1"
+                    CornerRadius="8"
+                    TextColor="White"
+                    HeightRequest="42"
+                    PlaceholderColor="#ededed"
+                    HorizontalTextAlignment="Center"
+                    VerticalTextAlignment="Center"
+                    ReturnType="Next"/>
+                <control:StanndardEntry
+                    x:Name="clave"
+                        BackgroundColor="#31FFFFFF" 
+                        BorderColor="White"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        PlaceholderColor="#ededed"
+                        TextColor="White"
+                        HeightRequest="42"
+                        Placeholder="Ingrese su Contraseña"
+                        HorizontalTextAlignment="Center" 
+                        VerticalTextAlignment="Center"
+                        IsPassword="True" 
+                        ReturnType="Done"/>
             </StackLayout>
 
             <StackLayout WidthRequest="300" Padding="20,2,20,20">

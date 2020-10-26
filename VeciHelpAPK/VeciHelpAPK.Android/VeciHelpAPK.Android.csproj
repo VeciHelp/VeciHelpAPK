@@ -79,6 +79,7 @@
     <Compile Include="AndroidNotificationManager.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MyFirebaseMessagingService.cs" />
+    <Compile Include="Renderers\StandardEntryRenderers.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
