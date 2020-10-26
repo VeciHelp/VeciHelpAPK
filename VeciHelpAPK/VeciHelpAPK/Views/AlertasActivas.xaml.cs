@@ -79,9 +79,6 @@ namespace VeciHelpAPK.Views
                     btnAlertas.FontSize = 17;
 
                     StackAlertas.Children.Add(btnAlertas);
-                
-
-                
             }
         }
 
@@ -91,7 +88,7 @@ namespace VeciHelpAPK.Views
 
             var alert = (Alerta)button.CommandParameter;
 
-            await Navigation.PushAsync(new NotificacionView(alert));
+            await Navigation.PushAsync(new NotificacionView(alert.idAlerta));
             
         }
     }

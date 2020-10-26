@@ -98,5 +98,10 @@ namespace VeciHelpAPK.Views
                 return BitConverter.ToString(sha256.ComputeHash(Encoding.UTF8.GetBytes(clave))).Replace("-", "");
             }
         }
+
+        private async void buttonRecuperar_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new RecuperarClave());
+        }
     }
 }

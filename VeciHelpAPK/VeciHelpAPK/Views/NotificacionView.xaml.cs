@@ -15,12 +15,11 @@ namespace VeciHelpAPK.Views
     {
         public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
         Alerta alerta = new Alerta();
-        public NotificacionView(Alerta alert)
+        public NotificacionView(int idAlerta)
         {
-            this.alerta = alert;
             InitializeComponent();
             LblDetalle.IsVisible = false;
-            ActualizarAlerta();
+            ActualizarAlerta(idAlerta);
         }
 
         private async void ButtonAcudir_Clicked(object sender, EventArgs e)
@@ -49,13 +48,12 @@ namespace VeciHelpAPK.Views
                 //await DisplayAlert("Atención", response, "Aceptar");
             }
 
-            ActualizarAlerta();
+            ActualizarAlerta(alerta.idAlerta);
         }
-        private async void ActualizarAlerta()
+        private async void ActualizarAlerta(int idAlerta)
         {
             var IdUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
             var token = Preferences.Get("Ses_token", null);
-            var idAlerta = alerta.idAlerta;
 
             var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
 

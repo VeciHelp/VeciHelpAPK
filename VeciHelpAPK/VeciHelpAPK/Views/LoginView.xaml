@@ -60,6 +60,8 @@
 
                 <Button  
                     Text="Olvidó su contraseña?"
+                    x:Name="buttonRecuperar"
+                    Clicked="buttonRecuperar_Clicked"
                         TextColor="#d92027"
                         BackgroundColor="#00000"
                         FontSize="Small"/>

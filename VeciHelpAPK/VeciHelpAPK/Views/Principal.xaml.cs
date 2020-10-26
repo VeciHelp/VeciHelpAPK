@@ -33,8 +33,7 @@ namespace VeciHelpAPK.Views
             lblAdministrador.IsEnabled = false;
             user = usr;
 
-            var rolename = Preferences.Get("Ses_rolename",null);
-            if (rolename=="Administrador")
+            if (user.rolename=="Administrador")
             {
                 ButtonAdministrador.IsEnabled = true;
                 ButtonAdministrador.IsVisible = true;
@@ -76,7 +75,7 @@ namespace VeciHelpAPK.Views
 
         private async void ButtonActualizarDatos_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Crear_Usuario(user));
+            await Navigation.PushAsync(new Crear_Usuario(user.id_Usuario));
         }
 
         private async void ButtonActualizarClave_Clicked(object sender, EventArgs e)

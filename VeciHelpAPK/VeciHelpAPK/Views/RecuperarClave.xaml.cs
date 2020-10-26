@@ -27,13 +27,9 @@ namespace VeciHelpAPK.Views
 
                 var response = await endPoint.RecuperarClave(txtCorreo.Text);
 
-                if (response == "Exito")
-                {
+             
                     await DisplayAlert("Atención", response, "Aceptar");
                     await Navigation.PopAsync();
-                }
-                else
-                    await DisplayAlert("Atención", response, "Aceptar");
             }
             else
                 await DisplayAlert("Atención", "Contraseñas no coinciden", "Aceptar");

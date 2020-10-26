@@ -50,11 +50,10 @@ namespace VeciHelpAPK.Views
                 }
                 else
                 {
-                    //var jsonfoto = JsonConvert.SerializeObject(foto);
+                    //envio por aca, cuando se carga con foto
                     var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, foto);
 
                     
-
                     await DisplayAlert("Atención", respuesta, "Aceptar");
                 }
             }
