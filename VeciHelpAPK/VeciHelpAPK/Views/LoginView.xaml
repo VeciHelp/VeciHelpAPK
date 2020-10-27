@@ -72,7 +72,6 @@
                             Clicked="ButtonLogin_Clicked"/>     
 
 
-
                 <Button x:Name="ButtonRegistrarse"
                     Text="Registrarse"
                         TextColor="#ffcd3c"
@@ -81,8 +80,6 @@
                         Clicked="ButtonRegistrate_Clicked"
                         FontAttributes="Bold"
                         />
-
-
 
                 <Button  
                     Text="Olvidó su contraseña?"

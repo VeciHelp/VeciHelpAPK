@@ -97,10 +97,7 @@
                             Clicked="ButtonSospecha_Clicked"
                             />
 
-                        
-
-
-
+                       
                     </StackLayout>
                 </StackLayout>
             </StackLayout>

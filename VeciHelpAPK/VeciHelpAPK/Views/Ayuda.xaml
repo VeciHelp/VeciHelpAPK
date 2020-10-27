@@ -43,9 +43,9 @@
             <Button
                 x:Name="ButtonVecino"
                     VerticalOptions="Center"
-                    BackgroundColor="#c0c0c0"
+                    BackgroundColor="White"
                     Text="CASA VECINO"
-                    TextColor="White"
+                    TextColor="#1d83d4"
                     FontSize="20"
                     FontAttributes="Bold"
                     HeightRequest = "80"

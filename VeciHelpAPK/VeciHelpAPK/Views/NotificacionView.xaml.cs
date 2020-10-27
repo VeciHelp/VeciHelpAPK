@@ -15,6 +15,7 @@ namespace VeciHelpAPK.Views
     {
         public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
         Alerta alerta = new Alerta();
+        
         public NotificacionView(int idAlerta)
         {
             InitializeComponent();
@@ -33,17 +34,20 @@ namespace VeciHelpAPK.Views
             aler.idUsuario = IdUsuario;
             aler.idAlerta = alerta.idAlerta;
 
-
-
+            DisplayAlert("Atencion", "Su participacion se representa con un ticket en el listado de alertas", "Aceptar");
+            
+            
             if(alerta.opcionBoton == "Finalizar")
             {
                 var response = await endPoint.FinalizarAlerta(aler);
                 await DisplayAlert("Atención", response, "Aceptar");
                 await Navigation.PopAsync();
+                GlobalClass.varGlobal = false;
             }
             else if(alerta.opcionBoton == "Acudir")
             {
                 var response = await endPoint.AcudirAlerta(aler);
+                GlobalClass.varGlobal = true;
 
                 //await DisplayAlert("Atención", response, "Aceptar");
             }

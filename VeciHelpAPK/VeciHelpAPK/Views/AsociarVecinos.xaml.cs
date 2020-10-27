@@ -148,7 +148,7 @@ namespace VeciHelpAPK.Views
                     //rescato el id del administrador desde la variable guardada en el login
                     var idAdministrador = int.Parse(Preferences.Get("Ses_id_Usuario", null));
                      //usrLst = response;
-                     await Navigation.PushAsync(new ListadoComunidad(usrlista, usr.id_Usuario, idAdministrador));
+                     await Navigation.PushAsync(new ListadoComunidad(usrlista, usr.id_Usuario,usr.nombre+" "+usr.apellido , idAdministrador));
 
                 }
                 else if (response.StatusCode == HttpStatusCode.NotFound)

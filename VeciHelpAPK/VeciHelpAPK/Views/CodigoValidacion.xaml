@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:control="clr-namespace:VeciHelpAPK.Controls"
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.CodigoValidacion"
              Title="VERIFICACION"
@@ -22,14 +22,35 @@
             </StackLayout>
 
             <StackLayout Padding="20">
-                <Entry x:Name="correo" Placeholder="Correo Electronico" HorizontalOptions="Center" 
-                       WidthRequest="400" Keyboard="Email" BackgroundColor="White" HorizontalTextAlignment="Center"/>
-                <Entry x:Name="codigoVerificacion" Placeholder="Codigo de Verificacion" HorizontalOptions="Center"
-                       WidthRequest="400" BackgroundColor="White" HorizontalTextAlignment="Center"/>
+                <control:StanndardEntry x:Name="correo" Placeholder="Correo Electronico" HorizontalOptions="Center" 
+                       WidthRequest="400" Keyboard="Email"  HorizontalTextAlignment="Center"
+                        BackgroundColor="#31FFFFFF" 
+                        BorderColor="White"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                        PlaceholderColor="#ededed"
+                        TextColor="White"
+                        HeightRequest="42" />
+                <control:StanndardEntry x:Name="codigoVerificacion" Placeholder="Codigo de Verificacion" HorizontalOptions="Center"
+                       WidthRequest="400" 
+                       HorizontalTextAlignment="Center"
+                        BackgroundColor="#31FFFFFF" 
+                        BorderColor="White"
+                        BorderThickness="1"
+                        CornerRadius="8"
+                                        
+                        PlaceholderColor="#ededed"
+                        TextColor="White"
+                        HeightRequest="42" />
             </StackLayout>
             
             <Button x:Name="ButtonValidar" Clicked="ButtonValidar_Clicked" Text="Verificar Datos"
-                    BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" Padding="10" FontAttributes="Bold" />
+                    BackgroundColor="#2FBB62" TextColor="White"
+                    CornerRadius="20" 
+                    Padding="10" 
+                    HeightRequest="80"
+                    FontSize="20"
+                    FontAttributes="Bold" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

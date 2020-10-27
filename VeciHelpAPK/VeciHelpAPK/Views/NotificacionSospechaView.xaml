@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="VeciHelpAPK.Views.NotificacionSospechaView">
+             x:Class="VeciHelpAPK.Views.NotificacionSospechaView"
+             BackgroundColor="#242525">
     <ContentPage.ToolbarItems>
         <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
     </ContentPage.ToolbarItems>
@@ -9,24 +10,22 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="30">
-                <Label x:Name="LblTipoAlerta" Text="TIPO ALERTA"
+                <Label x:Name="LblTipoAlerta"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"
                    TextColor="White"
                    FontSize="Title"/>
 
                 <StackLayout Orientation="Vertical" Padding="30">
-                    <Frame CornerRadius="100" IsClippedToBounds="true" Padding="0" Margin="0" BackgroundColor="#00000" >
                         <Image x:Name="FotoPerfil" Source="profile.png"
                        WidthRequest="150"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="CenterAndExpand"
                        />
-                    </Frame>
                     <StackLayout HorizontalOptions="CenterAndExpand">
-                        <Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-                        <Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
-                        <Label x:Name="LblHoraAlerta" Text="Hora" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="StartAndExpand"/>
+                        <Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                        <Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                        <Label x:Name="LblHoraAlerta" Text="Hora" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Orientation="Vertical">
