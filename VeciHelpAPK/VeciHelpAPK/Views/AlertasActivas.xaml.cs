@@ -13,6 +13,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using VeciHelpAPK.Views;
+using Xamarin.Forms.Markup;
 
 namespace VeciHelpAPK.Views
 {
@@ -52,8 +53,8 @@ namespace VeciHelpAPK.Views
             foreach (var item in response)
             {
                 Button btnAlertas = new Button();
-               
-                    if (item.TipoAlerta == "SOS")
+
+                if (item.TipoAlerta == "SOS")
                     {
                         btnAlertas.BackgroundColor = Color.FromHex("#d92027");
                         btnAlertas.TextColor = Color.White;
@@ -70,8 +71,13 @@ namespace VeciHelpAPK.Views
 
                 }
                 Image acudarImage = new Image();
-                
-                btnAlertas.Text = item.TipoAlerta.ToUpper() + " " + item.horaAlerta.ToString("HH:mm") + "\n " + item.direccion + "\n " + item.nombreAyuda + " " + 
+
+                if (item.opcionBoton == "Finalizar")
+                {
+                    btnAlertas.ImageSource = "accept.png";
+                   
+                }
+                    btnAlertas.Text =  item.TipoAlerta.ToUpper() + " " + item.horaAlerta.ToString("HH:mm") + "\n " + item.direccion + "\n " + item.nombreAyuda + " " + 
                     item.apellidoAyuda;
                     btnAlertas.ClassId = item.idAlerta.ToString();
                     btnAlertas.CornerRadius = 25;
@@ -79,11 +85,11 @@ namespace VeciHelpAPK.Views
                     btnAlertas.CommandParameter = item;
                     //btnAlertas.TextColor = Color.White;
                     btnAlertas.FontSize = 17;
-                    if (item.opcionBoton == "Finalizar")
-                        {
-                            btnAlertas.ImageSource = "aceptar.png";
-                        }
+
                     
+
+                Button botonExtra = new Button();
+                botonExtra.Opacity = 0;
 
                     StackAlertas.Children.Add(btnAlertas);
                     
@@ -96,11 +102,20 @@ namespace VeciHelpAPK.Views
 
             var alert = (Alerta)button.CommandParameter;
 
-            
+            if(alert.TipoAlerta == "Sospecha" )
+            {
+                await Navigation.PushAsync(new NotificacionSospechaView(alert.idAlerta));
+            }
+            else
+            {
                 await Navigation.PushAsync(new NotificacionView(alert.idAlerta));
-            
+            }
 
-            
+
+
+
+
+
         }
     }
 }

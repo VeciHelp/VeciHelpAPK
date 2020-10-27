@@ -15,15 +15,17 @@ namespace VeciHelpAPK.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NotificacionSospechaView : ContentPage
     {
+
         public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
         Alerta alerta = new Alerta();
-        public NotificacionSospechaView(Alerta alert)
+
+        public NotificacionSospechaView(int idAlerta)
         {
-            this.alerta = alert;
             InitializeComponent();
             LblDetalle.IsVisible = false;
-            ActualizarAlerta();
+            ActualizarAlerta(idAlerta);
         }
+
         private async void ButtonAcudir_Clicked(object sender, EventArgs e)
         {
             var IdUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
@@ -36,28 +38,27 @@ namespace VeciHelpAPK.Views
             aler.idAlerta = alerta.idAlerta;
 
 
-
             if (alerta.opcionBoton == "Finalizar")
             {
                 var response = await endPoint.FinalizarAlerta(aler);
-                await DisplayAlert("v", response, "Aceptar");
+                await DisplayAlert("Atención", response, "Aceptar");
                 await Navigation.PopAsync();
+                GlobalClass.varGlobal = false;
             }
             else if (alerta.opcionBoton == "Acudir")
             {
                 var response = await endPoint.AcudirAlerta(aler);
+                GlobalClass.varGlobal = true;
 
-                await DisplayAlert("Atención", response, "Aceptar");
+                //await DisplayAlert("Atención", response, "Aceptar");
             }
 
-            ActualizarAlerta();
+            ActualizarAlerta(alerta.idAlerta);
         }
-
-        private async void ActualizarAlerta()
+        private async void ActualizarAlerta(int idAlerta)
         {
             var IdUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
             var token = Preferences.Get("Ses_token", null);
-            var idAlerta = alerta.idAlerta;
 
             var endPoint = RestService.For<IAlertas>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
 
@@ -75,25 +76,27 @@ namespace VeciHelpAPK.Views
                 LblDetalle.IsVisible = true;
                 LblDetalle.Text = alerta.coordenadaSospecha;
             }
-            LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda;
-            LblDireccion.Text = alerta.direccion;
-            LblTipoAlerta.Text = alerta.TipoAlerta;
+            LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda + "\n\n" + alerta.direccion;
+
+            //LblDireccion.Text = alerta.direccion;
+            LblTipoAlerta.Text = alerta.TipoAlerta.ToUpper();
+
 
 
             if (LblTipoAlerta.Text == "SOS")
             {
                 LblTipoAlerta.TextColor = Color.FromHex("#d92027");
             }
-            else if (LblTipoAlerta.Text == "Emergencia")
+            else if (LblTipoAlerta.Text == "EMERGENCIA")
             {
                 LblTipoAlerta.TextColor = Color.FromHex("#ffcd3c");
             }
-            else if (LblTipoAlerta.Text == "Sospecha")
+            else if (LblTipoAlerta.Text == "SOSPECHA")
             {
                 LblTipoAlerta.TextColor = Color.FromHex("#2FBB62");
             }
 
-            LblHoraAlerta.Text = alerta.horaAlerta.ToString("HH:mm");
+            LblHoraAlerta.Text = "Generada a las " + alerta.horaAlerta.ToString("HH:mm");
             LblContadorPersonas.Text = alerta.participantes.ToString();
 
             FotoPerfil.Source = Xamarin.Forms.ImageSource.FromStream(
@@ -114,8 +117,6 @@ namespace VeciHelpAPK.Views
             }
 
         }
-
-
 
 
     }

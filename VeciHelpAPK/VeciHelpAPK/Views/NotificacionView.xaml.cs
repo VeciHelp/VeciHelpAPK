@@ -33,6 +33,8 @@ namespace VeciHelpAPK.Views
 
             aler.idUsuario = IdUsuario;
             aler.idAlerta = alerta.idAlerta;
+
+            DisplayAlert("Atencion", "Su participacion se representa con un ticket en el listado de alertas", "Aceptar");
             
             
             if(alerta.opcionBoton == "Finalizar")

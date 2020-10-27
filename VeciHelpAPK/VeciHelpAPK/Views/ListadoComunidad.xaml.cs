@@ -23,6 +23,7 @@ namespace VeciHelpAPK.Views
         public List<Usuario> usrLst;
         public int idUsr;
         public int idAdmin;
+        public string nombreUsuario;
 
         public ListadoComunidad()
         {
@@ -30,20 +31,22 @@ namespace VeciHelpAPK.Views
             
         }
 
-        public ListadoComunidad(List<Usuario> lst,int idUsuario, int idAdministrador)
+        public ListadoComunidad(List<Usuario> lst,int idUsuario,string nombreUsuario, int idAdministrador)
         {
             this.usrLst = lst;
             this.idUsr = idUsuario;
             this.idAdmin = idAdministrador;
+            this.nombreUsuario = nombreUsuario;
            
             InitializeComponent();
+            Nombre.Text = nombreUsuario;
             cargarVecinos();
+            
         }
 
         private void cargarVecinos()
         {
             
-
             foreach (var item in usrLst)
             {
                 Button btnCliente = new Button();

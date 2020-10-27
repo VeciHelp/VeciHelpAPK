@@ -87,9 +87,13 @@
                         TextColor="White"
                         HeightRequest="42" />
 
-                        <DatePicker x:Name="DPFechaNacimiento" WidthRequest="400" Format="dd/MMMM/yyyy"
-                                    DateSelected="DPFechaNacimiento_DateSelected" HorizontalOptions="CenterAndExpand" 
-                                    BackgroundColor="#31FFFFFF" />
+                        <DatePicker x:Name="DPFechaNacimiento"
+                                    WidthRequest="400" 
+                                    Format="dd/MMMM/yyyy"
+                                    DateSelected="DPFechaNacimiento_DateSelected" 
+                                    HorizontalOptions="CenterAndExpand" 
+                                    BackgroundColor="#31FFFFFF"  
+                                    TextColor="White"/>
 
                             <control:StanndardEntry x:Name="celular" Placeholder="Telefono" WidthRequest="400" HorizontalOptions="Center"
                                ReturnType="Next" Keyboard="Telephone" BackgroundColor="#31FFFFFF" 
