@@ -12,6 +12,7 @@ using VeciHelpAPK.Security;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using VeciHelpAPK.Views;
 
 namespace VeciHelpAPK.Views
 {
@@ -68,6 +69,7 @@ namespace VeciHelpAPK.Views
                         btnAlertas.TextColor = Color.White;
 
                 }
+                Image acudarImage = new Image();
                 
                 btnAlertas.Text = item.TipoAlerta.ToUpper() + " " + item.horaAlerta.ToString("HH:mm") + "\n " + item.direccion + "\n " + item.nombreAyuda + " " + 
                     item.apellidoAyuda;
@@ -77,8 +79,14 @@ namespace VeciHelpAPK.Views
                     btnAlertas.CommandParameter = item;
                     //btnAlertas.TextColor = Color.White;
                     btnAlertas.FontSize = 17;
+                    if (item.opcionBoton == "Finalizar")
+                        {
+                            btnAlertas.ImageSource = "aceptar.png";
+                        }
+                    
 
                     StackAlertas.Children.Add(btnAlertas);
+                    
             }
         }
 
@@ -88,7 +96,10 @@ namespace VeciHelpAPK.Views
 
             var alert = (Alerta)button.CommandParameter;
 
-            await Navigation.PushAsync(new NotificacionView(alert.idAlerta));
+            
+                await Navigation.PushAsync(new NotificacionView(alert.idAlerta));
+            
+
             
         }
     }

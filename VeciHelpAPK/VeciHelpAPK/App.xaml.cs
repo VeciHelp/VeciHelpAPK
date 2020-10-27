@@ -5,11 +5,14 @@ namespace VeciHelpAPK
 {
     public partial class App : Application
     {
+        public static bool _variableGlobal { get; set; }
+
         public App()
         {
             InitializeComponent();
 
             MainPage = new NavigationPage(new LoginView());
+
         }
 
         protected override void OnStart()
