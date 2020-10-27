@@ -2,32 +2,53 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:control="clr-namespace:VeciHelpAPK.Controls"
              mc:Ignorable="d"
-             x:Class="VeciHelpAPK.Views.RecuperarClave">
+             x:Class="VeciHelpAPK.Views.RecuperarClave"
+             Title="RECUPERAR CLAVE"
+             BackgroundColor="#242525">
     <ContentPage.Content>
         <StackLayout Padding ="30" >
-            <StackLayout >
-                <Label Text="Ingrese su correo para recuperar su contraseña"
-                VerticalOptions="CenterAndExpand" 
+            <StackLayout Padding="10">
+                <Label Text="Ingrese su correo e inicie sesion con la clave enviada"
+                VerticalOptions="StartAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
-                       HorizontalTextAlignment="Center"
-                   FontSize="Medium"
-                   WidthRequest="160"
-                   HeightRequest="80"
-                   TextColor="White"
-                   BackgroundColor="#00000"
-                   FontAttributes="Bold"
+                HorizontalTextAlignment="Center"
+                FontSize="Large"
+                TextColor="White"
+                BackgroundColor="#00000"
+                FontAttributes="Bold"
                    />
             </StackLayout>
 
-            <StackLayout Padding="20">
-                <Entry x:Name="txtCorreo" Placeholder="Correo Electronico" HorizontalOptions="Center" 
-                       WidthRequest="400" Keyboard="Email" BackgroundColor="White"/>
+            <StackLayout Padding="30,160,30,10">
+                <control:StanndardEntry x:Name="txtCorreo" 
+                                        Placeholder="Correo Electronico"
+                                        HorizontalOptions="CenterAndExpand"
+                                        HorizontalTextAlignment="Center"
+                                        WidthRequest="400" 
+                                        Keyboard="Email"
+                                        BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        TextColor="White"
+                                        HeightRequest="42"
+                                        PlaceholderColor="#ededed"
+                                        />        
             </StackLayout>
 
-            <Button x:Name="ButtonRecuperar" Clicked="ButtonRecuperar_Clicked" Text="Recuperar"
-                    BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" Padding="10" FontAttributes="Bold" />
+            <StackLayout Padding="30">
+                <Button x:Name="ButtonRecuperar" 
+                    Clicked="ButtonRecuperar_Clicked" 
+                    Text="Recuperar"
+                    BackgroundColor="#2FBB62" 
+                    TextColor="White"
+                    CornerRadius="22"
+                    FontSize="20"
+                    HeightRequest="80"
+                    FontAttributes="Bold" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

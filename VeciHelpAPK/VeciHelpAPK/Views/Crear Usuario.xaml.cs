@@ -16,6 +16,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+
 namespace VeciHelpAPK.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
@@ -110,8 +111,48 @@ namespace VeciHelpAPK.Views
             usr.fechaNacimiento = DPFechaNacimiento.Date;
         }
 
+
+        public class NumericValidationBehavior : Behavior<Entry>
+        {
+
+            protected override void OnAttachedTo(Entry entry)
+            {
+                entry.TextChanged += OnEntryTextChanged;
+                base.OnAttachedTo(entry);
+            }
+
+            protected override void OnDetachingFrom(Entry entry)
+            {
+                entry.TextChanged -= OnEntryTextChanged;
+                base.OnDetachingFrom(entry);
+            }
+
+            private static void OnEntryTextChanged(object sender, TextChangedEventArgs args)
+            {
+
+                if (!string.IsNullOrWhiteSpace(args.NewTextValue))
+                {
+                    bool isValid = args.NewTextValue.ToCharArray().All(x => char.IsDigit(x)); //Make sure all characters are numbers
+
+                    ((Entry)sender).Text = isValid ? args.NewTextValue : args.NewTextValue.Remove(args.NewTextValue.Length - 1);
+                }
+            }
+
+
+        }
+
+
+
+
+
+
+
+
+
         public void asignarDatos()
         {
+  
+
             usr.nombre = nombre.Text;
             usr.apellido = apellido.Text;
             usr.correo = correo.Text;

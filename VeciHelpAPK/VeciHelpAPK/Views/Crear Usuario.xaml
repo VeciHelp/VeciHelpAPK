@@ -3,11 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:VeciHelpAPK.Models" xmlns:control="clr-namespace:VeciHelpAPK.Controls"
+             xmlns:local="clr-namespace:VeciHelpAPK.Models" xmlns:control="clr-namespace:VeciHelpAPK.Controls" 
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.Crear_Usuario"
              Title="MIS DATOS"
-             BackgroundColor=" #242525">
+             BackgroundColor=" #242525"
+             >
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="30" Orientation="Vertical" HorizontalOptions="Center">
@@ -42,8 +44,7 @@
                         PlaceholderColor="#ededed"
                         TextColor="White"
                         HeightRequest="42" ReturnType="Next" />
-                            <control:StanndardEntry x:Name="nombre" Placeholder="Nombre" WidthRequest="400" HorizontalOptions="Center" 
-                        BackgroundColor="#31FFFFFF" 
+                            <control:StanndardEntry x:Name="nombre" Placeholder="Nombre" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
                         BorderThickness="1"
                         CornerRadius="8"
@@ -60,23 +61,27 @@
                         HeightRequest="42"
                                ReturnType="Next"/>
                         <StackLayout Orientation="Horizontal">
-                                <control:StanndardEntry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="270" Keyboard="Numeric" 
+                            <control:StanndardEntry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="270" Keyboard="Numeric" 
                                    ReturnType="Next" BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
                         BorderThickness="1"
                         CornerRadius="8"
                         PlaceholderColor="#ededed"
                         TextColor="White"
-                        HeightRequest="42"/>
-                                <control:StanndardEntry x:Name="digito" Placeholder="DV" HorizontalOptions="Center" 
-                                   WidthRequest="55" BackgroundColor="#31FFFFFF" 
-                        BorderColor="White"
-                        BorderThickness="1"
-                        CornerRadius="8"
-                        PlaceholderColor="#ededed"
-                        TextColor="White"
-                        HeightRequest="42" ReturnType="Next" 
-                                   HorizontalTextAlignment="Center"/>
+                        HeightRequest="42" />
+
+                            <control:StanndardEntry x:Name="digito" 
+                                                Placeholder="DV"
+                                                HorizontalOptions="Center" 
+                                                WidthRequest="55" 
+                                                BackgroundColor="#31FFFFFF" 
+                                                BorderColor="White"
+                                                BorderThickness="1"
+                                                CornerRadius="8"
+                                                PlaceholderColor="#ededed"
+                                                TextColor="White"
+                                                HeightRequest="42" ReturnType="Next" 
+                                                HorizontalTextAlignment="Center"/>
                         </StackLayout>
                             <control:StanndardEntry x:Name="AntecedentesSalud" WidthRequest="400" Placeholder="Antecedendes Salud" HorizontalOptions="Center" 
                                ReturnType="Next" BackgroundColor="#31FFFFFF" 
@@ -87,13 +92,9 @@
                         TextColor="White"
                         HeightRequest="42" />
 
-                        <DatePicker x:Name="DPFechaNacimiento"
-                                    WidthRequest="400" 
-                                    Format="dd/MMMM/yyyy"
-                                    DateSelected="DPFechaNacimiento_DateSelected" 
-                                    HorizontalOptions="CenterAndExpand" 
-                                    BackgroundColor="#31FFFFFF"  
-                                    TextColor="White"/>
+                        <DatePicker x:Name="DPFechaNacimiento" WidthRequest="400" Format="dd/MMMM/yyyy"
+                                    DateSelected="DPFechaNacimiento_DateSelected" HorizontalOptions="CenterAndExpand" 
+                                    BackgroundColor="#31FFFFFF" />
 
                             <control:StanndardEntry x:Name="celular" Placeholder="Telefono" WidthRequest="400" HorizontalOptions="Center"
                                ReturnType="Next" Keyboard="Telephone" BackgroundColor="#31FFFFFF" 
@@ -102,15 +103,17 @@
                         CornerRadius="8"
                         PlaceholderColor="#ededed"
                         TextColor="White"
-                        HeightRequest="42"/>
-                            <control:StanndardEntry x:Name="direccion" Placeholder="Direccion" WidthRequest="400" HorizontalOptions="Center"
-                               ReturnType="Next" BackgroundColor="#31FFFFFF" 
-                        BorderColor="White"
-                        BorderThickness="1"
-                        CornerRadius="8"
-                        PlaceholderColor="#ededed"
-                        TextColor="White"
-                        HeightRequest="42"/>
+                        HeightRequest="42"
+                       
+                        />
+                       <control:StanndardEntry x:Name="direccion" Placeholder="Direccion" WidthRequest="400" HorizontalOptions="Center"
+                                       ReturnType="Next" BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        PlaceholderColor="#ededed"
+                                        TextColor="White"
+                                        HeightRequest="42"/>
                             <control:StanndardEntry  x:Name="clave" Placeholder="Clave" WidthRequest="400"
                                 ReturnType="Next" HorizontalOptions="Center"  IsPassword="True" BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
