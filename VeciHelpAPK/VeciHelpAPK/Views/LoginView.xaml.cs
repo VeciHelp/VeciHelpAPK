@@ -52,10 +52,20 @@ namespace VeciHelpAPK.Views
                     //convierto el contenido de json al objeto usuario
                     usr = JsonConvert.DeserializeObject<Usuario>(jsonString);
 
-                    //guardo los datos del objeto usuario en variables locales de la aplicacion
-                    GuardarDatosSesion(usr);
-                    //redirecciona a la pagina principal
-                    await Navigation.PushAsync(new Principal(usr));
+                    if (usr.existe==1)
+                    {
+                        //guardo los datos del objeto usuario en variables locales de la aplicacion
+                        GuardarDatosSesion(usr);
+                        //redirecciona a la pagina principal
+                        await Navigation.PushAsync(new Principal(usr));
+                    }
+                    else if(usr.existe==2)
+                    {
+                        Preferences.Set("Ses_token", usr.token);
+                        Preferences.Set("Ses_id_Usuario", usr.id_Usuario.ToString());
+                        await DisplayAlert("Atención", "Por seguridad debe actualizar su contraseña", "Aceptar");
+                        await Navigation.PushAsync(new ActualizarClave(clave.Text));
+                    }
                 }
                 else if(response.StatusCode == HttpStatusCode.NotFound)
                 {
@@ -72,17 +82,17 @@ namespace VeciHelpAPK.Views
         {
             Preferences.Set("Ses_token", usr.token);
             Preferences.Set("Ses_id_Usuario", usr.id_Usuario.ToString());
-            Preferences.Set("Ses_correo", usr.correo);
-            Preferences.Set("Ses_nombre", usr.nombre);
-            Preferences.Set("Ses_apellido", usr.apellido);
-            Preferences.Set("Ses_rut", usr.rut);
-            Preferences.Set("Ses_digito", usr.digito);
-            Preferences.Set("Ses_Foto", usr.Foto);
-            Preferences.Set("Ses_antecedentesSalud", usr.antecedentesSalud);
-            Preferences.Set("Ses_fechaNacimiento", usr.fechaNacimiento.ToString());
-            Preferences.Set("Ses_celular", usr.celular);
-            Preferences.Set("Ses_direccion", usr.direccion);
-            Preferences.Set("Ses_numeroEmergencia", usr.numeroEmergencia);
+            //Preferences.Set("Ses_correo", usr.correo);
+            //Preferences.Set("Ses_nombre", usr.nombre);
+            //Preferences.Set("Ses_apellido", usr.apellido);
+            //Preferences.Set("Ses_rut", usr.rut);
+            //Preferences.Set("Ses_digito", usr.digito);
+            //Preferences.Set("Ses_Foto", usr.Foto);
+            //Preferences.Set("Ses_antecedentesSalud", usr.antecedentesSalud);
+            //Preferences.Set("Ses_fechaNacimiento", usr.fechaNacimiento.ToString());
+            //Preferences.Set("Ses_celular", usr.celular);
+            //Preferences.Set("Ses_direccion", usr.direccion);
+            //Preferences.Set("Ses_numeroEmergencia", usr.numeroEmergencia);
             Preferences.Set("Ses_rolename", usr.rolename);
         }
 

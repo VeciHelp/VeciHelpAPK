@@ -13,6 +13,7 @@ using System.Security.Cryptography;
 using System.Net.Http;
 using VeciHelpAPK.Security;
 using System.Net;
+using Android.Content.Res;
 
 namespace VeciHelpAPK.Views
 {
@@ -27,37 +28,51 @@ namespace VeciHelpAPK.Views
             this.user = usr;
         }
 
+        //se esta entrando desde la pantalla de login con una contraseña temporal
+        public ActualizarClave(string clave)
+        {
+            InitializeComponent();
+            txtOldPass.Text = clave;
+        }
+
         private async void ButtonValidar_Clicked(object sender, EventArgs e)
         {
             RequestPass pass = new RequestPass();
-
-            if (txtNewPass.Text == txtNewPass2.Text)
+            if (txtOldPass.Text.Length >= 6 && txtNewPass.Text.Length>=6)
             {
-                pass.id_usuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
-                pass.claveAntigua = Encriptar(txtOldPass.Text);
-
-                //encripto la clave antes de enviarla
-                pass.claveNueva = Encriptar(txtNewPass.Text);
-
-                var token = Preferences.Get("Ses_token", null);
-
-                var endPoint = RestService.For<IUsuario>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
-
-                var response = await endPoint.UpdatePass(pass);
-
-                
-                if (response.StatusCode==HttpStatusCode.OK)
+                if (txtNewPass.Text == txtNewPass2.Text)
                 {
-                    var jsonString = await response.Content.ReadAsStringAsync();
-                    await DisplayAlert("Exito", jsonString, "ok");
-                    //await Navigation.PushAsync(new Principal(user));
-                    await Navigation.PopAsync();
+                    pass.id_usuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
+                    pass.claveAntigua = Encriptar(txtOldPass.Text);
+
+                    //encripto la clave antes de enviarla
+                    pass.claveNueva = Encriptar(txtNewPass.Text);
+
+                    var token = Preferences.Get("Ses_token", null);
+
+                    var endPoint = RestService.For<IUsuario>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
+
+                    var response = await endPoint.UpdatePass(pass);
+
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        var jsonString = await response.Content.ReadAsStringAsync();
+                        await DisplayAlert("Exito", jsonString, "ok");
+
+                        //regreso a la pagina anterior
+                        await Navigation.PopAsync();
+
+                    }
+                    else
+                        await DisplayAlert("Atención", "Hubo un problema", "Aceptar");
                 }
                 else
-                    await DisplayAlert("Atención", "Hubo un problema", "Aceptar");
+                    await DisplayAlert("Atención", "Contraseñas no coinciden", "Aceptar");
             }
             else
-                await DisplayAlert("Atención", "Contraseñas no coinciden", "Aceptar");
+                await DisplayAlert("Atención", "La contraseña debe contener al menos 6 caracteres", "Aceptar");
+
         }
 
         private string Encriptar(string clave)
