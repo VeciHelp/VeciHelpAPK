@@ -75,7 +75,7 @@ namespace VeciHelpAPK.Views
 
         }
 
-        private string Encriptar(string clave)
+        public static string Encriptar(string clave)
         {
                 using (var sha256 = new SHA256Managed())
                 {

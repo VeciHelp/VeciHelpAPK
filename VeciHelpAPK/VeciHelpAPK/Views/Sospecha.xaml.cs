@@ -35,27 +35,17 @@ namespace VeciHelpAPK.Views
             {
                 var idUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
 
-                if (FotoSospecha.Source == null)
+                if (foto == null)
                 {
-
-                    var action = await DisplayAlert("Atención", "Desea enviar la alerta sin foto", "Si", "No");
-
-                    if (action)
-                    {
-                        var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, null);
-
-                        await DisplayAlert("Atención", respuesta, "Aceptar");
-                    }
-
+                    await DisplayAlert("Atención", "Se cargará la alerta sin foto", "Aceptar");
                 }
-                else
-                {
-                    //envio por aca, cuando se carga con foto
-                    var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, foto);
 
-                    
-                    await DisplayAlert("Atención", respuesta, "Aceptar");
-                }
+                //envio por aca, cuando se carga con foto
+                var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, foto);
+
+
+                await DisplayAlert("Atención", respuesta, "Aceptar");
+
             }
             catch (Exception ex)
             {

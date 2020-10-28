@@ -75,7 +75,7 @@ namespace VeciHelpAPK.Views
                         if (action)
                         {
                             var response2 = await endPoint.EliminarUsuario(usr.id_Usuario);
-                            await DisplayAlert("Atención", "Usuario eliminado correctamente", "Aceptar");
+                            await DisplayAlert("Atención",response2, "Aceptar");
                             EliminarCorreo.Text = string.Empty;
                         }
                     }

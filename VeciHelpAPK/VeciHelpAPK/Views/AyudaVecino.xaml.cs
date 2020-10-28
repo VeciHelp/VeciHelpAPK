@@ -54,7 +54,7 @@ namespace VeciHelpAPK.Views
             if (usrLst.Count==0)
             {
                 await DisplayAlert("Atención", "Usuario no posee vecinos enrolados", "Aceptar");
-                await Navigation.PushAsync(new Ayuda());
+                await Navigation.PopAsync();
             }
 
         }

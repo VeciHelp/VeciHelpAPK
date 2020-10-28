@@ -14,23 +14,18 @@
         <ScrollView>
             <StackLayout Padding="30" Orientation="Vertical" HorizontalOptions="Center">
                 
-                <StackLayout>
+                <StackLayout x:Name="LayoutFoto">
                     <Image x:Name="ImagenPerfil" Source="profile.png" WidthRequest="100"/>
                     
                     <StackLayout Orientation="Horizontal" Padding="40,10">
                         <Button x:Name="ButtonAgregarFoto" Clicked="ButtonAgregarFoto_Clicked"
                                 ImageSource="camara.png"
                                 BackgroundColor="#00000"
-                                HorizontalOptions="StartAndExpand"/> 
+                                HorizontalOptions="StartAndExpand"/>
                         <Button x:Name="ButtoncargarFoto"
                                 Clicked="ButtonCargarFoto_Clicked" 
                                 ImageSource="cargarFoto.png" BackgroundColor="#00000"
                                 HorizontalOptions="CenterAndExpand"/>
-                    
-                    <Button x:Name="ButtonSubirCambios" Clicked="ButtonSubirCambios_Clicked"
-                            ImageSource="aceptar.png"
-                            BackgroundColor="#00000"
-                            HorizontalOptions="EndAndExpand"/>
                     </StackLayout>
                 </StackLayout>
                 <StackLayout>
@@ -61,7 +56,7 @@
                         HeightRequest="42"
                                ReturnType="Next"/>
                         <StackLayout Orientation="Horizontal">
-                            <control:StanndardEntry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="270" Keyboard="Numeric" 
+                            <control:StanndardEntry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="190" Keyboard="Numeric" 
                                    ReturnType="Next" BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
                         BorderThickness="1"
@@ -75,7 +70,7 @@
                             <control:StanndardEntry x:Name="digito" 
                                                 Placeholder="DV"
                                                 HorizontalOptions="Center" 
-                                                WidthRequest="55" 
+                                                WidthRequest="45" 
                                                 BackgroundColor="#31FFFFFF" 
                                                 BorderColor="White"
                                                 BorderThickness="1"
