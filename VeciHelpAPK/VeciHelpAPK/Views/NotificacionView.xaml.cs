@@ -34,25 +34,41 @@ namespace VeciHelpAPK.Views
             aler.idUsuario = IdUsuario;
             aler.idAlerta = alerta.idAlerta;
 
-            DisplayAlert("Atencion", "Su participacion se representa con un ticket en el listado de alertas", "Aceptar");
+           
             
             
             if(alerta.opcionBoton == "Finalizar")
             {
                 var response = await endPoint.FinalizarAlerta(aler);
                 await DisplayAlert("Atención", response, "Aceptar");
+
+                //elimino la ventana actual quedando parado en la pantalla de alertas activas
                 await Navigation.PopAsync();
+
+
+                var response2 = await endPoint.AlertasActivas(IdUsuario);
+
+
+                //vuelvo a invocar a la misma ventana de alertas activas desde la ventana de alertas activas por lo que solo se actualizara no creara una ventana nueva
+                await Navigation.PushAsync(new AlertasActivas(response2));
                 GlobalClass.varGlobal = false;
             }
             else if(alerta.opcionBoton == "Acudir")
             {
+                
                 var response = await endPoint.AcudirAlerta(aler);
                 GlobalClass.varGlobal = true;
+                await DisplayAlert("Atencion", "Su participacion se representa con un ticket en el listado de alertas", "Aceptar");
+
+                //elimino la ventana actual quedando parado en la pantalla de alertas activas
+                await Navigation.PopAsync();
+                //vuelvo a invocar a la misma ventana de alertas activas desde la ventana de alertas activas por lo que solo se actualizara no creara una ventana nueva
+                await Navigation.PushAsync(new AlertasActivas());
 
                 //await DisplayAlert("Atención", response, "Aceptar");
             }
 
-            ActualizarAlerta(alerta.idAlerta);
+           // ActualizarAlerta(alerta.idAlerta);
         }
         private async void ActualizarAlerta(int idAlerta)
         {

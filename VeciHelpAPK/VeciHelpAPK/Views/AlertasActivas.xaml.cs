@@ -29,6 +29,12 @@ namespace VeciHelpAPK.Views
             CargarAlertas();
         }
 
+        public AlertasActivas(List<Alerta> alertLst)
+        {
+            InitializeComponent();
+            CargarAlertas2(alertLst);
+        }
+
         private async void CargarAlertas()
         {
             var token = Preferences.Get("Ses_token", null);
@@ -93,6 +99,67 @@ namespace VeciHelpAPK.Views
 
                     StackAlertas.Children.Add(btnAlertas);
                     
+            }
+        }
+
+
+        private void CargarAlertas2(List<Alerta> response)
+        {
+           
+            if (response == null)
+            {
+                Image caraFeliz = new Image();
+                caraFeliz.Source = "happy.png";
+                LabelAlertasActivas.Text = "Que bien, no hay alertas activas";
+                LabelAlertasActivas.FontAttributes = FontAttributes.Bold;
+                LabelAlertasActivas.TextColor = Color.White;
+                LabelAlertasActivas.HorizontalTextAlignment = TextAlignment.Center;
+
+            }
+
+            foreach (var item in response)
+            {
+                Button btnAlertas = new Button();
+
+                if (item.TipoAlerta == "SOS")
+                {
+                    btnAlertas.BackgroundColor = Color.FromHex("#d92027");
+                    btnAlertas.TextColor = Color.White;
+                }
+                else if (item.TipoAlerta == "Emergencia")
+                {
+                    btnAlertas.BackgroundColor = Color.FromHex("#ffcd3c");
+                    btnAlertas.TextColor = Color.FromHex("#242525");
+                }
+                else if (item.TipoAlerta == "Sospecha")
+                {
+                    btnAlertas.BackgroundColor = Color.FromHex("#2FBB62");
+                    btnAlertas.TextColor = Color.White;
+
+                }
+                Image acudarImage = new Image();
+
+                if (item.opcionBoton == "Finalizar")
+                {
+                    btnAlertas.ImageSource = "accept.png";
+
+                }
+                btnAlertas.Text = item.TipoAlerta.ToUpper() + " " + item.horaAlerta.ToString("HH:mm") + "\n " + item.direccion + "\n " + item.nombreAyuda + " " +
+                item.apellidoAyuda;
+                btnAlertas.ClassId = item.idAlerta.ToString();
+                btnAlertas.CornerRadius = 25;
+                btnAlertas.Clicked += btnAlertas_Click;
+                btnAlertas.CommandParameter = item;
+                //btnAlertas.TextColor = Color.White;
+                btnAlertas.FontSize = 17;
+
+
+
+                Button botonExtra = new Button();
+                botonExtra.Opacity = 0;
+
+                StackAlertas.Children.Add(btnAlertas);
+
             }
         }
 
