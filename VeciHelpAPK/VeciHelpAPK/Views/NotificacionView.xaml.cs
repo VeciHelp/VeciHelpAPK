@@ -132,6 +132,16 @@ namespace VeciHelpAPK.Views
             }
 
         }
+
+        private void BtnBomberos_Clicked(object sender, EventArgs e)
+        {
+            PhoneDialer.Open("132");
+        }
+
+        private void BtnCarabineros_Clicked(object sender, EventArgs e)
+        {
+            PhoneDialer.Open(alerta.nroEmergencia);
+        }
     }
 
 }

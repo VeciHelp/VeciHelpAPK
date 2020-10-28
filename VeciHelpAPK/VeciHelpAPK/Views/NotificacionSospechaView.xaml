@@ -58,7 +58,8 @@
                             FontAttributes="Bold" />
                 </StackLayout >
                 <StackLayout Orientation="Horizontal" Padding="20">
-                    <Button Text="BOMBEROS" 
+                    <Button x:Name="BtnBomberos"
+                            Text="BOMBEROS" 
                             HorizontalOptions="StartAndExpand" 
                             TextColor="White" 
                             FontSize="Medium"
@@ -66,9 +67,11 @@
                             BorderWidth="1"
                             BorderColor="White"
                             CornerRadius="25" 
-                            WidthRequest="150"/>
+                            WidthRequest="150"
+                            Clicked="BtnBomberos_Clicked"/>
 
-                    <Button Text="CARABINEROS" 
+                    <Button x:Name="BtnCarabineros"
+                            Text="CARABINEROS" 
                             HorizontalOptions="EndAndExpand"
                             TextColor="White" 
                             FontSize="Medium" 
@@ -76,7 +79,8 @@
                             BorderWidth="1" 
                             BorderColor="White" 
                             CornerRadius="25"
-                            WidthRequest="150"/>
+                            WidthRequest="150"
+                            Clicked="BtnCarabineros_Clicked"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

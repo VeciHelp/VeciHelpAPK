@@ -37,7 +37,7 @@ namespace VeciHelpAPK.Views
             aler.idUsuario = IdUsuario;
             aler.idAlerta = alerta.idAlerta;
 
-            DisplayAlert("Atencion", "Su participacion se representa con un ticket en el listado de alertas", "Aceptar");
+            await DisplayAlert("Atencion", "Su participacion se representa con un ticket en el listado de alertas", "Aceptar");
 
 
 
@@ -121,6 +121,14 @@ namespace VeciHelpAPK.Views
 
         }
 
+        private void BtnBomberos_Clicked(object sender, EventArgs e)
+        {
+            PhoneDialer.Open("132");
+        }
 
+        private void BtnCarabineros_Clicked(object sender, EventArgs e)
+        {
+            PhoneDialer.Open(alerta.nroEmergencia);
+        }
     }
 }
