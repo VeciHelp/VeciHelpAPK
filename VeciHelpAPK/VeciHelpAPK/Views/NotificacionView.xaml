@@ -43,14 +43,10 @@
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Orientation="Vertical">
-                    <Label Text="Esperando Ayuda" HorizontalOptions="Center" TextColor="Azure"/>
 
-                    <Label x:Name="LblContadorPersonas" Text="X Personas en Camino" HorizontalOptions="Center" TextColor="Azure"/>
-                </StackLayout>
-                <StackLayout Padding="20,40, 20, 20" HorizontalOptions="Center" VerticalOptions="Center">
-                    <Image Source="/Users/enzorojasjarpa/Projects/VH/VH.iOS/Resources/mapa.png"
-                       WidthRequest="300"
-                       HorizontalOptions="EndAndExpand"/>
+                    <Label x:Name="LblContadorPersonas" 
+                           HorizontalOptions="Center" 
+                           TextColor="Azure"/>
                 </StackLayout>
                 <Label x:Name="LblDetalle"
                    HorizontalOptions="CenterAndExpand"
@@ -58,13 +54,37 @@
                    TextColor="White"
                    FontSize="Title"/>
                 <StackLayout>
-                    <Button x:Name="ButtonAcudir" Text="ACUDIR A LLAMADO" FontSize="Subtitle" TextColor="Azure" BackgroundColor="#2FBB62"
+                    <Button x:Name="ButtonAcudir"
+                            Text="ACUDIR A LLAMADO" 
+                            FontSize="20" 
+                            TextColor="White" 
+                            BackgroundColor="#2FBB62"
                         Clicked="ButtonAcudir_Clicked"
-                        CornerRadius="25" Padding="10,20" FontAttributes="Bold" />
+                        CornerRadius="20" 
+                            Padding="20" 
+                            HeightRequest="80"
+                            FontAttributes="Bold" />
                 </StackLayout >
                 <StackLayout Orientation="Horizontal" Padding="20">
-                    <Button Text="BOMBEROS" HorizontalOptions="StartAndExpand" TextColor="White" FontSize="Medium" BackgroundColor="#00000" BorderWidth="1" BorderColor="White" CornerRadius="25" WidthRequest="150"/>
-                    <Button Text="CARABINEROS" HorizontalOptions="EndAndExpand" TextColor="White" FontSize="Medium" BackgroundColor="#00000" BorderWidth="1" BorderColor="White" CornerRadius="25" WidthRequest="150"/>
+                    <Button Text="BOMBEROS" 
+                            HorizontalOptions="StartAndExpand" 
+                            TextColor="White" 
+                            FontSize="Medium"
+                            BackgroundColor="#00000"
+                            BorderWidth="1"
+                            BorderColor="White"
+                            CornerRadius="25" 
+                            WidthRequest="150"/>
+                    
+                    <Button Text="CARABINEROS" 
+                            HorizontalOptions="EndAndExpand"
+                            TextColor="White" 
+                            FontSize="Medium" 
+                            BackgroundColor="#00000"
+                            BorderWidth="1" 
+                            BorderColor="White" 
+                            CornerRadius="25"
+                            WidthRequest="150"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

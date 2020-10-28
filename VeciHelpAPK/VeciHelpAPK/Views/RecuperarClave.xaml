@@ -38,9 +38,10 @@
                                         />        
             </StackLayout>
 
-            <StackLayout Padding="30">
+            <StackLayout>
                 <Button x:Name="ButtonRecuperar" 
-                    Clicked="ButtonRecuperar_Clicked" 
+                    Clicked="ButtonRecuperar_Clicked"
+                    Padding="10"
                     Text="Recuperar"
                     BackgroundColor="#2FBB62" 
                     TextColor="White"

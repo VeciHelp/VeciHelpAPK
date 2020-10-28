@@ -371,7 +371,8 @@ namespace VeciHelpAPK.Views
             }
             clave.IsVisible = false;
             codigoVerificacion.IsVisible = false;
-            ButtonCrear.Text = "Actualizar";
+            ButtonCrear.Text = "ACTUALIZAR";
+            ButtonCrear.TextColor = Color.Black;
             ButtonCrear.BackgroundColor = Color.FromHex("#ffcd3c");
             DPFechaNacimiento.Date = user.fechaNacimiento;
         }
