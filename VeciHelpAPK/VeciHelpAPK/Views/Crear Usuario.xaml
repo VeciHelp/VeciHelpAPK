@@ -68,7 +68,9 @@
                         CornerRadius="8"
                         PlaceholderColor="#ededed"
                         TextColor="White"
-                        HeightRequest="42" />
+                        HeightRequest="42"
+                        MaxLength="8"
+                        />
 
                             <control:StanndardEntry x:Name="digito" 
                                                 Placeholder="DV"
@@ -81,7 +83,8 @@
                                                 PlaceholderColor="#ededed"
                                                 TextColor="White"
                                                 HeightRequest="42" ReturnType="Next" 
-                                                HorizontalTextAlignment="Center"/>
+                                                HorizontalTextAlignment="Center"
+                                                    MaxLength="1"/>
                         </StackLayout>
                             <control:StanndardEntry x:Name="AntecedentesSalud" WidthRequest="400" Placeholder="Antecedendes Salud" HorizontalOptions="Center" 
                                ReturnType="Next" BackgroundColor="#31FFFFFF" 
@@ -104,7 +107,8 @@
                         PlaceholderColor="#ededed"
                         TextColor="White"
                         HeightRequest="42"
-                       
+                         MaxLength="9"
+                        
                         />
                        <control:StanndardEntry x:Name="direccion" Placeholder="Direccion" WidthRequest="400" HorizontalOptions="Center"
                                        ReturnType="Next" BackgroundColor="#31FFFFFF" 
@@ -135,7 +139,13 @@
                 </ScrollView>
             </StackLayout>
             <StackLayout>
-                    <Button x:Name="ButtonCrear" Clicked="ButtonCrear_Clicked" Text="ACEPTAR" BackgroundColor="#2FBB62" TextColor="White" CornerRadius="25" />
+                    <Button x:Name="ButtonCrear" 
+                            Clicked="ButtonCrear_Clicked" 
+                            Text="ACEPTAR" BackgroundColor="#2FBB62" 
+                            TextColor="White" 
+                            CornerRadius="20"
+                            HeightRequest="80"
+                            FontSize="20"/>
                 </StackLayout>
 
             </StackLayout>

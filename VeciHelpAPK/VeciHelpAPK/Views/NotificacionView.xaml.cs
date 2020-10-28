@@ -112,7 +112,7 @@ namespace VeciHelpAPK.Views
             }
 
             LblHoraAlerta.Text = "Generada a las "+ alerta.horaAlerta.ToString("HH:mm");
-            LblContadorPersonas.Text = alerta.participantes.ToString();
+            LblContadorPersonas.Text = " Esperando ayuda " + alerta.participantes.ToString();
 
             FotoPerfil.Source = Xamarin.Forms.ImageSource.FromStream(
                () => new MemoryStream(Convert.FromBase64String(alerta.foto)));

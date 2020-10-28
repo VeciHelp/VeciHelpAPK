@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Java.Util.Regex;
+using Newtonsoft.Json;
 using Plugin.Media;
 using Refit;
 using System;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using VeciHelpAPK.Interface;
 using VeciHelpAPK.Models;
@@ -85,24 +87,67 @@ namespace VeciHelpAPK.Views
                     RecargarDatosUsuario(usr.id_Usuario);
                 }
             }
+            /*
             else
             {
-                //esta opcion se utiliza para que el usuario cree sus datos previo a la validacion del codigo enviado al correo
-                asignarDatos();
-                var endPoint = RestService.For<IUsuario>(BaseAddress);
-
-                var request = await endPoint.RegistrarUsuario(usr);
-
-                if (request.StatusCode == HttpStatusCode.OK)
+                if (ValidaterUT())
                 {
-                    var jsonString = await request.Content.ReadAsStringAsync();
 
-                    await DisplayAlert("Atención", jsonString, "Aceptar");
+                    if (validateDV())
+                    {
 
-                    //retrocedo a la ventana anterior que seria el login
-                    await Navigation.PopAsync();
+                        if (ValidaterCel())
+                        {
+                            if (camposOK())
+                            {
+                                //esta opcion se utiliza para que el usuario cree sus datos previo a la validacion del codigo enviado al correo
+                                asignarDatos();
+                                var endPoint = RestService.For<IUsuario>(BaseAddress);
+
+                                var request = await endPoint.RegistrarUsuario(usr);
+
+                                if (request.StatusCode == HttpStatusCode.OK)
+                                {
+                                    var jsonString = await request.Content.ReadAsStringAsync();
+
+                                    await DisplayAlert("Atención", jsonString, "Aceptar");
+
+                                    //retrocedo a la ventana anterior que seria el login
+                                    await Navigation.PopAsync();
+                                }
+                            }
+                            else
+                            {
+                                await this.DisplayAlert("Advertencia", "Todos los campos deben ser completados", "ACEPTAR");
+
+                            }
+
+                        }
+                        else
+                        {
+                            await this.DisplayAlert("Advertencia", "El telefono debe contener 9 digitos", "ACEPTAR");
+
+                        }
+                    }
+                    else
+                    {
+                        await this.DisplayAlert("Advertencia", "El DV debe contener 1 digito", "ACEPTAR");
+
+                    }
+
+
+
+
                 }
+                else
+                {
+                    await this.DisplayAlert("Advertencia", "El rut debe contener 7 8 digitos", "ACEPTAR");
+
+                }
+                
+
             }
+            */
         }
 
 
@@ -140,29 +185,67 @@ namespace VeciHelpAPK.Views
 
 
         }
-
-
-
-
-
-
-
-
-
-        public void asignarDatos()
+        
+        public  bool camposOK()
         {
-  
+            if(nombre.Text.Length>=3 && apellido.Text.Length>=3 && direccion.Text.Length>=3 && clave.Text.Length >= 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-            usr.nombre = nombre.Text;
-            usr.apellido = apellido.Text;
-            usr.correo = correo.Text;
-            usr.rut = rut.Text;
-            usr.digito = char.Parse(digito.Text);
-            usr.antecedentesSalud = AntecedentesSalud.Text;
-            usr.celular = int.Parse(celular.Text);
-            usr.direccion = direccion.Text;
-            usr.clave = clave.Text;
-            usr.codigoVerificacion = codigoVerificacion.Text;
+        /*
+        public bool ValidaterUT()
+        {
+            if (rut.Text.ToCharArray().All(Char.IsDigit) && (rut.Text.Length == 8 || rut.Text.Length == 7))
+            {
+                return true;
+            }
+            return false;
+            
+            return true;
+
+        }
+
+        public bool ValidaterCel()
+        {
+            if (celular.Text.ToCharArray().All(Char.IsDigit) || rut.Text.Length == 9)
+            {
+                return true;
+            }
+            return false;
+        }
+        public bool validateDV()
+        {
+            if (int.Parse(codigoVerificacion.Text)>=0 && int.Parse(codigoVerificacion.Text)<=9 || codigoVerificacion.Text  == "K" ) 
+            {
+                return true;
+            }
+            return false;
+
+        }
+            */
+
+
+
+
+        public async void asignarDatos()
+        {
+
+                usr.nombre = nombre.Text;
+                usr.apellido = apellido.Text;
+                usr.correo = correo.Text;
+                usr.rut = rut.Text;
+                usr.antecedentesSalud = AntecedentesSalud.Text;
+                usr.celular = int.Parse(celular.Text);
+                usr.direccion = direccion.Text;
+                usr.clave = clave.Text;
+                usr.codigoVerificacion = codigoVerificacion.Text;
+            
         }
 
         //aqui se abre la camara para tomar una foto
@@ -288,7 +371,8 @@ namespace VeciHelpAPK.Views
             }
             clave.IsVisible = false;
             codigoVerificacion.IsVisible = false;
-            ButtonCrear.Text = "Actualizar";
+            ButtonCrear.Text = "ACTUALIZAR";
+            ButtonCrear.TextColor = Color.Black;
             ButtonCrear.BackgroundColor = Color.FromHex("#ffcd3c");
             DPFechaNacimiento.Date = user.fechaNacimiento;
         }
