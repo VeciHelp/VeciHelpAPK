@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Gms.Common;
 using Xamarin.Essentials;
+using Java.Lang;
 
 namespace VeciHelpAPK.Droid
 {
@@ -50,7 +51,8 @@ namespace VeciHelpAPK.Droid
                 {
                     alert.SetTitle("Salir de la aplicación");
                     alert.SetMessage("Esta seguro que desea salir?");
-                    alert.SetPositiveButton("SI", (sender, args) => { FinishAffinity(); }); // inform Android that we are done with the activity
+                    //alert.SetPositiveButton("SI", (sender, args) => { FinishAffinity(); }); // inform Android that we are done with the activity
+                    alert.SetPositiveButton("SI", (sender, args) => { JavaSystem.Exit(0) ; }); // inform Android that we are done with the activity
                     alert.SetNegativeButton("No", (sender, args) => { }); // do nothing
 
                     var dialog = alert.Create();

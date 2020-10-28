@@ -26,6 +26,10 @@ namespace VeciHelpAPK.Views
     {
         public string BaseAddress = "http://201.238.247.59/vecihelp/api/v1/";
         public string token= Preferences.Get("Ses_token", null);
+
+        public string mensajeValidaciones=string.Empty;
+        public bool estadoValidacion=false;
+
         Usuario usr = new Usuario();
 
         public  Crear_Usuario()
@@ -90,20 +94,30 @@ namespace VeciHelpAPK.Views
             }
             else
             {
-                asignarDatos();
-                var endPoint = RestService.For<IUsuario>(BaseAddress);
+                validacionesCampos();
 
-                var request = await endPoint.RegistrarUsuario(usr);
-
-                if (request.StatusCode == HttpStatusCode.OK)
+                if (estadoValidacion==true)
                 {
-                    var jsonString = await request.Content.ReadAsStringAsync();
+                    asignarDatos();
+                    var endPoint = RestService.For<IUsuario>(BaseAddress);
 
-                    await DisplayAlert("Atención", jsonString, "Aceptar");
+                    var request = await endPoint.RegistrarUsuario(usr);
 
-                    //retrocedo a la ventana anterior que seria el login
-                    await Navigation.PopAsync(); //x2
+                    if (request.StatusCode == HttpStatusCode.OK)
+                    {
+                        var jsonString = await request.Content.ReadAsStringAsync();
+
+                        await DisplayAlert("Atención", jsonString, "Aceptar");
+
+                        //retrocedo a la ventana anterior que seria el login
+                        await Navigation.PopAsync(); //x2
+                    }
                 }
+                else
+                {
+                    await DisplayAlert("Atención", mensajeValidaciones, "Aceptar");
+                }
+                
             }
         }
 
@@ -376,6 +390,59 @@ namespace VeciHelpAPK.Views
 
                     RecargarDatosUsuario(usr.id_Usuario);
                 }
+        }
+
+        private void validacionesCampos()
+        {
+            if (nombre.Text==null ||  nombre.Text.Trim()==string.Empty)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "el Nombre no puede ir en blanco";
+            }
+
+            else if (apellido.Text == null || apellido.Text.Trim() == string.Empty)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "el Apellido no puede ir en blanco";
+            }
+
+            else if (rut.Text == null || nombre.Text.Trim() == string.Empty)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "el rut no puede ir en blanco";
+            }
+            else if (digito.Text == null || digito.Text.Trim() == string.Empty)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "el digito Verificador no puede ir en blanco";
+            }
+            else if (digito.Text == null || digito.Text.Trim() == string.Empty)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "el digito Verificador no puede ir en blanco";
+            }
+
+            else if (celular.Text == null || celular.Text.Trim() == string.Empty)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "el telefono no puede ir en blanco";
+            }
+
+            else if (direccion.Text == null || direccion.Text.Trim() == string.Empty)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "La direccion no puede ir en blanco";
+            }
+
+            else if (clave.Text == null || clave.Text.Trim() == string.Empty)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "La clave no puede ir en blanco";
+            }
+            else
+            {
+                estadoValidacion = true;
+            }
         }
     }
 }
