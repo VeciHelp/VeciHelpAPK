@@ -35,6 +35,7 @@
                         Placeholder="Ingrese un Correo" 
                         BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
+                        TextColor="White"
                         BorderThickness="1"
                         CornerRadius="8"
                         HeightRequest="42"

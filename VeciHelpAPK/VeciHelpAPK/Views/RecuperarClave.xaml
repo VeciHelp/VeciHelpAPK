@@ -44,7 +44,7 @@
                     Text="Recuperar"
                     BackgroundColor="#2FBB62" 
                     TextColor="White"
-                    CornerRadius="22"
+                    CornerRadius="20"
                     FontSize="20"
                     HeightRequest="80"
                     FontAttributes="Bold" />
