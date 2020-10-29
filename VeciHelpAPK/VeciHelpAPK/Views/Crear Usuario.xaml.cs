@@ -409,41 +409,53 @@ namespace VeciHelpAPK.Views
             if (nombre.Text==null ||  nombre.Text.Trim()==string.Empty)
             {
                 estadoValidacion = false;
-                mensajeValidaciones = "el Nombre no puede ir en blanco";
+                mensajeValidaciones = "El Nombre no puede ir en blanco";
             }
 
             else if (apellido.Text == null || apellido.Text.Trim() == string.Empty)
             {
                 estadoValidacion = false;
-                mensajeValidaciones = "el Apellido no puede ir en blanco";
+                mensajeValidaciones = "El Apellido no puede ir en blanco";
             }
 
             else if (rut.Text == null || nombre.Text.Trim() == string.Empty)
             {
                 estadoValidacion = false;
-                mensajeValidaciones = "el rut no puede ir en blanco";
+                mensajeValidaciones = "El rut no puede ir en blanco";
             }
+            else if (rut.Text.Length < 7 || nombre.Text.Length > 8 )
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "El rut debe contener 7 u 8 dígitos";
+            }
+
             else if (digito.Text == null || digito.Text.Trim() == string.Empty)
             {
                 estadoValidacion = false;
-                mensajeValidaciones = "el digito Verificador no puede ir en blanco";
+                mensajeValidaciones = "El dígito verificador no puede ir en blanco";
             }
+            else if (digito.Text != "K" && digito.Text != "k" && !digito.Text.ToCharArray().All(Char.IsDigit))
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "El dígito verificador debe contener del 0-9 o una K";
+            }
+
             else if (digito.Text == null || digito.Text.Trim() == string.Empty)
             {
                 estadoValidacion = false;
-                mensajeValidaciones = "el digito Verificador no puede ir en blanco";
+                mensajeValidaciones = "El dígito verificador no puede ir en blanco";
             }
 
             else if (celular.Text == null || celular.Text.Trim() == string.Empty)
             {
                 estadoValidacion = false;
-                mensajeValidaciones = "el telefono no puede ir en blanco";
+                mensajeValidaciones = "El teléfono no puede ir en blanco";
             }
 
             else if (direccion.Text == null || direccion.Text.Trim() == string.Empty)
             {
                 estadoValidacion = false;
-                mensajeValidaciones = "La direccion no puede ir en blanco";
+                mensajeValidaciones = "La dirección no puede ir en blanco";
             }
 
             else if (clave.Text == null || clave.Text.Trim() == string.Empty)

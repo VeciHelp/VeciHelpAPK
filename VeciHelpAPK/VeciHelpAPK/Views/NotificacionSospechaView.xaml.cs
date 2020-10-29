@@ -37,7 +37,6 @@ namespace VeciHelpAPK.Views
             aler.idUsuario = IdUsuario;
             aler.idAlerta = alerta.idAlerta;
 
-            await DisplayAlert("Atencion", "Su participacion se representa con un ticket en el listado de alertas", "Aceptar");
 
 
 
@@ -52,6 +51,17 @@ namespace VeciHelpAPK.Views
             {
                 var response = await endPoint.AcudirAlerta(aler);
                 GlobalClass.varGlobal = true;
+
+                if (response.Equals("\"No puede acudir a mas de una alerta\""))
+                {
+                    await DisplayAlert("Atención", response, "Aceptar");
+                }
+                else
+                {
+                    await DisplayAlert("Atención", "Su participación se representa con un ticket en el listado de alertas", "Aceptar");
+
+                }
+
 
                 //await DisplayAlert("Atención", response, "Aceptar");
             }
@@ -79,7 +89,7 @@ namespace VeciHelpAPK.Views
                 LblDetalle.IsVisible = true;
                 LblDetalle.Text = alerta.coordenadaSospecha;
             }
-            LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda + "\n" + alerta.direccion;
+            LblNombre.Text = "INFORMANTE "+alerta.nombreAyuda + " " + alerta.apellidoAyuda + "\n" + alerta.direccion;
 
             //LblDireccion.Text = alerta.direccion;
             LblTipoAlerta.Text = alerta.TipoAlerta.ToUpper();

@@ -39,7 +39,7 @@
                         PlaceholderColor="#ededed"
                         TextColor="White"
                         HeightRequest="42" ReturnType="Next" />
-                            <control:StanndardEntry x:Name="nombre" Placeholder="Nombre" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="#31FFFFFF" 
+                            <control:StanndardEntry x:Name="nombre" Placeholder="Nombre (Obligatorio)" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
                         BorderThickness="1"
                         CornerRadius="8"
@@ -47,7 +47,7 @@
                         TextColor="White"
                         HeightRequest="42" 
                                ReturnType="Next"/>
-                            <control:StanndardEntry x:Name="apellido" Placeholder="Apellido" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="#31FFFFFF" 
+                            <control:StanndardEntry x:Name="apellido" Placeholder="Apellido (Obligatorio)" WidthRequest="400" HorizontalOptions="Center" BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
                         BorderThickness="1"
                         CornerRadius="8"
@@ -56,7 +56,7 @@
                         HeightRequest="42"
                                ReturnType="Next"/>
                         <StackLayout Orientation="Horizontal">
-                            <control:StanndardEntry x:Name="rut" Placeholder="RUT" HorizontalOptions="Center" WidthRequest="190" Keyboard="Numeric" 
+                                <control:StanndardEntry x:Name="rut" Placeholder="RUT (Obligatorio)" HorizontalOptions="Center" WidthRequest="190" Keyboard="Numeric" 
                                    ReturnType="Next" BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
                         BorderThickness="1"
@@ -94,7 +94,7 @@
                                     DateSelected="DPFechaNacimiento_DateSelected" HorizontalOptions="CenterAndExpand" 
                                     BackgroundColor="#31FFFFFF" />
 
-                            <control:StanndardEntry x:Name="celular" Placeholder="Telefono" WidthRequest="400" HorizontalOptions="Center"
+                            <control:StanndardEntry x:Name="celular" Placeholder="Telefono (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
                                ReturnType="Next" Keyboard="Telephone" BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
                         BorderThickness="1"
@@ -105,7 +105,7 @@
                          MaxLength="9"
                         
                         />
-                       <control:StanndardEntry x:Name="direccion" Placeholder="Direccion" WidthRequest="400" HorizontalOptions="Center"
+                            <control:StanndardEntry x:Name="direccion" Placeholder="Dirección (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
                                        ReturnType="Next" BackgroundColor="#31FFFFFF" 
                                         BorderColor="White"
                                         BorderThickness="1"
@@ -113,7 +113,7 @@
                                         PlaceholderColor="#ededed"
                                         TextColor="White"
                                         HeightRequest="42"/>
-                            <control:StanndardEntry  x:Name="clave" Placeholder="Clave" WidthRequest="400"
+                            <control:StanndardEntry  x:Name="clave" Placeholder="Clave (Obligatorio)" WidthRequest="400"
                                 ReturnType="Next" HorizontalOptions="Center"  IsPassword="True" BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
                         BorderThickness="1"

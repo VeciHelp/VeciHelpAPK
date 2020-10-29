@@ -83,8 +83,17 @@ namespace VeciHelpAPK.Views
                     btnAlertas.ImageSource = "accept.png";
                    
                 }
-                    btnAlertas.Text =  item.TipoAlerta.ToUpper() + " " + item.horaAlerta.ToString("HH:mm") + "\n " + item.direccion + "\n " + item.nombreAyuda + " " + 
-                    item.apellidoAyuda;
+                if (item.TipoAlerta == "Sospecha")
+                {
+                    btnAlertas.Text = item.TipoAlerta.ToUpper() + "\nGenerada a las " + item.horaAlerta.ToString("HH:mm") + " Hrs. \n " + "INFORMANTE\n" + item.nombreAyuda + " " + item.apellidoAyuda;
+
+                }
+                else
+                {
+                    btnAlertas.Text = item.TipoAlerta.ToUpper() + "\nGenerada a las " + item.horaAlerta.ToString("HH:mm") + " Hrs. \nLUGAR: " + item.direccion + "\nAYUDAR A: " + item.nombreAyuda + " " + item.apellidoAyuda;
+
+                }
+                
                     btnAlertas.ClassId = item.idAlerta.ToString();
                     btnAlertas.CornerRadius = 25;
                     btnAlertas.Clicked += btnAlertas_Click;
