@@ -36,7 +36,7 @@ namespace VeciHelpAPK.Views
 
                 response = response.Replace("\"", "");
 
-                if (response.Equals("Codigo Validado Correctamente"))
+                if (response.Equals("Código Validado Correctamente"))
                 {
                     await DisplayAlert("Atención", response, "Aceptar");
 

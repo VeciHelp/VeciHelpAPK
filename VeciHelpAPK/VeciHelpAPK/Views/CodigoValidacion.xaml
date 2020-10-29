@@ -5,12 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:control="clr-namespace:VeciHelpAPK.Controls"
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.CodigoValidacion"
-             Title="VERIFICACION"
+             Title="VERIFICACIÓN"
              BackgroundColor="#242525">
     <ContentPage.Content>
         <StackLayout Padding ="30" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
             <StackLayout >
-                <Label Text="Ingrese correo y codigo de verificacion"
+                <Label Text="Ingrese correo y código de verificación"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                 HorizontalTextAlignment="Center"
@@ -22,7 +22,7 @@
             </StackLayout>
 
             <StackLayout Padding="20">
-                <control:StanndardEntry x:Name="correo" Placeholder="Correo Electronico" HorizontalOptions="Center" 
+                <control:StanndardEntry x:Name="correo" Placeholder="Correo Electrónico" HorizontalOptions="Center" 
                        WidthRequest="400" Keyboard="Email"  HorizontalTextAlignment="Center"
                         BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
@@ -31,7 +31,7 @@
                         PlaceholderColor="#ededed"
                         TextColor="White"
                         HeightRequest="42" />
-                <control:StanndardEntry x:Name="codigoVerificacion" Placeholder="Codigo de Verificacion" HorizontalOptions="Center"
+                <control:StanndardEntry x:Name="codigoVerificacion" Placeholder="Código de Verificación" HorizontalOptions="Center"
                        WidthRequest="400" 
                        HorizontalTextAlignment="Center"
                         BackgroundColor="#31FFFFFF" 

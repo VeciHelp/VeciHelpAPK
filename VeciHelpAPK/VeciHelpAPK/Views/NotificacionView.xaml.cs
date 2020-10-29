@@ -35,8 +35,6 @@ namespace VeciHelpAPK.Views
             aler.idAlerta = alerta.idAlerta;
 
            
-            
-            
             if(alerta.opcionBoton == "Finalizar")
             {
                 var response = await endPoint.FinalizarAlerta(aler);
@@ -58,8 +56,15 @@ namespace VeciHelpAPK.Views
                 
                 var response = await endPoint.AcudirAlerta(aler);
                 GlobalClass.varGlobal = true;
-                await DisplayAlert("Atencion", "Su participacion se representa con un ticket en el listado de alertas", "Aceptar");
+                if (response.Equals("\"No puede acudir a mas de una alerta\""))
+                {
+                    await DisplayAlert("Atención", response, "Aceptar");
+                }
+                else
+                {
+                    await DisplayAlert("Atención", "Su participación se representa con un ticket en el listado de alertas", "Aceptar");
 
+                }
                 //elimino la ventana actual quedando parado en la pantalla de alertas activas
                 await Navigation.PopAsync();
                 //vuelvo a invocar a la misma ventana de alertas activas desde la ventana de alertas activas por lo que solo se actualizara no creara una ventana nueva

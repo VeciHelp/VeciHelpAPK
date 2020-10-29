@@ -37,6 +37,11 @@ namespace VeciHelpAPK.Views
                 log.Clave = Encriptar(clave.Text);
                 log.TokenFireBase = Preferences.Get("TokenFirebase", null);
 
+                if (log.TokenFireBase == null)
+                {
+                    log.TokenFireBase = "A";
+                }
+
                 string mensaje = "Usuario o Contraseña inválida";
                           
 
