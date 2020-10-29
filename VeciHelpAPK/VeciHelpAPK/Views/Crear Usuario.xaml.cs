@@ -73,7 +73,7 @@ namespace VeciHelpAPK.Views
         {
             if (ButtonCrear.Text == "ACTUALIZAR")
             {
-                asignarDatos();
+                asignarDatosActualizar();
 
                 var endPoint = RestService.For<IUsuario>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
                 
@@ -183,7 +183,19 @@ namespace VeciHelpAPK.Views
                 usr.direccion = direccion.Text;
                 usr.clave = ActualizarClave.Encriptar(clave.Text);
                 usr.codigoVerificacion = codigoVerificacion.Text;
-            
+        }
+
+        public void asignarDatosActualizar()
+        {
+
+            usr.nombre = nombre.Text;
+            usr.apellido = apellido.Text;
+            usr.correo = correo.Text;
+            usr.rut = rut.Text;
+            usr.digito = char.Parse(digito.Text);
+            usr.antecedentesSalud = AntecedentesSalud.Text;
+            usr.celular = int.Parse(celular.Text);
+            usr.direccion = direccion.Text;
         }
 
         //aqui se abre la camara para tomar una foto
