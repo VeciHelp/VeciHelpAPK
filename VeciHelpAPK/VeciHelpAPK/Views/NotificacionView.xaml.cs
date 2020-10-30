@@ -28,11 +28,6 @@ namespace VeciHelpAPK.Views
 
         private async void ButtonAcudir_Clicked(object sender, EventArgs e)
         {
-            //prueba
-            //var pag = new LoginView();
-            //await PopToPage(pag);
-
-
             var IdUsuario = int.Parse(Preferences.Get("Ses_id_Usuario", null));
             var token = Preferences.Get("Ses_token", null);
 
@@ -48,15 +43,11 @@ namespace VeciHelpAPK.Views
                 var response = await endPoint.FinalizarAlerta(aler);
                 await DisplayAlert("Atención", response, "Aceptar");
 
-                //elimino la ventana actual quedando parado en la pantalla de alertas activas
+                //elimino 2 ventanas
+
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
                 await Navigation.PopAsync();
 
-
-                var response2 = await endPoint.AlertasActivas(IdUsuario);
-
-
-                //vuelvo a invocar a la misma ventana de alertas activas desde la ventana de alertas activas por lo que solo se actualizara no creara una ventana nueva
-                await Navigation.PushAsync(new AlertasActivas(response2));
                 GlobalClass.varGlobal = false;
             }
             else if(alerta.opcionBoton == "Acudir")
@@ -73,15 +64,13 @@ namespace VeciHelpAPK.Views
                     await DisplayAlert("Atención", "Su participación se representa con un ticket en el listado de alertas", "Aceptar");
 
                 }
-                //elimino la ventana actual quedando parado en la pantalla de alertas activas
-                await Navigation.PopAsync();
-                //vuelvo a invocar a la misma ventana de alertas activas desde la ventana de alertas activas por lo que solo se actualizara no creara una ventana nueva
-                await Navigation.PushAsync(new AlertasActivas());
 
-                //await DisplayAlert("Atención", response, "Aceptar");
+                //elimino 2 ventanas
+
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                await Navigation.PopAsync();
             }
 
-           // ActualizarAlerta(alerta.idAlerta);
         }
         private async void ActualizarAlerta(int idAlerta)
         {

@@ -11,7 +11,7 @@ namespace VeciHelpAPK
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginView());
+            MainPage = new NavigationPage(new VeciHelpAPK.Views.LoginView());
 
         }
 
@@ -32,12 +32,12 @@ namespace VeciHelpAPK
             get
             {
                 bool promptToConfirmExit = false;
-                
-                 if (MainPage is NavigationPage mainPage)
+
+                if (MainPage is NavigationPage mainPage)
                 {
-                        promptToConfirmExit = mainPage.Navigation.NavigationStack.Count <= 2;
+                    promptToConfirmExit = MainPage.Navigation.NavigationStack.Count <= 2;
+                    //promptToConfirmExit = ((MasterDetailPage)Current.MainPage).Detail.Navigation.NavigationStack.Count <= 2;
                 }
-              
                 return promptToConfirmExit;
             }
         }

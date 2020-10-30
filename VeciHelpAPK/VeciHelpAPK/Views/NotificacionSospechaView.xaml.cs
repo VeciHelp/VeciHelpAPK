@@ -37,14 +37,16 @@ namespace VeciHelpAPK.Views
             aler.idUsuario = IdUsuario;
             aler.idAlerta = alerta.idAlerta;
 
-
-
-
             if (alerta.opcionBoton == "Finalizar")
             {
                 var response = await endPoint.FinalizarAlerta(aler);
                 await DisplayAlert("Atención", response, "Aceptar");
+
+                //elimino 2 ventanas
+
+                Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
                 await Navigation.PopAsync();
+
                 GlobalClass.varGlobal = false;
             }
             else if (alerta.opcionBoton == "Acudir")
@@ -60,13 +62,14 @@ namespace VeciHelpAPK.Views
                 {
                     await DisplayAlert("Atención", "Su participación se representa con un ticket en el listado de alertas", "Aceptar");
 
+                    //elimino 2 ventanas
+
+                    Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+                    await Navigation.PopAsync();
+
                 }
-
-
                 //await DisplayAlert("Atención", response, "Aceptar");
             }
-
-            ActualizarAlerta(alerta.idAlerta);
         }
         private async void ActualizarAlerta(int idAlerta)
         {
@@ -84,37 +87,22 @@ namespace VeciHelpAPK.Views
 
         private void LlenarCamposDeAlerta()
         {
-            if (alerta.TipoAlerta == "Sospecha")
-            {
+          
                 LblDetalle.IsVisible = true;
                 LblDetalle.Text = alerta.coordenadaSospecha;
-            }
+
             LblNombre.Text = "Informante: "+alerta.nombreAyuda + " " + alerta.apellidoAyuda + "\n" + alerta.direccion;
 
-            //LblDireccion.Text = alerta.direccion;
             LblTipoAlerta.Text = alerta.TipoAlerta.ToUpper();
 
+            LblTipoAlerta.TextColor = Color.FromHex("#2FBB62");
 
-
-            if (LblTipoAlerta.Text == "SOS")
-            {
-                LblTipoAlerta.TextColor = Color.FromHex("#d92027");
-            }
-            else if (LblTipoAlerta.Text == "EMERGENCIA")
-            {
-                LblTipoAlerta.TextColor = Color.FromHex("#ffcd3c");
-            }
-            else if (LblTipoAlerta.Text == "SOSPECHA")
-            {
-                LblTipoAlerta.TextColor = Color.FromHex("#2FBB62");
-            }
 
             LblHoraAlerta.Text = "Generada a las " + alerta.horaAlerta.ToString("HH:mm");
             LblContadorPersonas.Text = "Esperando ayuda " + alerta.participantes.ToString();
 
             FotoPerfil.Source = Xamarin.Forms.ImageSource.FromStream(
                () => new MemoryStream(Convert.FromBase64String(alerta.foto)));
-
 
 
             //cambio el boton dependiendo de lo que le corresponda

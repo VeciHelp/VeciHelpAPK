@@ -81,7 +81,7 @@ namespace VeciHelpAPK.Views
                         var loginJson = JsonConvert.SerializeObject(log);
                         Preferences.Set("AutoLogin",loginJson);
                         //redirecciona a la pagina principal
-                        
+
                         await Navigation.PushModalAsync(new MenuPrincipal(usr));
                     }
                     else if(usr.existe==2)
@@ -168,8 +168,8 @@ namespace VeciHelpAPK.Views
                         GuardarDatosSesion(usr);
 
                     //redirecciona a la pagina principal
+
                     await Navigation.PushModalAsync(new MenuPrincipal(usr));
-                       // await Navigation.PushAsync(new MenuPrincipal(usr));
                     }
                     else if (usr.existe == 2)
                     {

@@ -24,27 +24,27 @@ namespace VeciHelpAPK.Views
         }
         public void MyMenu()
         {
-
+            
             Detail = new NavigationPage(new Principal(usr));
             List<Menu> menu = new List<Menu>
             {
 
-                new Menu{ Page= new Principal(usr),MenuTitle="INICIO",  MenuDetail="Mi perfil",icon="escudo.png"},
-                new Menu{ Page= new Crear_Usuario(usr.id_Usuario),MenuTitle="ACTUALIZAR",  MenuDetail="Mis Datos",icon="message.png"},
-                new Menu{ Page= new ActualizarClave(usr),MenuTitle="CAMBIAR",  MenuDetail="Contraseña",icon="contacts.png"},
-                //new Menu{ Page= new Principal(usr),MenuTitle="CERRAR SESIÓN",  MenuDetail="Configuración",icon="settings.png"}
+                new Menu{ MenuTitle="INICIO",  MenuDetail="Mi perfil",icon="escudo.png"},
+                new Menu{ MenuTitle="ACTUALIZAR",  MenuDetail="Mis Datos",icon="message.png"},
+                new Menu{ MenuTitle="CAMBIAR",  MenuDetail="Contraseña",icon="contacts.png"},
+                new Menu{ MenuTitle="CERRAR SESIÓN",  MenuDetail="LogOut",icon="contacts.png"},
             };
             ListMenu.ItemsSource = menu;
         }
         private void ListMenu_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var menu = e.SelectedItem as Menu;
-            if (menu != null)
-            {
-                IsPresented = false;
-                Detail = new NavigationPage(menu.Page);
-            }
-            else if(menu.MenuTitle == "INICIO")
+            //if (menu != null)
+            //{
+            //    IsPresented = false;
+            //    Detail = new NavigationPage(menu.Page);
+            //}
+            if(menu.MenuTitle == "INICIO")
             {
                 IsPresented = false;
                 Detail = new NavigationPage(new Principal(usr));
@@ -59,6 +59,12 @@ namespace VeciHelpAPK.Views
             {
                 IsPresented = false;
                 Detail = new NavigationPage(new ActualizarClave(usr));
+            }
+            else if (menu.MenuTitle == "CERRAR SESIÓN")
+            {
+                IsPresented = false;
+                Preferences.Remove("AutoLogin");
+                Navigation.PopModalAsync();
             }
 
         }
@@ -81,11 +87,8 @@ namespace VeciHelpAPK.Views
                 set;
             }
 
-            public Page Page
-            {
-                get;
-                set;
-            }
         }
+
+       
     }
 }
