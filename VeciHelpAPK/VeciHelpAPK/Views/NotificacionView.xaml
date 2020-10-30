@@ -26,13 +26,14 @@
                        FontSize="17"/>
 
 
-                <StackLayout Orientation="Horizontal" Padding="30">
-                    <Frame CornerRadius="100" IsClippedToBounds="true" Padding="0" Margin="0" BackgroundColor="#00000" >
+                <StackLayout Orientation="Horizontal" Padding="5,30">
+                  <Frame CornerRadius="100" IsClippedToBounds="true" 
+                           Padding="0" Margin="0" BackgroundColor="#00000" >
                         <Image x:Name="FotoPerfil" Source="profile.png"
-                       WidthRequest="150"
-                       HorizontalOptions="EndAndExpand"
-                       />
+                                WidthRequest="130"
+                                HorizontalOptions="StartAndExpand"/>
                     </Frame>
+       
                     <StackLayout HorizontalOptions="StartAndExpand">
 
                         <Label x:Name="LblNombre"  VerticalOptions="CenterAndExpand" TextColor="White" 
@@ -65,7 +66,7 @@
                             HeightRequest="80"
                             FontAttributes="Bold" />
                 </StackLayout >
-                <StackLayout Orientation="Horizontal" Padding="20">
+                <StackLayout Orientation="Horizontal" Padding="0,20" HorizontalOptions="CenterAndExpand">
                     <Button x:Name="BtnBomberos"
                             Text="BOMBEROS" 
                             HorizontalOptions="StartAndExpand" 

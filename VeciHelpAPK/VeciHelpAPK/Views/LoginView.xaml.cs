@@ -25,6 +25,7 @@ namespace VeciHelpAPK.Views
         public LoginView()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
 
             if (Preferences.ContainsKey("AutoLogin"))
             {
@@ -80,7 +81,8 @@ namespace VeciHelpAPK.Views
                         var loginJson = JsonConvert.SerializeObject(log);
                         Preferences.Set("AutoLogin",loginJson);
                         //redirecciona a la pagina principal
-                        await Navigation.PushAsync(new Principal(usr));
+                        
+                        await Navigation.PushModalAsync(new MenuPrincipal(usr));
                     }
                     else if(usr.existe==2)
                     {
@@ -165,8 +167,9 @@ namespace VeciHelpAPK.Views
                         //guardo los datos del objeto usuario en variables locales de la aplicacion
                         GuardarDatosSesion(usr);
 
-                        //redirecciona a la pagina principal
-                        await Navigation.PushAsync(new Principal(usr));
+                    //redirecciona a la pagina principal
+                    await Navigation.PushModalAsync(new MenuPrincipal(usr));
+                       // await Navigation.PushAsync(new MenuPrincipal(usr));
                     }
                     else if (usr.existe == 2)
                     {
@@ -182,5 +185,7 @@ namespace VeciHelpAPK.Views
                     Preferences.Remove("AutoLogin");
                 }
         }
+
+
     }
 }

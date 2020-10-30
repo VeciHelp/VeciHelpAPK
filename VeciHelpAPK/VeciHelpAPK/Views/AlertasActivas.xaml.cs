@@ -45,14 +45,19 @@ namespace VeciHelpAPK.Views
             var response = await endPoint.AlertasActivas(idUsuario);
             
 
-            if (response == null)
+            if (response.Count ==0)
             {
-                Image caraFeliz = new Image();
-                caraFeliz.Source = "happy.png";
+
+                Button caraFeliz = new Button();
+                caraFeliz.ImageSource = "alert.png";
+                caraFeliz.BackgroundColor = Color.White;
+                caraFeliz.TextColor = Color.White;
+                caraFeliz.Text = "Que bien";
                 LabelAlertasActivas.Text = "Que bien, no hay alertas activas";
                 LabelAlertasActivas.FontAttributes = FontAttributes.Bold;
                 LabelAlertasActivas.TextColor = Color.White;
                 LabelAlertasActivas.HorizontalTextAlignment = TextAlignment.Center;
+                
                 
             }
 
@@ -76,7 +81,6 @@ namespace VeciHelpAPK.Views
                         btnAlertas.TextColor = Color.White;
 
                 }
-                Image acudarImage = new Image();
 
                 if (item.opcionBoton == "Finalizar")
                 {
@@ -107,8 +111,8 @@ namespace VeciHelpAPK.Views
                 botonExtra.Opacity = 0;
 
                     StackAlertas.Children.Add(btnAlertas);
-                    
             }
+
         }
 
 

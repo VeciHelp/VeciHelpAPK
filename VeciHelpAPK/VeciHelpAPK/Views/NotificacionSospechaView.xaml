@@ -29,7 +29,7 @@
                        VerticalOptions="CenterAndExpand"
                        />
                     <StackLayout HorizontalOptions="CenterAndExpand">
-                        <Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                        <Label x:Name="LblNombre" FontSize="Medium" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
                         <!--<Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
                     -->
                         </StackLayout>
@@ -57,7 +57,7 @@
                             HeightRequest="80"
                             FontAttributes="Bold" />
                 </StackLayout >
-                <StackLayout Orientation="Horizontal" Padding="20">
+                <StackLayout Orientation="Horizontal" Padding="0,20" HorizontalOptions="CenterAndExpand">
                     <Button x:Name="BtnBomberos"
                             Text="BOMBEROS" 
                             HorizontalOptions="StartAndExpand" 

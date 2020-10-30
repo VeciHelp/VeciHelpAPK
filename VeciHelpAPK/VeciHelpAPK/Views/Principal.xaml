@@ -6,21 +6,15 @@
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.Views.Principal"
              xmlns:local="clr-namespace:VeciHelpAPK.Models"
-             Title="VeciHelp"
              BackgroundColor="#242525">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="setup.png"  Clicked="ButtonActualizarDatos_Clicked"/>
-        <ToolbarItem IconImageSource="rec.png"  />
-        <ToolbarItem IconImageSource="rec.png" />
-        <ToolbarItem IconImageSource="rec.png" />
-        <ToolbarItem IconImageSource="setup.png" Clicked="ButtonActualizarClave_Clicked" />
-        <ToolbarItem IconImageSource="rec.png" />
-        <ToolbarItem IconImageSource="rec.png" />
-        <ToolbarItem IconImageSource="escudo.png"/>
+
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+
     </ContentPage.ToolbarItems>
-    
-    
+
+
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Padding="20">

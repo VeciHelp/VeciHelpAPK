@@ -1,4 +1,5 @@
-﻿using Refit;
+﻿using Newtonsoft.Json;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,7 +27,12 @@ namespace VeciHelpAPK.Views
         public Principal(Usuario usr)
         {
             InitializeComponent();
+            var usrTemp = JsonConvert.SerializeObject(usr);
+
+            Preferences.Set("UsuarioMasterPage", usrTemp);
             NavigationPage.SetHasBackButton(this, false);
+
+
             ButtonAdministrador.IsEnabled = false;
             ButtonAdministrador.IsVisible = false;
             lblAdministrador.IsVisible = false;
