@@ -28,7 +28,7 @@
                     
                 </StackLayout>
                 <Label Text="ENROLAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
-                <Label Text="Ingresa al sistema y envia un codigo de verificacion via correo" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+                <Label Text="Ingresa al usuario y envía un código de verificación vía correo" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
                 <StackLayout Padding="10,10,10,90">
                     <control:StanndardEntry
                         x:Name="EnrolarCorreo"
@@ -73,7 +73,7 @@
                     
                 </StackLayout>
                 <Label Text="ELIMINAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
-                <Label Text="Elimina Usuario buscando por correo registrado" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+                <Label Text="Desasocia un suario buscando por correo registrado" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
                 <StackLayout Padding="10,10,10,90">
                     <control:StanndardEntry 
                         x:Name="EliminarCorreo" 
@@ -118,7 +118,7 @@
                 </StackLayout>
                 <Label  Text="ASOCIAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
 
-                <Label Text="Asocia Vecinos Cercanos para Alertas CASA VECINO" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+                <Label Text="Asocia vecinos para alertas CASA VECINO" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
 
                 <StackLayout Padding="10,10,10,90">
                     <control:StanndardEntry
@@ -162,7 +162,7 @@
                 <Label Text="DESASOCIAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
 
 
-                <Label Text="Elimina Vecinos Cercanos para Alertas CASA VECINO" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+                <Label Text="Elimina vecinos para alertas CASA VECINO" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
 
                 <StackLayout Padding="10,10,10,90">
                     <control:StanndardEntry 

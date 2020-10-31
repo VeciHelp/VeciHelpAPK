@@ -60,26 +60,26 @@
                 <StackLayout Orientation="Horizontal" Padding="0,20" HorizontalOptions="CenterAndExpand">
                     <Button x:Name="BtnBomberos"
                             Text="BOMBEROS" 
-                            HorizontalOptions="StartAndExpand" 
+                            HorizontalOptions="CenterAndExpand" 
                             TextColor="White" 
-                            FontSize="Medium"
+                            FontSize="16"
                             BackgroundColor="#00000"
                             BorderWidth="1"
                             BorderColor="White"
-                            CornerRadius="25" 
-                            WidthRequest="150"
+                            CornerRadius="20" 
+                            WidthRequest="130"
                             Clicked="BtnBomberos_Clicked"/>
 
                     <Button x:Name="BtnCarabineros"
                             Text="CARABINEROS" 
-                            HorizontalOptions="EndAndExpand"
+                            HorizontalOptions="CenterAndExpand"
                             TextColor="White" 
-                            FontSize="Medium" 
+                            FontSize="16" 
                             BackgroundColor="#00000"
                             BorderWidth="1" 
                             BorderColor="White" 
-                            CornerRadius="25"
-                            WidthRequest="150"
+                            CornerRadius="20"
+                            WidthRequest="130"
                             Clicked="BtnCarabineros_Clicked"/>
                 </StackLayout>
             </StackLayout>
