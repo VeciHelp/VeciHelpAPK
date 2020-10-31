@@ -30,9 +30,9 @@ namespace VeciHelpAPK.Views
             {
 
                 new Menu{ MenuTitle="INICIO",  MenuDetail="Mi perfil",icon="escudo.png"},
-                new Menu{ MenuTitle="ACTUALIZAR",  MenuDetail="Mis Datos",icon="message.png"},
-                new Menu{ MenuTitle="CAMBIAR",  MenuDetail="Contraseña",icon="contacts.png"},
-                new Menu{ MenuTitle="CERRAR SESIÓN",  MenuDetail="LogOut",icon="contacts.png"},
+                new Menu{ MenuTitle="ACTUALIZAR",  MenuDetail="Mis Datos",icon="userVerde.png"},
+                new Menu{ MenuTitle="CAMBIAR",  MenuDetail="Contraseña",icon="key.png"},
+                new Menu{ MenuTitle="SALIR",  MenuDetail="Cerrar Sesión",icon="logout.png"},
             };
             ListMenu.ItemsSource = menu;
         }

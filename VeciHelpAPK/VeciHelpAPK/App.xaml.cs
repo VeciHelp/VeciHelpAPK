@@ -1,5 +1,7 @@
-﻿using VeciHelpAPK.Views;
+﻿using VeciHelpAPK.Models;
+using VeciHelpAPK.Views;
 using Xamarin.Forms;
+using Xamarin.Forms.Markup;
 
 namespace VeciHelpAPK
 {
@@ -36,6 +38,8 @@ namespace VeciHelpAPK
                 if (MainPage is NavigationPage mainPage)
                 {
                     promptToConfirmExit = MainPage.Navigation.NavigationStack.Count <= 2;
+
+                   // promptToConfirmExit = MenuPage.Navigation.NavigationStack.Count <= 2;
                     //promptToConfirmExit = ((MasterDetailPage)Current.MainPage).Detail.Navigation.NavigationStack.Count <= 2;
                 }
                 return promptToConfirmExit;

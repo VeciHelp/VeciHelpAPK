@@ -62,7 +62,7 @@ namespace VeciHelpAPK.Droid
         //    }
         //    base.OnBackPressed();
         //}
-        long lastPress;
+        //long lastPress;
 
         //public override void OnBackPressed()
         //{
