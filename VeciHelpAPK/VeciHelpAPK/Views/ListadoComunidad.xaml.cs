@@ -54,7 +54,8 @@ namespace VeciHelpAPK.Views
                 btnCliente.ClassId = item.id_Usuario.ToString();
                 btnCliente.Clicked += BtnCliente_Click;
                 btnCliente.FontSize = 17;
-                btnCliente.BackgroundColor = Color.FromHex("#b2b2b2");
+                btnCliente.BackgroundColor = Color.White;
+                btnCliente.TextColor = Color.FromHex("#1d83d4");
                 btnCliente.CornerRadius = 20;
                
                 sl.Children.Add(btnCliente);

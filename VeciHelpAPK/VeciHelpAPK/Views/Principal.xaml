@@ -7,7 +7,6 @@
              x:Class="VeciHelpAPK.Views.Principal"
              xmlns:local="clr-namespace:VeciHelpAPK.Models"
              BackgroundColor="#242525">
-
     <ContentPage.ToolbarItems>
 
         <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
@@ -17,7 +16,7 @@
 
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Padding="20">
+            <StackLayout Padding="20,20,20,10">
 
                 <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                     <Label Text="Veci" TextColor="White" FontSize="40" Margin="0"/>

@@ -29,7 +29,7 @@ namespace VeciHelpAPK.Views
             List<Menu> menu = new List<Menu>
             {
 
-                new Menu{ MenuTitle="INICIO",  MenuDetail="Mi perfil",icon="escudo.png"},
+                new Menu{ MenuTitle="INICIO",  MenuDetail="VeciHelp",icon="escudo.png"},
                 new Menu{ MenuTitle="ACTUALIZAR",  MenuDetail="Mis Datos",icon="userVerde.png"},
                 new Menu{ MenuTitle="CAMBIAR",  MenuDetail="Contraseña",icon="key.png"},
                 new Menu{ MenuTitle="SALIR",  MenuDetail="Cerrar Sesión",icon="logout.png"},

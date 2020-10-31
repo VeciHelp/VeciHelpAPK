@@ -47,7 +47,7 @@
 
                     <Label x:Name="LblContadorPersonas" 
                            HorizontalOptions="Center" 
-                           TextColor="Azure"/>
+                           TextColor="Azure" FontSize="16"/>
                 </StackLayout>
                 <Label x:Name="LblDetalle"
                    HorizontalOptions="CenterAndExpand"
