@@ -73,7 +73,7 @@
                     
                 </StackLayout>
                 <Label Text="ELIMINAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
-                <Label Text="Desasocia un suario buscando por correo registrado" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+                <Label Text="Desasocia un usuario buscando por correo registrado" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
                 <StackLayout Padding="10,10,10,90">
                     <control:StanndardEntry 
                         x:Name="EliminarCorreo" 

@@ -22,6 +22,8 @@ namespace VeciHelpAPK.Views
             usr = user;
             MyMenu();
         }
+
+       
         public void MyMenu()
         {
             

@@ -82,6 +82,11 @@ namespace VeciHelpAPK.Views
 
                 }
 
+                if (item.nombreGenerador == item.nombreAyuda)
+                {
+                    btnAlertas.ImageSource = "user.png";
+                }
+
                 if (item.opcionBoton == "Finalizar")
                 {
                     btnAlertas.ImageSource = "accept.png";

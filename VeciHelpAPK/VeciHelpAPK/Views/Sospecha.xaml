@@ -26,8 +26,10 @@
                    />
                     <StackLayout Padding="50,20">
                         <Button x:Name="ButtonFotoSospecha" 
-                            Text="Tomar Foto"
-                                
+                            Text="TOMAR FOTO"
+                                CornerRadius="20"
+                                HeightRequest="50"
+                                FontSize="20"
                             Clicked="ButtonFotoSospecha_Clicked"/>
                     </StackLayout>
                 </StackLayout>

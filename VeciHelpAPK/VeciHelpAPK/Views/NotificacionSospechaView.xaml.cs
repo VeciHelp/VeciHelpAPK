@@ -98,7 +98,7 @@ namespace VeciHelpAPK.Views
             LblTipoAlerta.TextColor = Color.FromHex("#2FBB62");
 
 
-            LblHoraAlerta.Text = "Generada a las " + alerta.horaAlerta.ToString("HH:mm");
+            LblHoraAlerta.Text = "Generada a las " + alerta.horaAlerta.ToString("HH:mm") + " Hrs.";
             LblContadorPersonas.Text = "Esperando ayuda " + alerta.participantes.ToString();
 
             FotoPerfil.Source = Xamarin.Forms.ImageSource.FromStream(
