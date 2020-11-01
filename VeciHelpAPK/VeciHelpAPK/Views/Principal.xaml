@@ -7,11 +7,6 @@
              x:Class="VeciHelpAPK.Views.Principal"
              xmlns:local="clr-namespace:VeciHelpAPK.Models"
              BackgroundColor="#242525">
-    <ContentPage.ToolbarItems>
-
-        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
-
-    </ContentPage.ToolbarItems>
 
 
     <ContentPage.Content>

@@ -77,15 +77,20 @@ namespace VeciHelpAPK.Views
                         GuardarDatosSesion(usr);
 
                         //guardo el login en la memoria
-
                         var loginJson = JsonConvert.SerializeObject(log);
                         Preferences.Set("AutoLogin",loginJson);
-                        //redirecciona a la pagina principal
 
-                        await Navigation.PushModalAsync(new MenuPrincipal(usr));
+
+                        //Asigno la MAsterDetailPAge como MainPage
+                        Application.Current.MainPage = new MenuPrincipal(usr);
+
+                        //redirecciona a la pagina principal
+                        await Navigation.PushModalAsync(new Principal(usr));
+
                     }
                     else if(usr.existe==2)
                     {
+                        //el usuario debe cambiar la contraseña
                         Preferences.Set("Ses_token", usr.token);
                         Preferences.Set("Ses_id_Usuario", usr.id_Usuario.ToString());
                         await DisplayAlert("Atención", "Por seguridad debe actualizar su contraseña", "Aceptar");
@@ -167,9 +172,12 @@ namespace VeciHelpAPK.Views
                         //guardo los datos del objeto usuario en variables locales de la aplicacion
                         GuardarDatosSesion(usr);
 
-                    //redirecciona a la pagina principal
+                    
+                    //Asigno la MAsterDetailPAge como MainPage
+                    Application.Current.MainPage = new MenuPrincipal(usr);
 
-                    await Navigation.PushModalAsync(new MenuPrincipal(usr));
+                    //redirecciona a la pagina principal
+                    await Navigation.PushModalAsync(new Principal(usr));
                     }
                     else if (usr.existe == 2)
                     {

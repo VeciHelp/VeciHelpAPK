@@ -43,45 +43,51 @@ namespace VeciHelpAPK.Droid
         }
 
         //Confirm with dialog
-        //public override void OnBackPressed()
-        //{
-        //    if (((VeciHelpAPK.App)App.Current).PromptToConfirmExit)
-        //    {
-        //        using (var alert = new AlertDialog.Builder(this))
-        //        {
-        //            alert.SetTitle("Salir de la aplicación");
-        //            alert.SetMessage("Esta seguro que desea salir?");
-        //            //alert.SetPositiveButton("SI", (sender, args) => { FinishAffinity(); }); // inform Android that we are done with the activity
-        //            alert.SetPositiveButton("SI", (sender, args) => { JavaSystem.Exit(0); }); // inform Android that we are done with the activity
-        //            alert.SetNegativeButton("No", (sender, args) => { }); // do nothing
+       //public override void OnBackPressed()
+       //{
+       //    if (((VeciHelpAPK.App)App.Current).PromptToConfirmExit)
+       //    {
+       //        using (var alert = new AlertDialog.Builder(this))
+       //        {
+       //            alert.SetTitle("Salir de la aplicación");
+       //            alert.SetMessage("Esta seguro que desea salir?");
+       //            //alert.SetPositiveButton("SI", (sender, args) => { FinishAffinity(); }); // inform Android that we are done with the activity
+       //            alert.SetPositiveButton("SI", (sender, args) => { JavaSystem.Exit(0); }); // inform Android that we are done with the activity
+       //            alert.SetNegativeButton("No", (sender, args) => { }); // do nothing
+       //
+       //            var dialog = alert.Create();
+       //            dialog.Show();
+       //        }
+       //        return;
+       //    }
+       //    base.OnBackPressed();
+       //}
 
-        //            var dialog = alert.Create();
-        //            dialog.Show();
-        //        }
-        //        return;
-        //    }
-        //    base.OnBackPressed();
-        //}
-        //long lastPress;
+        long lastPress;
 
-        //public override void OnBackPressed()
-        //{
-        //    long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
+        public override void OnBackPressed()
+        {
+            int cont = 0;
+            long currentTime = DateTime.UtcNow.Ticks / TimeSpan.TicksPerMillisecond;
 
-
-        //    var curren = App.Current.MainPage;
-        //    App.Current.MainPage=this
-
-        //    if (currentTime - lastPress > 5000)
-        //    {
-        //        Toast.MakeText(this, "Press back again to exit", ToastLength.Long).Show();
-        //        lastPress = currentTime;
-        //    }
-        //    else
-        //    {
-        //        base.OnBackPressed();
-        //    }
-        //}
+            if (((VeciHelpAPK.App)App.Current).PromptToConfirmExit)
+            {
+                if (currentTime - lastPress > 5000)
+                {
+                    Toast.MakeText(this, "Presione 2 veces para Salir", ToastLength.Long).Show();
+                    lastPress = currentTime;
+                    cont++;
+                }
+                else
+                {
+                        JavaSystem.Exit(0);
+                }
+            }
+            else
+            {
+                base.OnBackPressed();
+            }
+        }
 
     }
 }

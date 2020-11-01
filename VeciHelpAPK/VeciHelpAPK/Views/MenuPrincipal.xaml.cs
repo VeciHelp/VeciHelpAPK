@@ -38,7 +38,7 @@ namespace VeciHelpAPK.Views
             };
             ListMenu.ItemsSource = menu;
         }
-        private void ListMenu_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void ListMenu_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var menu = e.SelectedItem as Menu;
             //if (menu != null)
@@ -49,24 +49,38 @@ namespace VeciHelpAPK.Views
             if(menu.MenuTitle == "INICIO")
             {
                 IsPresented = false;
-                Detail = new NavigationPage(new Principal(usr));
+               // Detail = new NavigationPage();
+                await Detail.Navigation.PushAsync(new Principal(usr));
             }
             else if (menu.MenuTitle == "ACTUALIZAR")
             {
                 IsPresented = false;
-                
-                Detail = new NavigationPage(new Crear_Usuario(usr.id_Usuario));
+
+                await Detail.Navigation.PushAsync(new Crear_Usuario(usr.id_Usuario));
             }
            else if (menu.MenuTitle == "CAMBIAR")
             {
                 IsPresented = false;
-                Detail = new NavigationPage(new ActualizarClave(usr));
+                await Detail.Navigation.PushAsync(new ActualizarClave(usr));
             }
-            else if (menu.MenuTitle == "CERRAR SESIÓN")
+            else if (menu.MenuTitle == "SALIR")
             {
-                IsPresented = false;
-                Preferences.Remove("AutoLogin");
-                Navigation.PopModalAsync();
+                var action = await DisplayAlert("Atención", "Quiere cerrar Sesion?", "Si", "No");
+                if (action)
+                {
+                    IsPresented = false;
+                    Preferences.Remove("AutoLogin");
+
+                    //Asigno el Login como MainPage
+                    Application.Current.MainPage = new LoginView();
+
+                    await Navigation.PopModalAsync();
+
+                    //redirecciona a la pagina principal
+                    await Navigation.PushModalAsync(new Principal(usr));
+                }
+              
+                
             }
 
         }
