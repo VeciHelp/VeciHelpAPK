@@ -41,7 +41,10 @@ namespace VeciHelpAPK.Views
             if(alerta.opcionBoton == "Finalizar")
             {
                 var response = await endPoint.FinalizarAlerta(aler);
+                response = response.Replace("\"", "");
                 await DisplayAlert("Atención", response, "Aceptar");
+
+
 
                 //elimino 2 ventanas
 
@@ -55,7 +58,8 @@ namespace VeciHelpAPK.Views
                 
                 var response = await endPoint.AcudirAlerta(aler);
                 GlobalClass.varGlobal = true;
-                if (response.Equals("\"No puede acudir a mas de una alerta\""))
+                response = response.Replace("\"", "");
+                if (response.Equals("No puede acudir a mas de una alerta"))
                 {
                     await DisplayAlert("Atención", response, "Aceptar");
                 }
@@ -175,6 +179,26 @@ namespace VeciHelpAPK.Views
             }
 
             await Navigation.PopAsync();
+        }
+
+        private void toolBarPrincipal_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarMisDatos_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarClave_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 

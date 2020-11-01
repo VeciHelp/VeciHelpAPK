@@ -40,6 +40,7 @@ namespace VeciHelpAPK.Views
 
                 var response = await endPoint.EnrolarUsuario(adm);
 
+                response = response.Replace("\"", "");
                 await DisplayAlert("Atención", response.ToString(), "Aceptar");
 
                 EnrolarCorreo.Text = string.Empty;
@@ -70,7 +71,7 @@ namespace VeciHelpAPK.Views
 
                         usr = JsonConvert.DeserializeObject<Usuario>(jsonString);
 
-                        var action = await DisplayAlert("Atención", "Desea borrar al usuario: " + usr.nombre + " " + usr.apellido, "Si", "No");
+                        var action = await DisplayAlert("Atención", "Desea borrar al usuario: " + usr.nombre + " " + usr.apellido, "Aceptar", "Cancelar");
 
                         if (action)
                         {
@@ -219,6 +220,26 @@ namespace VeciHelpAPK.Views
                 ex.Message.ToString();
                 throw;
             }
+        }
+
+        private void toolBarPrincipal_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarMisDatos_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarClave_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
     
