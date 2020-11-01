@@ -82,7 +82,7 @@ namespace VeciHelpAPK.Views
                         Preferences.Set("AutoLogin",loginJson);
                         //redirecciona a la pagina principal
 
-                        await Navigation.PushModalAsync(new MenuPrincipal(usr));
+                        await Navigation.PushAsync(new Principal(usr));
                     }
                     else if(usr.existe==2)
                     {
@@ -169,7 +169,7 @@ namespace VeciHelpAPK.Views
 
                     //redirecciona a la pagina principal
 
-                    await Navigation.PushModalAsync(new MenuPrincipal(usr));
+                    await Navigation.PushAsync(new Principal(usr));
                     }
                     else if (usr.existe == 2)
                     {

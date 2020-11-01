@@ -10,6 +10,14 @@
              BackgroundColor=" #242525"
              >
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="toolBarPrincipal" Order="Secondary" Text="INICIO" Priority="0"/>
+        <ToolbarItem x:Name="toolBarMisDatos" Order="Secondary" Text="MIS DATOS" Priority="0"  />
+        <ToolbarItem x:Name="toolBarClave" Order="Secondary" Text="CONTRASEÑA" Priority="0" />
+        <ToolbarItem x:Name="toolBarCerrarSesion" Order="Secondary" Text="CERRAR SESIÓN" Priority="0"  />
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary"/>
+    </ContentPage.ToolbarItems>
+
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="30" Orientation="Vertical" HorizontalOptions="Center">

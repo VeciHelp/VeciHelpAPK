@@ -125,6 +125,13 @@ namespace VeciHelpAPK.Views
 
             await Navigation.PopAsync();
         }
+
+        private void toolBarCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+            Preferences.Remove("AutoLogin");
+
+            Navigation.PushModalAsync(new NavigationPage(new LoginView()));
+        }
     }
 
 }
