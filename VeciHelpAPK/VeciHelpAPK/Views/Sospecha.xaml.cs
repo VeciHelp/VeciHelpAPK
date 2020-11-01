@@ -37,14 +37,30 @@ namespace VeciHelpAPK.Views
 
                 if (foto == null)
                 {
-                    await DisplayAlert("Atención", "Se cargará la alerta sin foto", "Aceptar");
+                    //await DisplayAlert("Atención", "Se cargará la alerta sin foto", "Aceptar");
+
+                    var action = await DisplayAlert("Atención", "Desea enviar la alerta sin foto ?" , "Aceptar", "Cancelar");
+
+                    if (action)
+                    {
+                        //envio por aca, cuando se carga con foto
+                        var respuesta2 = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, foto);
+
+
+                        await DisplayAlert("Atención", respuesta2, "Aceptar");
+                    }
+
+                }
+                else
+                {
+                    //envio por aca, cuando se carga con foto
+                    var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, foto);
+
+
+                    await DisplayAlert("Atención", respuesta, "Aceptar");
                 }
 
-                //envio por aca, cuando se carga con foto
-                var respuesta = await Alerta.EnviarAlerta(idUsuario, "sospecha", textoSospecha.Text, foto);
 
-
-                await DisplayAlert("Atención", respuesta, "Aceptar");
 
             }
             catch (Exception ex)
@@ -102,6 +118,26 @@ namespace VeciHelpAPK.Views
 
             return bytes;
             //return Convert.ToBase64String(bytes);
+        }
+
+        private void toolBarPrincipal_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarMisDatos_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarClave_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

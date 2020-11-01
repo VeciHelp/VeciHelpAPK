@@ -80,13 +80,13 @@ namespace VeciHelpAPK.Views
                 //token del administrador
                 var token = Preferences.Get("Ses_token", null);
 
-                var action = await DisplayAlert("Atención", "Desea asociar este vecino", "Si", "No");
+                var action = await DisplayAlert("Atención", "Desea asociar este vecino ?", "Aceptar", "Cancelar");
 
                 if (action)
                 {
                     var endPoint = RestService.For<IAdministrador>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(direccionBase) });
                     var response = await endPoint.AsociarVecinos(asociacion);
-
+                    response = response.Replace("\"", "");
                     await DisplayAlert("Atención", response, "Aceptar");
                 }
             }
@@ -98,6 +98,24 @@ namespace VeciHelpAPK.Views
            
         }
 
+        private void toolBarPrincipal_Clicked(object sender, EventArgs e)
+        {
 
+        }
+
+        private void toolBarMisDatos_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarClave_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

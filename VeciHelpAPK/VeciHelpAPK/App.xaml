@@ -6,6 +6,6 @@
              mc:Ignorable="d"
              x:Class="VeciHelpAPK.App">
     <Application.Resources>
-
+        
     </Application.Resources>
 </Application>

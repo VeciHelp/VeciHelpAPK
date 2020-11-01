@@ -53,8 +53,8 @@ namespace VeciHelpAPK.Views
             {
                 var response = await endPoint.AcudirAlerta(aler);
                 GlobalClass.varGlobal = true;
-
-                if (response.Equals("\"No puede acudir a mas de una alerta\""))
+                response = response.Replace("\"", "");
+                if (response.Equals("No puede acudir a mas de una alerta"))
                 {
                     await DisplayAlert("Atención", response, "Aceptar");
                 }
@@ -127,6 +127,26 @@ namespace VeciHelpAPK.Views
         private void BtnCarabineros_Clicked(object sender, EventArgs e)
         {
             PhoneDialer.Open(alerta.nroEmergencia);
+        }
+
+        private void toolBarPrincipal_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarMisDatos_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarClave_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,12 +36,32 @@ namespace VeciHelpAPK.Views
 
             var respuesta = await Alerta.EnviarAlerta(idVeci, "ayuda", datosAlerta,null);
 
-            await DisplayAlert(" ", respuesta, "Ok");
+            await DisplayAlert("Atención", respuesta, "Aceptar");
         }
 
         private async  void ButtonVecino_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new AyudaVecino());
+        }
+
+        private void toolBarPrincipal_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarMisDatos_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarClave_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolBarCerrarSesion_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }
