@@ -132,6 +132,25 @@ namespace VeciHelpAPK.Views
 
             Navigation.PushModalAsync(new NavigationPage(new LoginView()));
         }
+
+        private async void toolBarMisDatos_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new Crear_Usuario(user.id_Usuario)));
+        }
+
+        private async void toolBarPrincipal_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new Principal(user)));
+
+        }
+
+        private async void toolBarClave_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ActualizarClave(user));
+
+        }
+
+        
     }
 
 }
