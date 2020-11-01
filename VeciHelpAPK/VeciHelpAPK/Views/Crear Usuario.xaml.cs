@@ -35,13 +35,16 @@ namespace VeciHelpAPK.Views
         public  Crear_Usuario()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
 
         public Crear_Usuario(int idUser)
         {
             InitializeComponent();
             RecargarDatosUsuario(idUser);
-            
+            NavigationPage.SetHasNavigationBar(this, false);
+
         }
 
         //constructor para entrar por la vista de validacion de codigo
@@ -52,6 +55,8 @@ namespace VeciHelpAPK.Views
             LayoutFoto.IsVisible = false;
             mostrarcampos();
             CargarUsuarioValidado();
+            //Elimina la opcion cuando se crea un usuario nuevo 
+            NavigationPage.SetHasNavigationBar(this, false);
 
         }
 
