@@ -13,7 +13,7 @@ namespace VeciHelpAPK
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new VeciHelpAPK.Views.LoginView());
+            MainPage = new NavigationPage(new LoginView());
 
         }
 
@@ -35,12 +35,11 @@ namespace VeciHelpAPK
             {
                 bool promptToConfirmExit = false;
 
-                if (MainPage is NavigationPage mainPage)
-                {
-                    promptToConfirmExit = MainPage.Navigation.NavigationStack.Count <= 2;
+                var masterDetail = App.Current.MainPage as MasterDetailPage;
 
-                   // promptToConfirmExit = MenuPage.Navigation.NavigationStack.Count <= 2;
-                    //promptToConfirmExit = ((MasterDetailPage)Current.MainPage).Detail.Navigation.NavigationStack.Count <= 2;
+                if (MainPage is MasterDetailPage mainPage)
+                {
+                    promptToConfirmExit = masterDetail.Detail.Navigation.NavigationStack.Count == 1;
                 }
                 return promptToConfirmExit;
             }
