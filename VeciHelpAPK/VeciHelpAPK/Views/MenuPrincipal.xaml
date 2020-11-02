@@ -12,7 +12,6 @@
             Title="Menú"
             BackgroundColor="#5e5a5a"
             Padding="0,40,0,0">
-            <Label Text="My menu"/>
             <ListView BackgroundColor="White" x:Name="ListMenu" ItemSelected="ListMenu_ItemSelected" >
                 <ListView.ItemTemplate>
                     <DataTemplate>

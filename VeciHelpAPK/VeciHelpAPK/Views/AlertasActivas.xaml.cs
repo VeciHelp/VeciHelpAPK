@@ -79,7 +79,7 @@ namespace VeciHelpAPK.Views
 
                     }
 
-                if (item.nombreGenerador == item.nombreAyuda)
+                if (item.idVecino == idUsuario)
                 {
                     btnAlertas.ImageSource = "user.png";
                 }

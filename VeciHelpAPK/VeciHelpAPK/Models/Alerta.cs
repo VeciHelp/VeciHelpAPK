@@ -33,6 +33,7 @@ namespace VeciHelpAPK.Models
         public int participantes { get; set; }
         public string foto { get; set; }
         public string opcionBoton { get; set; }
+        public int idVecino { get; set; }
 
 
         public static async Task<string> EnviarAlerta(int idVecino,string tipoAlerta,string datosAlerta,byte[] foto)
