@@ -7,7 +7,8 @@
              x:Class="VeciHelpAPK.Views.Principal"
              xmlns:local="clr-namespace:VeciHelpAPK.Models"
              BackgroundColor="#242525">
-
+    
+    
 
     <ContentPage.Content>
         <StackLayout>

@@ -2,6 +2,11 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="VeciHelpAPK.Views.MenuPrincipal">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="Escudo.png" Priority="0" Order="Primary" />
+    </ContentPage.ToolbarItems>
+
     <MasterDetailPage.Master>
         <ContentPage
             Title="Menú"

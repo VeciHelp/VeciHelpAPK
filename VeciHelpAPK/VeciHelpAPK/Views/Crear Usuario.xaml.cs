@@ -35,7 +35,6 @@ namespace VeciHelpAPK.Views
         public  Crear_Usuario()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
 
         }
 
@@ -43,7 +42,6 @@ namespace VeciHelpAPK.Views
         {
             InitializeComponent();
             RecargarDatosUsuario(idUser);
-            NavigationPage.SetHasNavigationBar(this, false);
 
         }
 
@@ -55,8 +53,6 @@ namespace VeciHelpAPK.Views
             LayoutFoto.IsVisible = false;
             mostrarcampos();
             CargarUsuarioValidado();
-            //Elimina la opcion cuando se crea un usuario nuevo 
-            NavigationPage.SetHasNavigationBar(this, false);
 
         }
 

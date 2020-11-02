@@ -120,24 +120,5 @@ namespace VeciHelpAPK.Views
             //return Convert.ToBase64String(bytes);
         }
 
-        private void toolBarPrincipal_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolBarMisDatos_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolBarClave_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolBarCerrarSesion_Clicked(object sender, EventArgs e)
-        {
-
-        }
     }
 }
