@@ -65,7 +65,7 @@ namespace VeciHelpAPK.Views
             {
                 var response = await endPoint.FinalizarAlerta(aler);
                 response = response.Replace("\"", "");
-                await DisplayAlert("Atención", response, "Aceptar");
+                await DisplayAlert("MUCHAS GRACIAS !!!", "Agradecemos su participación en la comunidad", "Aceptar");
 
 
 
@@ -158,8 +158,8 @@ namespace VeciHelpAPK.Views
             }
             else if (alerta.opcionBoton == "Finalizar")
             {
-                ButtonAcudir.BackgroundColor = Color.FromHex("#d92027");
-                ButtonAcudir.Text = "Finalizar alerta";
+                ButtonAcudir.BackgroundColor = Color.FromHex("#1d83d4");
+                ButtonAcudir.Text = "Ayuda Realizada";
             }
 
         }

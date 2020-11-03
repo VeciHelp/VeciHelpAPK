@@ -25,12 +25,12 @@
             </StackLayout>
 
             <StackLayout Padding="30,85,30,10">
+                
                 <control:StanndardEntry 
                         x:Name="txtOldPass" 
                        Placeholder="Contraseña Antigua" 
                        HorizontalOptions="Center" 
                        WidthRequest="400" 
-                       Keyboard="Email" 
                         BackgroundColor="#31FFFFFF" 
                         BorderColor="White"
                         BorderThickness="1"
@@ -39,7 +39,8 @@
                         HeightRequest="42"
                         HorizontalTextAlignment="Center"
                         PlaceholderColor="#ededed"
-                    IsPassword="True"/>
+                        IsPassword="True"
+                    />
 
                 <control:StanndardEntry x:Name="txtNewPass" 
                        Placeholder="Contraseña Nueva" 
@@ -52,7 +53,8 @@
                         TextColor="White"
                         HeightRequest="42"
                         HorizontalTextAlignment="Center"
-                        PlaceholderColor="#ededed"/>
+                        PlaceholderColor="#ededed"
+                        IsPassword="True"/>
                 
                 <control:StanndardEntry x:Name="txtNewPass2" 
                        Placeholder="Repetir Contraseña" 

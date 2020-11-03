@@ -51,7 +51,7 @@ namespace VeciHelpAPK.Views
             this.usr = user;
             InitializeComponent();
             LayoutFoto.IsVisible = false;
-            mostrarcampos();
+            //mostrarcampos();
             CargarUsuarioValidado();
 
         }
@@ -74,24 +74,35 @@ namespace VeciHelpAPK.Views
         {
             if (ButtonCrear.Text == "ACTUALIZAR")
             {
-                asignarDatosActualizar();
+                validacionesCampos();
 
-                var endPoint = RestService.For<IUsuario>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
-                
-                var jsonstring = JsonConvert.SerializeObject(usr);
-
-                var request = await endPoint.ActualizarPerfil(usr);
-
-                
-
-                if (request.StatusCode == HttpStatusCode.OK)
+                if (estadoValidacion == true)
                 {
-                    var jsonString = await request.Content.ReadAsStringAsync();
 
-                    await DisplayAlert("Atención", jsonString, "Aceptar");
-                    //actualizo los datos actuales con los de la bd
-                    RecargarDatosUsuario(usr.id_Usuario);
+                    asignarDatosActualizar();
+
+                    var endPoint = RestService.For<IUsuario>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
+                
+                    var jsonstring = JsonConvert.SerializeObject(usr);
+
+                    var request = await endPoint.ActualizarPerfil(usr);
+
+                
+
+                    if (request.StatusCode == HttpStatusCode.OK)
+                    {
+                            var jsonString = await request.Content.ReadAsStringAsync();
+
+                            await DisplayAlert("Atención", jsonString, "Aceptar");
+                            //actualizo los datos actuales con los de la bd
+                            RecargarDatosUsuario(usr.id_Usuario);
+                    }
                 }
+                else
+                {
+                   await DisplayAlert("Atención", mensajeValidaciones, "Aceptar");
+                }
+
             }
             else
             {
@@ -288,13 +299,13 @@ namespace VeciHelpAPK.Views
             }
 
             nombre.Text = user.nombre;
-            nombre.IsReadOnly = true;
+            //nombre.IsReadOnly = true;
             if (nombre.IsReadOnly)
             {
                 nombre.Opacity = 0.7;
             }
             apellido.Text= user.apellido;
-            apellido.IsReadOnly = true;
+            //apellido.IsReadOnly = true;
             if (apellido.IsReadOnly)
             {
                 apellido.Opacity = 0.7;
@@ -306,13 +317,13 @@ namespace VeciHelpAPK.Views
                 correo.Opacity = 0.7;
             }
             rut.Text= user.rut;
-            rut.IsReadOnly = true;
+            //rut.IsReadOnly = true;
             if (rut.IsReadOnly)
             {
                 rut.Opacity = 0.7;
             }
             digito.Text= user.digito.ToString();
-            digito.IsReadOnly = true;
+           // digito.IsReadOnly = true;
             if (digito.IsReadOnly)
             {
                 digito.Opacity = 0.7;
@@ -320,7 +331,7 @@ namespace VeciHelpAPK.Views
             AntecedentesSalud.Text= user.antecedentesSalud;
             celular.Text= user.celular.ToString();
             direccion.Text= user.direccion;
-            direccion.IsReadOnly = true;
+           // direccion.IsReadOnly = true;
             if (direccion.IsReadOnly)
             {
                 direccion.Opacity = 0.7;
@@ -346,28 +357,28 @@ namespace VeciHelpAPK.Views
 
 
         //resetea todos los campos del formulario
-        private void mostrarcampos()
-        {
-            correo.IsVisible = true;
-            correo.IsReadOnly = false;
-            nombre.IsVisible = true;
-            nombre.IsReadOnly = false;
-            apellido.IsVisible = true;
-            apellido.IsReadOnly = false;
-            rut.IsVisible = true;
-            rut.IsReadOnly = false;
-            digito.IsVisible = true;
-            digito.IsReadOnly = false;
-            AntecedentesSalud.IsVisible = true;
-            AntecedentesSalud.IsReadOnly = false;
-            DPFechaNacimiento.IsVisible = true;
-            celular.IsVisible = true;
-            celular.IsReadOnly = false;
-            direccion.IsVisible = true;
-            direccion.IsReadOnly = false;
-            codigoVerificacion.IsVisible = true;
-            codigoVerificacion.IsReadOnly = false;
-        }
+        //private void mostrarcampos()
+        //{
+        //    correo.IsVisible = true;
+        //    correo.IsReadOnly = false;
+        //    nombre.IsVisible = true;
+        //    nombre.IsReadOnly = false;
+        //    apellido.IsVisible = true;
+        //    apellido.IsReadOnly = false;
+        //    rut.IsVisible = true;
+        //    rut.IsReadOnly = false;
+        //    digito.IsVisible = true;
+        //    digito.IsReadOnly = false;
+        //    AntecedentesSalud.IsVisible = true;
+        //    AntecedentesSalud.IsReadOnly = false;
+        //    DPFechaNacimiento.IsVisible = true;
+        //    celular.IsVisible = true;
+        //    celular.IsReadOnly = false;
+        //    direccion.IsVisible = true;
+        //    direccion.IsReadOnly = false;
+        //    codigoVerificacion.IsVisible = true;
+        //    codigoVerificacion.IsReadOnly = false;
+        //}
 
 
         //encripta la contraseña a sha256
@@ -424,7 +435,7 @@ namespace VeciHelpAPK.Views
                 estadoValidacion = false;
                 mensajeValidaciones = "El rut no puede ir en blanco";
             }
-            else if (rut.Text.Length < 7 || nombre.Text.Length > 8 )
+            else if (rut.Text.Length < 7 || rut.Text.Length > 8 )
             {
                 estadoValidacion = false;
                 mensajeValidaciones = "El rut debe contener 7 u 8 dígitos";
@@ -438,8 +449,13 @@ namespace VeciHelpAPK.Views
             else if (digito.Text != "K" && digito.Text != "k" && !digito.Text.ToCharArray().All(Char.IsDigit))
             {
                 estadoValidacion = false;
-                mensajeValidaciones = "El dígito verificador debe contener del 0-9 o una K";
+                mensajeValidaciones = "El dígito verificador debe contener desde el 0-9 o una K";
             }
+            //else if (validarRut(rut.Text, digito.Text) == false)
+            //{
+            //    estadoValidacion = false;
+            //    mensajeValidaciones = "Dígito verificador incorrecto";
+            //}
 
             else if (digito.Text == null || digito.Text.Trim() == string.Empty)
             {
@@ -469,5 +485,37 @@ namespace VeciHelpAPK.Views
                 estadoValidacion = true;
             }
         }
+
+        public bool validarRut(string rut, string dv)
+        {
+
+            bool validacion = false;
+            try
+            {
+                rut = rut.ToUpper();
+                rut = rut.Replace(".", "");
+                rut = rut.Replace("-", "");
+                //int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
+                int rutAux = int.Parse(rut);
+
+                char dv1 = char.Parse(dv);
+
+                int m = 0, s = 0;
+                for (; rutAux != 0; rutAux /= 10)
+                {
+                    s = (s + rutAux % 10 * (9 - m++ % 6)) % 11; 
+                }
+                //s--;
+                if (dv1 == (char)(s != 0 ? s + 47 : 75))
+                {
+                    validacion = true;
+                }
+            }
+            catch (Exception)
+            {
+            }
+            return validacion;
+        }
+
     }
 }
