@@ -19,6 +19,7 @@
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     
                 </StackLayout>
                 <Label Text="ENROLAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
@@ -62,6 +63,7 @@
                     
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     <Image Source="p1.png" WidthRequest="30" HeightRequest="30"/>
+                    <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     
@@ -108,6 +110,7 @@
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     <Image Source="p1.png" WidthRequest="30" HeightRequest="30"/>
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
 
                 </StackLayout>
                 <Label  Text="ASOCIAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
@@ -151,6 +154,7 @@
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
                     <Image Source="p1.png" WidthRequest="30" HeightRequest="30"/>
+                    <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
 
                 </StackLayout>
                 <Label Text="DESASOCIAR" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
@@ -186,6 +190,40 @@
 
             </StackLayout>
         </ContentPage.Content>
+    </ContentPage>
+
+
+
+    <ContentPage BackgroundColor="#242525">
+        <ContentPage.Content>
+            <StackLayout Padding="40">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+
+                    <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="p2.png" WidthRequest="10" HeightRequest="10"/>
+                    <Image Source="p1.png" WidthRequest="30" HeightRequest="30"/>
+
+                </StackLayout>
+                <Label Text="Organizacion" TextColor="White" FontSize="Title" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" Padding="10,10,10,130"/>
+
+
+                <Label Text="Modifica datos de tu Organización" TextColor="white" FontSize="Medium" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+                <StackLayout Padding="10,10,10,90">
+                    <Button
+                        ImageSource="desasociar.png"
+                        Padding="50,10,50,50"
+                    x:Name="ButtonOrganizacion"
+                    Clicked="ButtonOrganizacion_Clicked"
+                        BackgroundColor="#00000"
+                        />
+                </StackLayout>
+            </StackLayout>
+        </ContentPage.Content>
+
+
 
     </ContentPage>
 </CarouselPage>

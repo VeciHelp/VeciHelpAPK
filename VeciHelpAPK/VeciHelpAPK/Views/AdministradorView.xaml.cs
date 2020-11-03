@@ -222,7 +222,10 @@ namespace VeciHelpAPK.Views
             }
         }
 
-       
+        private async void ButtonOrganizacion_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new OrganizacionView());
+        }
     }
     
 }

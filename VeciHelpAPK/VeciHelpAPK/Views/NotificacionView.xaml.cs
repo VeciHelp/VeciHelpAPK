@@ -121,6 +121,7 @@ namespace VeciHelpAPK.Views
                 LblDetalle.Text = alerta.coordenadaSospecha;
             }
             LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda + "\n\n" + alerta.direccion;
+            LabelAntecedentesSalud.Text = alerta.antecedentesSalud;
             
             //LblDireccion.Text = alerta.direccion;
             LblTipoAlerta.Text =   alerta.TipoAlerta.ToUpper();
@@ -174,35 +175,35 @@ namespace VeciHelpAPK.Views
             PhoneDialer.Open(alerta.nroEmergencia);
         }
 
-        private async Task PopToPage(Page destination)
-        {
-            List<Page> toRemove = new List<Page>();
+        //private async Task PopToPage(Page destination)
+        //{
+        //    List<Page> toRemove = new List<Page>();
 
-            if (destination == null) return;
+        //    if (destination == null) return;
 
-            //First, we get the navigation stack as a list
-            var pages = Navigation.NavigationStack.ToList();
+        //    //First, we get the navigation stack as a list
+        //    var pages = Navigation.NavigationStack.ToList();
 
-            //Then we invert it because it's from first to last and we need in the inverse order
-            pages.Reverse();
+        //    //Then we invert it because it's from first to last and we need in the inverse order
+        //    pages.Reverse();
 
-            //Then we discard the current page
-            pages.RemoveAt(0);
+        //    //Then we discard the current page
+        //    pages.RemoveAt(0);
 
-            foreach (var page in pages)
-            {
-                if (page == destination) break; //We found it.
+        //    foreach (var page in pages)
+        //    {
+        //        if (page == destination) break; //We found it.
 
-                toRemove.Add(page);
-            }
+        //        toRemove.Add(page);
+        //    }
 
-            foreach (var rvPage in toRemove)
-            {
-                Navigation.RemovePage(rvPage);
-            }
+        //    foreach (var rvPage in toRemove)
+        //    {
+        //        Navigation.RemovePage(rvPage);
+        //    }
 
-            await Navigation.PopAsync();
-        }
+        //    await Navigation.PopAsync();
+        //}
 
     }
 

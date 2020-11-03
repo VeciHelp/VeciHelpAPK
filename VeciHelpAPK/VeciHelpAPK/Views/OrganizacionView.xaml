@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="VeciHelpAPK.Views.OrganizacionView"
+             xmlns:control="clr-namespace:VeciHelpAPK.Controls"
+             Title="MI ORGANIZACION"
+             BackgroundColor=" #242525">
+    
+    
+    
+    <ContentPage.Content>
+        <StackLayout Padding="30" Orientation="Vertical" HorizontalOptions="Center">
+
+            <StackLayout>
+                <StackLayout Padding="10" WidthRequest="400" Orientation="Vertical">
+
+                    <control:StanndardEntry x:Name="nombre" Placeholder="Dirección (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
+                                       ReturnType="Next" BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        PlaceholderColor="#ededed"
+                                        TextColor="White"
+                                        HeightRequest="42"/>
+                    
+                    <control:StanndardEntry x:Name="nroEmergencia" Placeholder="Dirección (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
+                                       ReturnType="Next" BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        PlaceholderColor="#ededed"
+                                        TextColor="White"
+                                        HeightRequest="42"/>
+
+                    <control:StanndardEntry x:Name="cantMinima" Placeholder="Dirección (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
+                                       ReturnType="Next" BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        PlaceholderColor="#ededed"
+                                        TextColor="White"
+                                        HeightRequest="42"/>
+
+                    <control:StanndardEntry x:Name="comuna" Placeholder="Dirección (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
+                                       ReturnType="Next" BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        PlaceholderColor="#ededed"
+                                        TextColor="White"
+                                        HeightRequest="42"/>
+                    
+                    <control:StanndardEntry x:Name="ciudad" Placeholder="Dirección (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
+                                       ReturnType="Next" BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        PlaceholderColor="#ededed"
+                                        TextColor="White"
+                                        HeightRequest="42"/>
+
+                    <control:StanndardEntry x:Name="provincia" Placeholder="Dirección (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
+                                       ReturnType="Next" BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        PlaceholderColor="#ededed"
+                                        TextColor="White"
+                                        HeightRequest="42"/>
+
+                    <control:StanndardEntry x:Name="region" Placeholder="Dirección (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
+                                       ReturnType="Next" BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        PlaceholderColor="#ededed"
+                                        TextColor="White"
+                                        HeightRequest="42"/>
+
+                    <control:StanndardEntry x:Name="pais" Placeholder="Dirección (Obligatorio)" WidthRequest="400" HorizontalOptions="Center"
+                                       ReturnType="Next" BackgroundColor="#31FFFFFF" 
+                                        BorderColor="White"
+                                        BorderThickness="1"
+                                        CornerRadius="8"
+                                        PlaceholderColor="#ededed"
+                                        TextColor="White"
+                                        HeightRequest="42"/>
+
+
+                </StackLayout>
+            </StackLayout>
+            <StackLayout>
+                <Button x:Name="ButtonActualizar" 
+                            Clicked="ButtonActualizar_Clicked" 
+                            Text="Actualizar" BackgroundColor="#2FBB62" 
+                            TextColor="White" 
+                            CornerRadius="20"
+                            HeightRequest="80"
+                            FontSize="20"/>
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
