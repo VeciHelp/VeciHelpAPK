@@ -33,9 +33,20 @@
        
                         <StackLayout HorizontalOptions="StartAndExpand">
 
-                            <Label x:Name="LblNombre"  VerticalOptions="CenterAndExpand" TextColor="White" 
-                                   FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>
-                            <Label x:Name="LabelAntecedentesSalud"/>
+                            <Label x:Name="LblNombre"  
+                                   VerticalOptions="CenterAndExpand" 
+                                   TextColor="White" 
+                                   FontAttributes="Bold" 
+                                   HorizontalTextAlignment="Start" 
+                                   HorizontalOptions="StartAndExpand"
+                                   FontSize="20"/>
+                            <Label x:Name="LabelAntecedentesSalud"
+                                   VerticalOptions="CenterAndExpand" 
+                                   TextColor="White" 
+                                   FontAttributes="Bold" 
+                                   HorizontalTextAlignment="Start" 
+                                   HorizontalOptions="StartAndExpand"
+                                   FontSize="20"/>
                             <!--<Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>
                             <Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>-->
                         </StackLayout>

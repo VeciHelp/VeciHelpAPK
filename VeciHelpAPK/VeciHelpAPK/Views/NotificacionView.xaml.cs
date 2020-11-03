@@ -120,9 +120,9 @@ namespace VeciHelpAPK.Views
                 LblDetalle.IsVisible = true;
                 LblDetalle.Text = alerta.coordenadaSospecha;
             }
-            LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda + "\n\n" + alerta.direccion;
-            LabelAntecedentesSalud.Text = alerta.antecedentesSalud;
-            
+            LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda + "\n\n" + alerta.direccion + "\n\n" + alerta.antecedentesSalud;
+            //LabelAntecedentesSalud.Text = alerta.antecedentesSalud;
+
             //LblDireccion.Text = alerta.direccion;
             LblTipoAlerta.Text =   alerta.TipoAlerta.ToUpper();
             
