@@ -19,17 +19,7 @@ namespace VeciHelpAPK.Views
         public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
         Alerta alerta = new Alerta();
 
-        private bool _isRefreshing;
-
-        public bool IsRefreshing
-        {
-            get => _isRefreshing;
-            set { _isRefreshing = value; OnPropertyChanged(); }
-        }
-
-        public ICommand RefreshCommand { private set; get; }
-
-
+       
         //
         public NotificacionView(int idAlerta)
         {
@@ -37,15 +27,6 @@ namespace VeciHelpAPK.Views
             LblDetalle.IsVisible = false;
             ActualizarAlerta(idAlerta);
            // RefreshCommand = new Command(async () => await LoadPublications());
-        }
-
-        
-
-
-        async Task LoadPublications()
-        {
-            ActualizarAlerta(alerta.idAlerta);
-            IsRefreshing = false;
         }
 
 

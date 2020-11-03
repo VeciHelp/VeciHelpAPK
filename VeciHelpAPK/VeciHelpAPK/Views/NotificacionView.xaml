@@ -4,68 +4,66 @@
 
 
     <ContentPage.Content>
-        <RefreshView IsRefreshing="{Binding IsRefreshing}"
-             Command="{Binding RefreshCommand}"
-             RefreshColor="Orange">
-            <ScrollView>
-                <StackLayout Padding="30">
-                    <Label x:Name="LblTipoAlerta"
+
+        <ScrollView>
+            <StackLayout Padding="30">
+                <Label x:Name="LblTipoAlerta"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="Center"
                        TextColor="White"
                            FontAttributes="Bold"
                        FontSize="Title"/>
-                
-                    <Label x:Name="LblHoraAlerta" Text="Hora"
+
+                <Label x:Name="LblHoraAlerta" Text="Hora"
                            HorizontalTextAlignment="Center" 
                            TextColor="White" 
                            HorizontalOptions="CenterAndExpand" 
                            FontSize="17"/>
 
 
-                    <StackLayout Orientation="Horizontal" Padding="5,30">
-                      <Frame CornerRadius="100" IsClippedToBounds="true" 
+                <StackLayout Orientation="Horizontal" Padding="5,30">
+                    <Frame CornerRadius="100" IsClippedToBounds="true" 
                                Padding="0" Margin="0" BackgroundColor="#00000" >
-                            <Image x:Name="FotoPerfil" Source="profile.png"
+                        <Image x:Name="FotoPerfil" Source="profile.png"
                                     WidthRequest="130"
                                     HorizontalOptions="StartAndExpand"/>
-                        </Frame>
-       
-                        <StackLayout HorizontalOptions="StartAndExpand">
+                    </Frame>
 
-                            <Label x:Name="LblNombre"  
+                    <StackLayout HorizontalOptions="StartAndExpand">
+
+                        <Label x:Name="LblNombre"  
                                    VerticalOptions="CenterAndExpand" 
                                    TextColor="White" 
                                    FontAttributes="Bold" 
                                    HorizontalTextAlignment="Start" 
                                    HorizontalOptions="StartAndExpand"
                                    FontSize="20"/>
-                            <Label x:Name="LabelAntecedentesSalud"
+                        <Label x:Name="LabelAntecedentesSalud"
                                    VerticalOptions="CenterAndExpand" 
                                    TextColor="White" 
                                    FontAttributes="Bold" 
                                    HorizontalTextAlignment="Start" 
                                    HorizontalOptions="StartAndExpand"
                                    FontSize="20"/>
-                            <!--<Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>
+                        <!--<Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>
                             <Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>-->
-                        </StackLayout>
                     </StackLayout>
+                </StackLayout>
 
-                    
-                    <StackLayout Orientation="Vertical">
 
-                        <Label x:Name="LblContadorPersonas" 
+                <StackLayout Orientation="Vertical">
+
+                    <Label x:Name="LblContadorPersonas" 
                                HorizontalOptions="Center" 
                                TextColor="Azure" FontSize="16"/>
-                    </StackLayout>
-                    <Label x:Name="LblDetalle"
+                </StackLayout>
+                <Label x:Name="LblDetalle"
                        HorizontalOptions="CenterAndExpand"
                        VerticalOptions="Center"
                        TextColor="White"
                        FontSize="Title"/>
-                    <StackLayout>
-                        <Button x:Name="ButtonAcudir"
+                <StackLayout>
+                    <Button x:Name="ButtonAcudir"
                                 Text="ACUDIR A LLAMADO" 
                                 FontSize="20" 
                                 TextColor="White" 
@@ -75,9 +73,9 @@
                                 Padding="20" 
                                 HeightRequest="80"
                                 FontAttributes="Bold" />
-                    </StackLayout >
-                    <StackLayout Orientation="Horizontal" Padding="0,20" HorizontalOptions="CenterAndExpand">
-                        <Button x:Name="BtnBomberos"
+                </StackLayout >
+                <StackLayout Orientation="Horizontal" Padding="0,20" HorizontalOptions="CenterAndExpand">
+                    <Button x:Name="BtnBomberos"
                                 Text="BOMBEROS" 
                                 HorizontalOptions="CenterAndExpand" 
                                 TextColor="White" 
@@ -89,7 +87,7 @@
                                 WidthRequest="130"
                                 Clicked="BtnBomberos_Clicked" />
 
-                        <Button x:Name="BtnCarabineros"
+                    <Button x:Name="BtnCarabineros"
                                 Text="Plan Cuadrante" 
                                 HorizontalOptions="CenterAndExpand"
                                 TextColor="White" 
@@ -100,9 +98,8 @@
                                 CornerRadius="20"
                                 WidthRequest="130"
                                 Clicked="BtnCarabineros_Clicked"/>
-                    </StackLayout>
                 </StackLayout>
-            </ScrollView>
-        </RefreshView>
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

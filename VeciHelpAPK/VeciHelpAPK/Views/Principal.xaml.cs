@@ -58,7 +58,8 @@ namespace VeciHelpAPK.Views
         {
             //var pag =  new LoginView() ;
             //await PopToPage(pag);
-            
+
+            //await Navigation.PushAsync(new Test());
             await Navigation.PushAsync(new SOSRobo());
         }
 
