@@ -48,6 +48,8 @@ namespace VeciHelpAPK.Views
 
 
                         await DisplayAlert("Atención", respuesta2, "Aceptar");
+
+                        await Navigation.PopAsync();
                     }
 
                 }
@@ -58,6 +60,7 @@ namespace VeciHelpAPK.Views
 
 
                     await DisplayAlert("Atención", respuesta, "Aceptar");
+                    await Navigation.PopAsync();
                 }
 
 

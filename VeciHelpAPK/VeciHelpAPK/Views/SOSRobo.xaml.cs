@@ -40,6 +40,7 @@ namespace VeciHelpAPK.Views
             var respuesta = await Alerta.EnviarAlerta(idVeci, "robo", datosAlerta,null);
 
             await DisplayAlert("Atención", respuesta, "Aceptar");
+            await Navigation.PopAsync();
         }
 
         private async void ButtonVecino_Clicked(object sender, EventArgs e)

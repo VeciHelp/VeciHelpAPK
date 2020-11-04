@@ -74,7 +74,8 @@ namespace VeciHelpAPK.Views
         {
             if (ButtonCrear.Text == "ACTUALIZAR")
             {
-                validacionesCampos();
+                //le envio un 2 para indicarle que necesito que realice las validaciones pero solo para el actualizar datos
+                validacionesCampos(2);
 
                 if (estadoValidacion == true)
                 {
@@ -106,7 +107,7 @@ namespace VeciHelpAPK.Views
             }
             else
             {
-                validacionesCampos();
+                validacionesCampos(1);
 
                 if (estadoValidacion==true)
                 {
@@ -415,7 +416,7 @@ namespace VeciHelpAPK.Views
                 }
         }
 
-        private void validacionesCampos()
+        private void validacionesCampos(int tipo)
         {
             if (nombre.Text==null ||  nombre.Text.Trim()==string.Empty)
             {
@@ -473,16 +474,21 @@ namespace VeciHelpAPK.Views
                 estadoValidacion = false;
                 mensajeValidaciones = "La dirección no puede ir en blanco";
             }
-
-            else if (clave.Text == null || clave.Text.Trim() == string.Empty)
+            //si le paso un 1 ademas de todo lo que esta validando valida la clave
+            else if(tipo==1)
             {
-                estadoValidacion = false;
-                mensajeValidaciones = "La clave no puede ir en blanco";
+                if (clave.Text == null || clave.Text.Trim() == string.Empty)
+                {
+                    estadoValidacion = false;
+                    mensajeValidaciones = "La clave no puede ir en blanco";
+                }
+               
             }
             else
             {
                 estadoValidacion = true;
             }
+
         }
 
         private Boolean validarRut(String RUT, String DV)

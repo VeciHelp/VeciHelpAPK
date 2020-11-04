@@ -46,7 +46,7 @@ namespace VeciHelpAPK.Views
                 var response = await endPoint.FinalizarAlerta(aler);
                 var jsonstring = JsonConvert.SerializeObject(aler);
                 response = response.Replace("\"", "");
-                await DisplayAlert("MUCHAS GRACIAS !!!", "Agradecemos su participación en la comunidad", "Aceptar");
+                await DisplayAlert("MUCHAS GRACIAS !!!", response, "Aceptar");
 
 
 

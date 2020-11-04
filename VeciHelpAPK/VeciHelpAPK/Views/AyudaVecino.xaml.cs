@@ -74,6 +74,11 @@ namespace VeciHelpAPK.Views
             var respuesta = await Alerta.EnviarAlerta(vecino.id_Usuario, "ayuda", datosAlerta,null);
 
             await DisplayAlert("Atención", respuesta, "Aceptar");
+
+            //elimino 2 ventanas
+
+            Navigation.RemovePage(Navigation.NavigationStack[Navigation.NavigationStack.Count - 2]);
+            await Navigation.PopAsync();
         }
 
         
