@@ -56,10 +56,7 @@ namespace VeciHelpAPK.Views
 
         private async void ButtonSOSRobo_Clicked(object sender, EventArgs e)
         {
-            //var pag =  new LoginView() ;
-            //await PopToPage(pag);
 
-            //await Navigation.PushAsync(new Test());
             await Navigation.PushAsync(new SOSRobo());
         }
 

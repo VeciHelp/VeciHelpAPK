@@ -64,9 +64,32 @@ namespace VeciHelpAPK.Views
             pais.Text = organ.pais;
         }
 
-        private void ButtonActualizar_Clicked(object sender, EventArgs e)
+        private async void ButtonActualizar_Clicked(object sender, EventArgs e)
         {
+            AsignarDatos();
 
+            var endPoint = RestService.For<IOrganizacion>(new HttpClient(new AuthenticatedHttpClientHandler(token)) { BaseAddress = new Uri(BaseAddress) });
+
+            var jsonstring = JsonConvert.SerializeObject(organ);
+
+            var request = await endPoint.ActualizarOrganizacion(organ);
+
+            if (request!=null)
+            {
+                await DisplayAlert("Atención", request, "Aceptar");
+            }
+            else
+            {
+                await DisplayAlert("Atención", "Error al actualizar datos", "Aceptar");
+            }
+        }
+
+        public void AsignarDatos()
+        {
+            organ.idUsuario = idUsuario;
+            organ.nombre = nombre.Text;
+            organ.nroEmergencia = nroEmergencia.Text;
+            organ.cantMinAyuda = int.Parse(cantMinima.Text);
         }
     }
 }

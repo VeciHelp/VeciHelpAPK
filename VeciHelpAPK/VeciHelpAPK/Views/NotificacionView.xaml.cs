@@ -1,4 +1,5 @@
-﻿using Refit;
+﻿using Newtonsoft.Json;
+using Refit;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -19,8 +20,6 @@ namespace VeciHelpAPK.Views
         public string direccionBase = "http://201.238.247.59/vecihelp/api/v1/";
         Alerta alerta = new Alerta();
 
-       
-        //
         public NotificacionView(int idAlerta)
         {
             InitializeComponent();
@@ -45,6 +44,7 @@ namespace VeciHelpAPK.Views
             if(alerta.opcionBoton == "Finalizar")
             {
                 var response = await endPoint.FinalizarAlerta(aler);
+                var jsonstring = JsonConvert.SerializeObject(aler);
                 response = response.Replace("\"", "");
                 await DisplayAlert("MUCHAS GRACIAS !!!", "Agradecemos su participación en la comunidad", "Aceptar");
 
@@ -96,11 +96,7 @@ namespace VeciHelpAPK.Views
 
         private void LlenarCamposDeAlerta()
         {
-            if (alerta.TipoAlerta=="Sospecha")
-            {
-                LblDetalle.IsVisible = true;
-                LblDetalle.Text = alerta.coordenadaSospecha;
-            }
+          
             LblNombre.Text = alerta.nombreAyuda + " " + alerta.apellidoAyuda + "\n\n" + alerta.direccion + "\n\n" + alerta.antecedentesSalud;
             //LabelAntecedentesSalud.Text = alerta.antecedentesSalud;
 
@@ -116,10 +112,6 @@ namespace VeciHelpAPK.Views
             else if (LblTipoAlerta.Text == "EMERGENCIA")
             {
                 LblTipoAlerta.TextColor = Color.FromHex("#ffcd3c");
-            }
-            else if (LblTipoAlerta.Text == "SOSPECHA")
-            {
-                LblTipoAlerta.TextColor = Color.FromHex("#2FBB62");
             }
 
             
@@ -156,35 +148,10 @@ namespace VeciHelpAPK.Views
             PhoneDialer.Open(alerta.nroEmergencia);
         }
 
-        //private async Task PopToPage(Page destination)
-        //{
-        //    List<Page> toRemove = new List<Page>();
-
-        //    if (destination == null) return;
-
-        //    //First, we get the navigation stack as a list
-        //    var pages = Navigation.NavigationStack.ToList();
-
-        //    //Then we invert it because it's from first to last and we need in the inverse order
-        //    pages.Reverse();
-
-        //    //Then we discard the current page
-        //    pages.RemoveAt(0);
-
-        //    foreach (var page in pages)
-        //    {
-        //        if (page == destination) break; //We found it.
-
-        //        toRemove.Add(page);
-        //    }
-
-        //    foreach (var rvPage in toRemove)
-        //    {
-        //        Navigation.RemovePage(rvPage);
-        //    }
-
-        //    await Navigation.PopAsync();
-        //}
+        private void ButtonSync_Clicked(object sender, EventArgs e)
+        {
+            ActualizarAlerta(alerta.idAlerta);
+        }
 
     }
 
