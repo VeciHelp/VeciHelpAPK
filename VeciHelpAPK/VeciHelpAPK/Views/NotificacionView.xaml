@@ -7,7 +7,7 @@
         <ScrollView>
           
             <StackLayout Padding="30">
-                <Button ImageSource="Sync.png"
+                <Button ImageSource="arrows.png"
                     x:Name="ButtonSync"
                     Clicked="ButtonSync_Clicked"
                         BackgroundColor="#242525"
@@ -35,25 +35,26 @@
                                     HorizontalOptions="StartAndExpand"/>
                     </Frame>
 
-                    <StackLayout HorizontalOptions="StartAndExpand">
-
-                        <Label x:Name="LblNombre"  
-                                   VerticalOptions="CenterAndExpand" 
-                                   TextColor="White" 
-                                   FontAttributes="Bold" 
-                                   HorizontalTextAlignment="Start" 
-                                   HorizontalOptions="StartAndExpand"
-                                   FontSize="20"/>
-                        <Label x:Name="LabelAntecedentesSalud"
-                                   VerticalOptions="CenterAndExpand" 
-                                   TextColor="White" 
-                                   FontAttributes="Bold" 
-                                   HorizontalTextAlignment="Start" 
-                                   HorizontalOptions="StartAndExpand"
-                                   FontSize="20"/>
-                        <!--<Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>
+                    <ScrollView>
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label x:Name="LblNombre"  
+                                       VerticalOptions="CenterAndExpand" 
+                                       TextColor="White" 
+                                       FontAttributes="Bold" 
+                                       HorizontalTextAlignment="Start" 
+                                       HorizontalOptions="StartAndExpand"
+                                       FontSize="20"/>
+                            <Label x:Name="LabelAntecedentesSalud"
+                                       VerticalOptions="CenterAndExpand" 
+                                       TextColor="White" 
+                                       FontAttributes="Bold" 
+                                       HorizontalTextAlignment="Start" 
+                                       HorizontalOptions="StartAndExpand"
+                                       FontSize="20"/>
+                            <!--<Label x:Name="LblNombre" Text="Nombre" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>
                             <Label x:Name="LblDireccion" Text="Dirección" VerticalOptions="CenterAndExpand" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>-->
-                    </StackLayout>
+                        </StackLayout>
+                    </ScrollView>
                 </StackLayout>
 
 

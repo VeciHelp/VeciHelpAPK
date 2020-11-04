@@ -9,6 +9,13 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="30">
+
+                <Button ImageSource="arrows.png"
+                    x:Name="ButtonSync"
+                        Clicked="ButtonSync_Clicked"
+                        BackgroundColor="#242525"
+                        />
+
                 <Label x:Name="LblTipoAlerta"
                    HorizontalOptions="CenterAndExpand"
                    VerticalOptions="Center"

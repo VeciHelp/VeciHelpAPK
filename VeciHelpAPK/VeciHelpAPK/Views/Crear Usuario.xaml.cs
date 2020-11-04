@@ -184,7 +184,6 @@ namespace VeciHelpAPK.Views
        
         public  void asignarDatos()
         {
-
                 usr.nombre = nombre.Text;
                 usr.apellido = apellido.Text;
                 usr.correo = correo.Text;
@@ -449,13 +448,13 @@ namespace VeciHelpAPK.Views
             else if (digito.Text != "K" && digito.Text != "k" && !digito.Text.ToCharArray().All(Char.IsDigit))
             {
                 estadoValidacion = false;
-                mensajeValidaciones = "El dígito verificador debe contener desde el 0-9 o una K";
+                mensajeValidaciones = "El dígito verificador debe contener un dígito o una K";
             }
-            //else if (validarRut(rut.Text, digito.Text) == false)
-            //{
-            //    estadoValidacion = false;
-            //    mensajeValidaciones = "Dígito verificador incorrecto";
-            //}
+            else if (validarRut(rut.Text, digito.Text) != true)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "El rut es invalido";
+            }
 
             else if (digito.Text == null || digito.Text.Trim() == string.Empty)
             {
@@ -486,36 +485,27 @@ namespace VeciHelpAPK.Views
             }
         }
 
-        public bool validarRut(string rut, string dv)
+        private Boolean validarRut(String RUT, String DV)
         {
-
-            bool validacion = false;
-            try
+            var rut = RUT;
+            var longitud = rut.Length;
+            var factor = 2;
+            var sumaProducto = 0;
+            var con = 0;
+            var caracter = 0;
+            for (con = longitud - 1; con >= 0; con--)
             {
-                rut = rut.ToUpper();
-                rut = rut.Replace(".", "");
-                rut = rut.Replace("-", "");
-                //int rutAux = int.Parse(rut.Substring(0, rut.Length - 1));
-                int rutAux = int.Parse(rut);
-
-                char dv1 = char.Parse(dv);
-
-                int m = 0, s = 0;
-                for (; rutAux != 0; rutAux /= 10)
-                {
-                    s = (s + rutAux % 10 * (9 - m++ % 6)) % 11; 
-                }
-                //s--;
-                if (dv1 == (char)(s != 0 ? s + 47 : 75))
-                {
-                    validacion = true;
-                }
+                caracter = Int32.Parse(rut.Substring(con, 1));
+                sumaProducto += (factor * caracter);
+                factor++; if (factor > 7) factor = 2;
             }
-            catch (Exception)
-            {
-            }
-            return validacion;
+            var digitoAuxiliar = 11 - (sumaProducto % 11);
+            var caracteres = "-123456789K0";
+            var digitoCaracter = caracteres.Substring(digitoAuxiliar, 1);
+            return DV.ToUpper().Equals(digitoCaracter);
         }
+
+
 
     }
 }

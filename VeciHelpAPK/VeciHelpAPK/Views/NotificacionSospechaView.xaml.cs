@@ -129,6 +129,10 @@ namespace VeciHelpAPK.Views
             PhoneDialer.Open(alerta.nroEmergencia);
         }
 
-       
+        private void ButtonSync_Clicked(object sender, EventArgs e)
+        {
+            ActualizarAlerta(alerta.idAlerta);
+
+        }
     }
 }

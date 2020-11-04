@@ -26,7 +26,7 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            PlaceholderColor="#ededed"
+                                            PlaceholderColor="#d5d5d5"
                                             TextColor="White"
                                             HeightRequest="42"/>
 
@@ -39,7 +39,7 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            PlaceholderColor="#ededed"
+                                            PlaceholderColor="#d5d5d5"
                                             TextColor="White"
                                             HeightRequest="42"/>
 
@@ -52,9 +52,9 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            PlaceholderColor="#ededed"
                                             TextColor="White"
-                                            HeightRequest="42"/>
+                                            HeightRequest="42"
+                                            PlaceholderColor="#d5d5d5"/>
 
                     <control:StanndardEntry x:Name="comuna" 
                                             Placeholder="Comuna" 
@@ -65,9 +65,10 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            PlaceholderColor="#ededed"
                                             TextColor="White"
-                                            HeightRequest="42"/>
+                                            HeightRequest="42"
+                                            IsReadOnly="True"
+                                            PlaceholderColor="#d5d5d5"/>
 
                     <control:StanndardEntry x:Name="ciudad" 
                                             Placeholder="Ciudad"
@@ -78,9 +79,10 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            PlaceholderColor="#ededed"
                                             TextColor="White"
-                                            HeightRequest="42"/>
+                                            HeightRequest="42" 
+                                            IsReadOnly="True"
+                                            PlaceholderColor="#d5d5d5"/>
 
                     <control:StanndardEntry x:Name="provincia" 
                                             Placeholder="Provincia"
@@ -91,9 +93,10 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            PlaceholderColor="#ededed"
                                             TextColor="White"
-                                            HeightRequest="42"/>
+                                            HeightRequest="42"
+                                            IsReadOnly="True"
+                                            PlaceholderColor="#d5d5d5"/>
 
                     <control:StanndardEntry x:Name="region"
                                             Placeholder="Región"
@@ -104,9 +107,10 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            PlaceholderColor="#ededed"
                                             TextColor="White"
-                                            HeightRequest="42"/>
+                                            HeightRequest="42"
+                                            IsReadOnly="True" 
+                                            PlaceholderColor="#d5d5d5"/>
 
                     <control:StanndardEntry x:Name="pais"
                                             Placeholder="País"
@@ -117,16 +121,17 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            PlaceholderColor="#ededed"
                                             TextColor="White"
-                                            HeightRequest="42"/>
+                                            HeightRequest="42"
+                                            IsReadOnly="True"
+                                            PlaceholderColor="#d5d5d5"/>
                 </StackLayout>
             </StackLayout>
             
             <StackLayout>
                 <Button x:Name="ButtonActualizar" 
                             Clicked="ButtonActualizar_Clicked" 
-                            Text="Actualizar" BackgroundColor="#2FBB62" 
+                            Text="CAMBIAR DATOS" BackgroundColor="#2FBB62" 
                             TextColor="White" 
                             CornerRadius="20"
                             HeightRequest="80"
