@@ -65,7 +65,7 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            TextColor="White"
+                                            TextColor="#d5d5d5"
                                             HeightRequest="42"
                                             IsReadOnly="True"
                                             PlaceholderColor="#d5d5d5"/>
@@ -79,7 +79,7 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            TextColor="White"
+                                            TextColor="#d5d5d5"
                                             HeightRequest="42" 
                                             IsReadOnly="True"
                                             PlaceholderColor="#d5d5d5"/>
@@ -93,7 +93,7 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            TextColor="White"
+                                            TextColor="#d5d5d5"
                                             HeightRequest="42"
                                             IsReadOnly="True"
                                             PlaceholderColor="#d5d5d5"/>
@@ -107,7 +107,7 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            TextColor="White"
+                                            TextColor="#d5d5d5"
                                             HeightRequest="42"
                                             IsReadOnly="True" 
                                             PlaceholderColor="#d5d5d5"/>
@@ -121,7 +121,7 @@
                                             BorderColor="White"
                                             BorderThickness="1"
                                             CornerRadius="8"
-                                            TextColor="White"
+                                            TextColor="#d5d5d5"
                                             HeightRequest="42"
                                             IsReadOnly="True"
                                             PlaceholderColor="#d5d5d5"/>
