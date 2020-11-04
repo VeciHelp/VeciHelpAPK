@@ -29,7 +29,7 @@ namespace VeciHelpAPK.Views
 
              
                     await DisplayAlert("Atención", response, "Aceptar");
-                    await Navigation.PopAsync();
+                    await Navigation.PopModalAsync();
             }
             else
                 await DisplayAlert("Atención", "Contraseñas no coinciden", "Aceptar");

@@ -42,7 +42,6 @@ namespace VeciHelpAPK.Views
         {
             InitializeComponent();
             RecargarDatosUsuario(idUser);
-
         }
 
         //constructor para entrar por la vista de validacion de codigo
@@ -109,7 +108,7 @@ namespace VeciHelpAPK.Views
             {
                 validacionesCampos(1);
 
-                if (estadoValidacion==true)
+                if (estadoValidacion == true)
                 {
                     asignarDatos();
                     var endPoint = RestService.For<IUsuario>(BaseAddress);
@@ -122,15 +121,15 @@ namespace VeciHelpAPK.Views
 
                         await DisplayAlert("Atención", jsonString, "Aceptar");
 
-                        //retrocedo a la ventana anterior que seria el login
-                        await Navigation.PopAsync(); //x2
+                        //retrocedo a la ventana anterior
+                        await Navigation.PopModalAsync();
                     }
                 }
                 else
                 {
                     await DisplayAlert("Atención", mensajeValidaciones, "Aceptar");
                 }
-                
+
             }
         }
 
@@ -356,31 +355,7 @@ namespace VeciHelpAPK.Views
         }
 
 
-        //resetea todos los campos del formulario
-        //private void mostrarcampos()
-        //{
-        //    correo.IsVisible = true;
-        //    correo.IsReadOnly = false;
-        //    nombre.IsVisible = true;
-        //    nombre.IsReadOnly = false;
-        //    apellido.IsVisible = true;
-        //    apellido.IsReadOnly = false;
-        //    rut.IsVisible = true;
-        //    rut.IsReadOnly = false;
-        //    digito.IsVisible = true;
-        //    digito.IsReadOnly = false;
-        //    AntecedentesSalud.IsVisible = true;
-        //    AntecedentesSalud.IsReadOnly = false;
-        //    DPFechaNacimiento.IsVisible = true;
-        //    celular.IsVisible = true;
-        //    celular.IsReadOnly = false;
-        //    direccion.IsVisible = true;
-        //    direccion.IsReadOnly = false;
-        //    codigoVerificacion.IsVisible = true;
-        //    codigoVerificacion.IsReadOnly = false;
-        //}
-
-
+        
         //encripta la contraseña a sha256
         public string ConvertToBase64(Stream stream)
         {
@@ -451,16 +426,18 @@ namespace VeciHelpAPK.Views
                 estadoValidacion = false;
                 mensajeValidaciones = "El dígito verificador debe contener un dígito o una K";
             }
-            else if (validarRut(rut.Text, digito.Text) != true)
-            {
-                estadoValidacion = false;
-                mensajeValidaciones = "El rut es invalido";
-            }
+           
 
             else if (digito.Text == null || digito.Text.Trim() == string.Empty)
             {
                 estadoValidacion = false;
                 mensajeValidaciones = "El dígito verificador no puede ir en blanco";
+            }
+
+            else if (Rut.ValidaRut(rut.Text, digito.Text) == false)
+            {
+                estadoValidacion = false;
+                mensajeValidaciones = "Ingrese un rut valido en chile";
             }
 
             else if (celular.Text == null || celular.Text.Trim() == string.Empty)
@@ -474,44 +451,33 @@ namespace VeciHelpAPK.Views
                 estadoValidacion = false;
                 mensajeValidaciones = "La dirección no puede ir en blanco";
             }
+
             //si le paso un 1 ademas de todo lo que esta validando valida la clave
             else if(tipo==1)
             {
-                if (clave.Text == null || clave.Text.Trim() == string.Empty)
+                if (clave.Text.Trim()==clave2.Text.Trim())
+                {
+                    if (clave.Text == null || clave.Text.Trim() == string.Empty)
+                    {
+                        estadoValidacion = false;
+                        mensajeValidaciones = "La clave no puede ir en blanco";
+                    }
+                    else
+                    {
+                        estadoValidacion = true;
+                    }
+                }
+                else
                 {
                     estadoValidacion = false;
-                    mensajeValidaciones = "La clave no puede ir en blanco";
+                    mensajeValidaciones = "Las contraseñas no coinciden";
                 }
+                
                
             }
-            else
-            {
-                estadoValidacion = true;
-            }
+            
 
         }
-
-        private Boolean validarRut(String RUT, String DV)
-        {
-            var rut = RUT;
-            var longitud = rut.Length;
-            var factor = 2;
-            var sumaProducto = 0;
-            var con = 0;
-            var caracter = 0;
-            for (con = longitud - 1; con >= 0; con--)
-            {
-                caracter = Int32.Parse(rut.Substring(con, 1));
-                sumaProducto += (factor * caracter);
-                factor++; if (factor > 7) factor = 2;
-            }
-            var digitoAuxiliar = 11 - (sumaProducto % 11);
-            var caracteres = "-123456789K0";
-            var digitoCaracter = caracteres.Substring(digitoAuxiliar, 1);
-            return DV.ToUpper().Equals(digitoCaracter);
-        }
-
-
 
     }
 }

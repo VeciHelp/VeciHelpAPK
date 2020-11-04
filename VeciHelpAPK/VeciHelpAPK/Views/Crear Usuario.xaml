@@ -124,6 +124,19 @@
                                 PlaceholderColor="#ededed"
                                 TextColor="White"
                                 HeightRequest="42"/>
+
+                            <control:StanndardEntry  x:Name="clave2" Placeholder="Repetir Clave" WidthRequest="400"
+                                        ReturnType="Next"
+                                      HorizontalOptions="Center" 
+                                          IsPassword="True"
+                                          BackgroundColor="#31FFFFFF" 
+                                BorderColor="White"
+                                BorderThickness="1"
+                                CornerRadius="8"
+                                PlaceholderColor="#ededed"
+                                TextColor="White"
+                                HeightRequest="42"/>
+                        
                             <control:StanndardEntry x:Name="codigoVerificacion" WidthRequest="400" Placeholder="Codigo de Verificacion"
                                ReturnType="Done" HorizontalOptions="Center"  BackgroundColor="#31FFFFFF" 
                         BorderColor="White"

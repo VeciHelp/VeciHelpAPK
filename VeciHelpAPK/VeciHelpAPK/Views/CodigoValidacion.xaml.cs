@@ -41,10 +41,14 @@ namespace VeciHelpAPK.Views
                     {
                         await DisplayAlert("Atención", response, "Aceptar");
 
-                    await Navigation.PushAsync(new Crear_Usuario(usr,1));
+                    await Navigation.PushModalAsync(new Crear_Usuario(usr,1));
                 }
                 else
+                {
                     await DisplayAlert("Atención", response, "Aceptar");
+                    await Navigation.PopModalAsync();
+                }
+                    
             }
             else
             {

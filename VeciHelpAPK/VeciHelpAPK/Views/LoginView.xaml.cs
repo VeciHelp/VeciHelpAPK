@@ -94,7 +94,7 @@ namespace VeciHelpAPK.Views
                         Preferences.Set("Ses_token", usr.token);
                         Preferences.Set("Ses_id_Usuario", usr.id_Usuario.ToString());
                         await DisplayAlert("Atención", "Por seguridad debe actualizar su contraseña", "Aceptar");
-                        await Navigation.PushAsync(new ActualizarClave(clave.Text));
+                        await Navigation.PushModalAsync(new ActualizarClave(clave.Text));
                     }
                 }
                 else if(response.StatusCode == HttpStatusCode.NotFound)
@@ -128,7 +128,7 @@ namespace VeciHelpAPK.Views
 
         private async void ButtonRegistrate_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CodigoValidacion());
+            await Navigation.PushModalAsync(new CodigoValidacion());
         }
 
         private string Encriptar(string clave)
@@ -141,7 +141,7 @@ namespace VeciHelpAPK.Views
 
         private async void buttonRecuperar_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new RecuperarClave());
+            await Navigation.PushModalAsync(new RecuperarClave());
         }
 
 

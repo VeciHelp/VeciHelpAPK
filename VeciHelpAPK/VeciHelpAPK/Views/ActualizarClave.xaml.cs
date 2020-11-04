@@ -22,6 +22,7 @@ namespace VeciHelpAPK.Views
     {
         public string BaseAddress = "http://201.238.247.59/vecihelp/api/v1/";
         public Usuario user;
+        public bool isModalAsync;
         public ActualizarClave(Usuario usr)
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace VeciHelpAPK.Views
         {
             InitializeComponent();
             txtOldPass.Text = clave;
+            isModalAsync = true;
         }
 
         private async void ButtonValidar_Clicked(object sender, EventArgs e)
@@ -60,8 +62,18 @@ namespace VeciHelpAPK.Views
                         var jsonString = await response.Content.ReadAsStringAsync();
                         await DisplayAlert("Exito", jsonString, "ok");
 
-                        //regreso a la pagina anterior
-                        await Navigation.PopAsync();
+                        //esta ventana se usa desde afuera del login y desde adentro por lo que cuando cambio la clave desde afuera debo retroceder con navigaion.popModalAsync()
+                        if (isModalAsync==true)
+                        {
+                            //regreso a la pagina anterior
+                            await Navigation.PopModalAsync();
+                        }
+                        else
+                        {
+                            //regreso a la pagina anterior
+                            await Navigation.PopAsync();
+                        }
+                       
 
                     }
                     else
