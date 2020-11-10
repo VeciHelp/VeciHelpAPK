@@ -28,7 +28,7 @@ namespace VeciHelpAPK.Views
         public string token= Preferences.Get("Ses_token", null);
 
         public string mensajeValidaciones=string.Empty;
-        public bool estadoValidacion=false;
+        public bool estadoValidacion=true;
 
         Usuario usr = new Usuario();
 
@@ -336,6 +336,7 @@ namespace VeciHelpAPK.Views
                 direccion.Opacity = 0.7;
             }
             clave.IsVisible = false;
+            clave2.IsVisible = false;
             codigoVerificacion.IsVisible = false;
             ButtonCrear.Text = "ACTUALIZAR";
             ButtonCrear.TextColor = Color.Black;
