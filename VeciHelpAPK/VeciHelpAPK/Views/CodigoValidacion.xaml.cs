@@ -3,6 +3,7 @@ using Refit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using VeciHelpAPK.Interface;
@@ -30,22 +31,31 @@ namespace VeciHelpAPK.Views
 
                 var endPoint = RestService.For<IUsuario>(BaseAddress);
 
-               // var jsonas = JsonConvert.SerializeObject(usr);
+                var request = await endPoint.ValidarCodigo(usr);
 
-                var response = await endPoint.ValidarCodigo(usr);
+                if (request.StatusCode == HttpStatusCode.OK)
+                {
+                    var jsonString = await request.Content.ReadAsStringAsync();
+                    var obj = JsonConvert.DeserializeObject<ValidacionCodigoResponse>(jsonString);
+                    var mensaje = obj.resp.Replace("\"", "");
 
-                response = response.Replace("\"", "");
-                
-                if (response.Equals("Código Validado"))
-
+                    if (obj.tipo!=0)
                     {
-                        await DisplayAlert("Atención", response, "Aceptar");
+                        await DisplayAlert("Atención", mensaje, "Aceptar");
 
-                    await Navigation.PushModalAsync(new Crear_Usuario(usr,1));
+                        await Navigation.PushModalAsync(new Crear_Usuario(usr, 1, obj.tipo));
+                    }
+                    else
+                    {
+                        await DisplayAlert("Atención", mensaje, "Aceptar");
+                        await Navigation.PopModalAsync();
+                    }
+                    
+
                 }
                 else
                 {
-                    await DisplayAlert("Atención", response, "Aceptar");
+                    await DisplayAlert("Atención", "Error de conexion", "Aceptar");
                     await Navigation.PopModalAsync();
                 }
                     

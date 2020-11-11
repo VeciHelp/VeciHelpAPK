@@ -19,7 +19,7 @@ namespace VeciHelpAPK.Interface
 
 
         [Get("/user/validarcodigo")]
-        Task<string> ValidarCodigo([Body(BodySerializationMethod.Serialized)] Usuario usr);
+        Task<HttpResponseMessage> ValidarCodigo([Body(BodySerializationMethod.Serialized)] Usuario usr);
 
 
         [Post("/user/CrearUser")]

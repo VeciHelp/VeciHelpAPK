@@ -24,7 +24,6 @@ namespace VeciHelpAPK.Interface
         Task<string> EnrolarUsuario(Administrador admin);
 
 
-        //falta completarlo
         [Delete("/admin/EliminarUsuario?idUsuario={idUsuario}")]
         [Headers("Authorization: Bearer")]
         Task<string> EliminarUsuario(int idUsuario);
@@ -47,5 +46,8 @@ namespace VeciHelpAPK.Interface
         [Get("/admin/GetUsuarioByCorreo?correo={correo}")]
         [Headers("Authorization: Bearer")]
         Task<HttpResponseMessage> GetUsuarioByCorreo(string correo);
+
+        [Post("/admin/CrearAdmin")]
+        Task<HttpResponseMessage> RegistrarAdministrador([Body(BodySerializationMethod.Serialized)] Usuario usr);
     }
 }

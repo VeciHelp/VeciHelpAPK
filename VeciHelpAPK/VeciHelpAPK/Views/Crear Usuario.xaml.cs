@@ -30,6 +30,9 @@ namespace VeciHelpAPK.Views
         public string mensajeValidaciones=string.Empty;
         public bool estadoValidacion=true;
 
+        //se utiliza para guardar el tipo de usuario que esta solicitando crear una nueva cuenta de usuario por la pantalla de codigo de validacion
+        public int tipoUsuario = 0;
+
         Usuario usr = new Usuario();
 
         public  Crear_Usuario()
@@ -45,9 +48,12 @@ namespace VeciHelpAPK.Views
         }
 
         //constructor para entrar por la vista de validacion de codigo
-        public Crear_Usuario(Usuario user, int validacion)
+        public Crear_Usuario(Usuario user, int validacion,int tipoUsuario)
         {
             this.usr = user;
+            //le indico el tipo de usuario que se creará
+            this.tipoUsuario = tipoUsuario;
+
             InitializeComponent();
             LayoutFoto.IsVisible = false;
             //mostrarcampos();
@@ -73,7 +79,7 @@ namespace VeciHelpAPK.Views
         {
             if (ButtonCrear.Text == "ACTUALIZAR")
             {
-                //le envio un 2 para indicarle que necesito que realice las validaciones pero solo para el actualizar datos
+                //le envio un 2 para indicarle que necesito que realice las validaciones pero solo para el actualizar datos osea no debe validar la contraseña
                 validacionesCampos(2);
 
                 if (estadoValidacion == true)
@@ -106,24 +112,50 @@ namespace VeciHelpAPK.Views
             }
             else
             {
+                //se envia un 1 cuando se debe validar la contraseña
                 validacionesCampos(1);
 
                 if (estadoValidacion == true)
                 {
                     asignarDatos();
-                    var endPoint = RestService.For<IUsuario>(BaseAddress);
-
-                    var request = await endPoint.RegistrarUsuario(usr);
-
-                    if (request.StatusCode == HttpStatusCode.OK)
+                    //pregunto por el tipo de usuario a crear para ver si llamo al endpoint de admin o de usuario
+                    if (tipoUsuario==2)//el 2 corresponde a usuarios
                     {
-                        var jsonString = await request.Content.ReadAsStringAsync();
+                        var endPoint = RestService.For<IUsuario>(BaseAddress);
 
-                        await DisplayAlert("Atención", jsonString, "Aceptar");
 
-                        //retrocedo a la ventana anterior
-                        await Navigation.PopModalAsync();
+                        var request = await endPoint.RegistrarUsuario(usr);
+
+                        if (request.StatusCode == HttpStatusCode.OK)
+                        {
+                            var jsonString = await request.Content.ReadAsStringAsync();
+
+                            await DisplayAlert("Atención", jsonString, "Aceptar");
+
+                            //retrocedo a la ventana anterior
+                            await Navigation.PopModalAsync();
+                        }
                     }
+                    else
+                    {
+                        //si el tipo de usario no es dos será 1 y entra aca e invoca al endpoint que crea administrador
+                        var endPoint = RestService.For<IAdministrador>(BaseAddress);
+
+
+                        var request = await endPoint.RegistrarAdministrador(usr);
+
+                        if (request.StatusCode == HttpStatusCode.OK)
+                        {
+                            var jsonString = await request.Content.ReadAsStringAsync();
+
+                            await DisplayAlert("Atención", jsonString, "Aceptar");
+
+                            //retrocedo a la ventana anterior
+                            await Navigation.PopModalAsync();
+                        }
+                    }
+                    
+                    
                 }
                 else
                 {
