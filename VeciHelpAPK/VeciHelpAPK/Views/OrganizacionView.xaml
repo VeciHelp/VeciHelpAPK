@@ -18,7 +18,7 @@
                 <StackLayout Padding="10" WidthRequest="400" Orientation="Vertical">
 
                     <control:StanndardEntry x:Name="nombre" 
-                                            Placeholder="Dirección" 
+                                            Placeholder="Nombre Organización" 
                                             WidthRequest="400"
                                             HorizontalOptions="Center"
                                             ReturnType="Next" 
@@ -41,6 +41,7 @@
                                             CornerRadius="8"
                                             PlaceholderColor="#d5d5d5"
                                             TextColor="White"
+                                            Keyboard="Numeric"
                                             HeightRequest="42"/>
 
                     <control:StanndardEntry x:Name="cantMinima"
@@ -54,6 +55,7 @@
                                             CornerRadius="8"
                                             TextColor="White"
                                             HeightRequest="42"
+                                            Keyboard="Numeric"
                                             PlaceholderColor="#d5d5d5"/>
 
                     <control:StanndardEntry x:Name="comuna" 

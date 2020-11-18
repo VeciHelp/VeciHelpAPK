@@ -77,7 +77,7 @@
                             Clicked="BtnBomberos_Clicked"/>
 
                     <Button x:Name="BtnCarabineros"
-                            Text="CARABINEROS" 
+                            Text="Plan Cuadrante" 
                             HorizontalOptions="CenterAndExpand"
                             TextColor="White" 
                             FontSize="16" 
